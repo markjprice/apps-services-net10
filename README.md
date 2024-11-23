@@ -40,7 +40,7 @@ Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution fi
 
 **Data**
 - Chapter 7 Managing Relational Data Using SQL: [code/Chapter07](code/Chapter07)
-- Chapter 8 Building Entity Models for SQL Server Using EF Core: [code/Chapter08](code/Chapter08)
+- Chapter 8 Building Entity Models Using EF Core: [code/Chapter08](code/Chapter08)
 - Chapter 9 Managing NoSQL Data Using MongoDB: [code/Chapter09](code/Chapter09)
 
 **Services**
