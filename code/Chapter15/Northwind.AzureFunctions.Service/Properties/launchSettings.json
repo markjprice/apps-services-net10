@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Northwind.AzureFunctions.Service": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 5101",
+      "launchBrowser": false
+    }
+  }
+}
