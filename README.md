@@ -52,7 +52,7 @@ Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution fi
 
 **Online-Only**
 - Chapter O1 Building Serverless Nanoservices Using Azure Functions: [code/ChapterO1](code/ChapterO1)
-- Chapter O2 Managing NoSQL Data Using Azure Cosmos DB: [code/ChapterO2](code/Chapter)2)
+- Chapter O2 Managing NoSQL Data Using Azure Cosmos DB: [code/ChapterO2](code/ChapterO2)
 
 ## Extra content to download
 
