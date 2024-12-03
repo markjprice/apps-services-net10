@@ -2,11 +2,11 @@
 
 # Apps and Services with .NET 10, Third Edition
 
-Repository for the Packt Publishing book titled "Apps and Services with .NET 10" by Mark J. Price. This book will be published in December 2025.
+Repository for the Packt Publishing book titled "Apps and Services with .NET 10" by Mark J. Price. This book is planned to be published in December 2025.
 
 If you have purchased the paperback or Kindle edition, then you can request a free PDF copy at the following link: https://www.packtpub.com/page/free-ebook.
 
-Join the Packt community on Discord: https://packt.link/apps_and_services_dotnet10. After accepting the Discord invite, find the channel for this book named **apps_and_services_2e**: https://discord.com/channels/963343534323269662/1166070194398048286.
+Join the Packt community on Discord: https://packt.link/apps_and_services_dotnet10. After accepting the Discord invite, find the channel for this book named **apps_and_services_3e**: https://discord.com/channels/963343534323269662/1166070194398048286.
 
 For questions about book pricing, distribution, and so on, please contact the publisher Packt at the following email address: customercare@packt.com
 
@@ -30,28 +30,29 @@ Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution fi
 - Chapter 1 Introducing Apps and Services with .NET: [code/Chapter01](code/Chapter01)
 
 **Apps**
-- Chapter 2 Building GUI Apps Using Avalonia: [code/Chapter02](code/Chapter02)
-- Chapter 3 Building Progressive Web Apps Using Blazor: [code/Chapter03](code/Chapter03)
+- Chapter 2 Building Mobile Apps Using .NET MAUI: [code/Chapter02](code/Chapter02)
+- Chapter 3 Building Desktop Apps Using Avalonia: [code/Chapter03](code/Chapter03)
+- Chapter 4 Building Web Apps Using Blazor: [code/Chapter04](code/Chapter04)
 
 **Specialized Libraries**
-- Chapter 4 Multitasking and Concurrency: [code/Chapter04](code/Chapter04)
 - Chapter 5 Implementing Popular Third-Party Libraries: [code/Chapter05](code/Chapter05)
 - Chapter 6 Handling Dates, Times, and Internationalization: [code/Chapter06](code/Chapter06)
 
 **Data**
 - Chapter 7 Managing Relational Data Using SQL: [code/Chapter07](code/Chapter07)
 - Chapter 8 Building Entity Models Using EF Core: [code/Chapter08](code/Chapter08)
-- Chapter 9 Managing NoSQL Data Using MongoDB: [code/Chapter09](code/Chapter09)
 
 **Services**
-- Chapter 10 Building and Securing Web Services: [code/Chapter10](code/Chapter10)
+- Chapter 9 Building a Custom LLM-based Service: [code/Chapter09](code/Chapter09)
+- Chapter 10 Building and Securing Web API Services: [code/Chapter10](code/Chapter10)
 - Chapter 11 Caching, Queuing, and Resilient Background Services: [code/Chapter11](code/Chapter11)
 - Chapter 12 Broadcasting Real-Time Communication Using SignalR: [code/Chapter12](code/Chapter12)
 - Chapter 13 Combining Data Sources Using GraphQL: [code/Chapter13](code/Chapter13)
 - Chapter 14 Building Efficient Microservices Using gRPC: [code/Chapter14](code/Chapter14)
 
 **Online-Only**
-- Chapter 15 Building Serverless Nanoservices Using Azure Functions: [code/Chapter15](code/Chapter15)
+- Chapter O1 Building Serverless Nanoservices Using Azure Functions: [code/ChapterO1](code/ChapterO1)
+- Chapter O2 Managing NoSQL Data Using Azure Cosmos DB: [code/ChapterO2](code/Chapter)2)
 
 ## Extra content to download
 
