@@ -16,6 +16,10 @@ All of my books on my publisher Packt's website: https://subscription.packtpub.c
 
 My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark_J_Price
 
+## Technologies covered in the book
+
+![Technologies covered in Apps and Services with .NET 10](docs/assets/apps-services-net10-diagram.png)
+
 ## Code solutions
 
 Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution files and projects for each chapter, found here: [/code](/code). 
