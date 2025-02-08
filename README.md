@@ -48,15 +48,15 @@ Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution fi
 
 **Services**
 - Chapter 9 Building a Custom LLM-based Service: [code/Chapter09](code/Chapter09)
-- Chapter 10 Building and Securing Web API Services: [code/Chapter10](code/Chapter10)
+- Chapter 10 Building and Securing Minimal API Web Services: [code/Chapter10](code/Chapter10)
 - Chapter 11 Caching, Queuing, and Resilient Background Services: [code/Chapter11](code/Chapter11)
 - Chapter 12 Broadcasting Real-Time Communication Using SignalR: [code/Chapter12](code/Chapter12)
 - Chapter 13 Combining Data Sources Using GraphQL: [code/Chapter13](code/Chapter13)
 - Chapter 14 Building Efficient Microservices Using gRPC: [code/Chapter14](code/Chapter14)
 
-**Online-Only**
-- Chapter O1 Building Serverless Nanoservices Using Azure Functions: [code/ChapterO1](code/ChapterO1)
-- Chapter O2 Managing NoSQL Data Using Azure Cosmos DB: [code/ChapterO2](code/ChapterO2)
+**Extra**
+- Chapter X1 Building Serverless Nanoservices Using Azure Functions: [code/ChapterX1](code/ChapterX1)
+- Chapter X2 Managing NoSQL Data Using Azure Cosmos DB: [code/ChapterX2](code/ChapterX2)
 
 ## Extra content to download
 
