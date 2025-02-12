@@ -32,7 +32,11 @@
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.2" />
   </ItemGroup>
 
-  <ItemGroup Label="Chapter 4 Building Web Apps Using Blazor.">
+  <ItemGroup Label="Chapter 1 Introducing Apps and Services with .NET">
+    <PackageVersion Include="BenchmarkDotNet" Version="0.14.0" />
+  </ItemGroup>
+  
+  <ItemGroup Label="Chapter 4 Building Web Apps Using Blazor">
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.2" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.2" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.2" />
