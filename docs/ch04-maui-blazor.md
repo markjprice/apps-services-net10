@@ -2,9 +2,9 @@
 
 This online-only section is about integrating .NET MAUI apps with Blazor components and native platform features to build hybrid apps that make the most of the operating system they run on.
 
-In *Chapter 15, Building Web Components Using Blazor*, you saw how easy it is to create components using web user interface technologies, including HTML and CSS, and common user interface style libraries like Bootstrap.
+In *Chapter 2, Building Mobile Apps Using .NET MAUI*, you saw that .NET MAUI enables you to build cross-platform apps that work using native controls on each device and its operating system.
 
-In *Chapter 16, Building Mobile and Desktop Apps Using .NET MAUI*, you saw that .NET MAUI enables you to build cross-platform apps that work using native controls on each device and its operating system.
+In *Chapter 3, Building Web Apps Using Blazor*, you saw how easy it is to create components using web user interface technologies, including HTML and CSS, and common user interface style libraries like Bootstrap.
 
 In this online-only section, you will see how to get the best of both those worlds by building .NET MAUI apps that host Blazor components and retain the ability to closely integrate with native features, including the look and feel.
 
