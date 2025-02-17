@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using System.Diagnostics; // To use Process.
 
 string imagesFolder = Path.Combine(
   Environment.CurrentDirectory, "images");

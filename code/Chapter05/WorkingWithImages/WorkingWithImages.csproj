@@ -2,24 +2,28 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Label="Simplify use of the Console class.">
     <Using Include="System.Console" Static="true" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.4" />
+    <PackageReference Include="SixLabors.ImageSharp" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Label="Globally import these namespaces.">
     <Using Include="SixLabors.ImageSharp" />
     <Using Include="SixLabors.ImageSharp.PixelFormats" />
     <Using Include="SixLabors.ImageSharp.Processing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="images\" />
   </ItemGroup>
 
   <ItemGroup>

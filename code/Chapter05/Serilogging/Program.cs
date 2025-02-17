@@ -30,5 +30,5 @@ Log.Information("{@PageView} occurred at {Viewed}",
   pageView, DateTimeOffset.UtcNow);
 
 // For a log with a buffer, like a text file logger, you
-// mustflush before ending the app.
+// must flush before ending the app.
 Log.CloseAndFlush();
