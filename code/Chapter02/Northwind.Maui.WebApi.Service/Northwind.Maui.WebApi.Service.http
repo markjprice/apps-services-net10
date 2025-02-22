@@ -1,6 +1,0 @@
-@Northwind.Maui.WebApi.Service_HostAddress = http://localhost:5244
-
-GET {{Northwind.Maui.WebApi.Service_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

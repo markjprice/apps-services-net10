@@ -5,7 +5,7 @@ namespace Northwind.Maui.Client;
 
 public class CustomerDetailViewModel : INotifyPropertyChanged
 {
-  public event PropertyChangedEventHandler PropertyChanged;
+  public event PropertyChangedEventHandler? PropertyChanged;
 
   private string customerId;
   private string companyName;

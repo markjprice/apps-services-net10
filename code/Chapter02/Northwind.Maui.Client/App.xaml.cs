@@ -1,12 +1,15 @@
 ﻿namespace Northwind.Maui.Client
 {
-  public partial class App : Application
-  {
-    public App()
+    public partial class App : Application
     {
-      InitializeComponent();
+        public App()
+        {
+            InitializeComponent();
+        }
 
-      MainPage = new AppShell();
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            return new Window(new AppShell());
+        }
     }
-  }
 }
