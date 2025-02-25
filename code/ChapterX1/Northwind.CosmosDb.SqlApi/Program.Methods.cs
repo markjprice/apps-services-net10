@@ -14,7 +14,7 @@ partial class Program
 {
   // To use Azure Cosmos DB in the local emulator.
   private static string endpointUri = "https://localhost:8081/";
-  private static string primaryKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
+  private static string primaryKey = "<secret>";
 
   /*
   // To use Azure Cosmos DB in the cloud.
