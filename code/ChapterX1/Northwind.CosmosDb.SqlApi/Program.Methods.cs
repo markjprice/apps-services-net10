@@ -14,14 +14,14 @@ partial class Program
 {
   // To use Azure Cosmos DB in the local emulator.
   private static string endpointUri = "https://localhost:8081/";
-  private static string primaryKey = "<secret>";
+  private static string primaryKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
 
   /*
   // To use Azure Cosmos DB in the cloud.
   private static string account = "apps-services-book"; // use your account
   private static string endpointUri =
     $"https://{account}.documents.azure.com:443/";
-  private static string primaryKey = "<secret>"; // use your key
+  private static string primaryKey = ""; // use your key
   */
 
   static async Task CreateCosmosResources()
