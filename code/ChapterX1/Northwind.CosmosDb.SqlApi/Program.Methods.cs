@@ -21,7 +21,7 @@ partial class Program
   private static string account = "apps-services-book"; // use your account
   private static string endpointUri =
     $"https://{account}.documents.azure.com:443/";
-  private static string primaryKey = "xN05xvMzv9ig8aNseFmMLCEGFE5ScZdW9xbDcfnJgsmZjvTUQFsBZaZwzcrl3pCij5udbBKm3fGtACDbJfJMzg=="; // use your key
+  private static string primaryKey = "<secret>"; // use your key
   */
 
   static async Task CreateCosmosResources()
