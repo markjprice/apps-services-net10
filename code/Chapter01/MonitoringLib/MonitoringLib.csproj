@@ -7,7 +7,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Label="Simplify use of Console class.">
     <Using Include="System.Console" Static="true" />
   </ItemGroup>
 
