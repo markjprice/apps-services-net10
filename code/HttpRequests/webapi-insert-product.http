@@ -1,4 +1,4 @@
-POST https://localhost:5081/api/products/
+POST https://localhost:5101/api/products/
 Content-Type: application/json
 
 {

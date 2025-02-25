@@ -46,15 +46,15 @@ public static class WebApplicationExtensions
     builder.Encrypt = true;
     builder.TrustServerCertificate = true;
     builder.ConnectTimeout = 10; // Default is 30 seconds.
-    builder.DataSource = "."; // Local SQL Server
-    builder.IntegratedSecurity = true;
 
-    /*
+    //builder.DataSource = "."; // Local SQL Server
+    //builder.IntegratedSecurity = true;
+    builder.DataSource = "tcp:127.0.0.1,1433"; // SQL Server in container.
+
     // To use SQL Server Authentication:
-    builder.UserID = userId;
-    builder.Password = password;
+    builder.UserID = Environment.GetEnvironmentVariable("MY_SQL_USR");
+    builder.Password = Environment.GetEnvironmentVariable("MY_SQL_PWD");
     builder.PersistSecurityInfo = false;
-    */
 
     SqlConnection connection = new(builder.ConnectionString);
 

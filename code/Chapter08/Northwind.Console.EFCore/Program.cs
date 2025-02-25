@@ -13,7 +13,7 @@ builder.ConnectTimeout = 10;
 WriteLine("Connect to:");
 WriteLine("  1 - SQL Server on local machine");
 WriteLine("  2 - Azure SQL Database");
-WriteLine("  3 - Azure SQL Edge");
+WriteLine("  3 - SQL Server in container");
 WriteLine();
 Write("Press a key: ");
 

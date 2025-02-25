@@ -27,7 +27,7 @@ MethodConfig configForAllMethods = new()
 builder.Services.AddGrpcClient<Greeter.GreeterClient>("Greeter",
   options =>
   {
-    options.Address = new Uri("https://localhost:5131");
+    options.Address = new Uri("https://localhost:5141");
   })
   .ConfigureChannel(channel =>
   {
@@ -40,20 +40,20 @@ builder.Services.AddGrpcClient<Greeter.GreeterClient>("Greeter",
 builder.Services.AddGrpcClient<Shipper.ShipperClient>("Shipper",
   options =>
   {
-    options.Address = new Uri("https://localhost:5131");
+    options.Address = new Uri("https://localhost:5141");
   });
 
 builder.Services.AddGrpcClient<Product.ProductClient>("Product",
   options =>
   {
-    options.Address = new Uri("https://localhost:5131");
+    options.Address = new Uri("https://localhost:5141");
   })
   .AddInterceptor<ClientLoggingInterceptor>();
 
 builder.Services.AddGrpcClient<Employee.EmployeeClient>("Employee",
   options =>
   {
-    options.Address = new Uri("https://localhost:5131");
+    options.Address = new Uri("https://localhost:5141");
   })
   .AddInterceptor<ClientLoggingInterceptor>();
 

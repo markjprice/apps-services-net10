@@ -35,24 +35,33 @@ secondary schools. Mark holds a Computer Science BSc. Hons. Degree
 from the University of Bristol, UK.
 
 Mark J Price has authored the following books:
-- C# 6 and .NET Core 1.0 – Modern Cross-Platform Development, 
+1. C# 6 and .NET Core 1.0 – Modern Cross-Platform Development, 
 1st Edition, 2016
-- C# 7 and .NET Core – Modern Cross-Platform Development, 
+2. C# 7 and .NET Core – Modern Cross-Platform Development, 
 2nd Edition, 2017
-- C# 7.1 and .NET Core 2.0 – Modern Cross-Platform Development, 
+3. C# 7.1 and .NET Core 2.0 – Modern Cross-Platform Development, 
 3rd Edition, 2017
-- C# 8.0 and .NET Core 3.0 – Modern Cross-Platform Development, 
+4. C# 8.0 and .NET Core 3.0 – Modern Cross-Platform Development, 
 4th Edition, 2019
-- C# 9 and .NET 5 – Modern Cross-Platform Development, 
+5. C# 9 and .NET 5 – Modern Cross-Platform Development, 
 5th Edition, 2020
-- C# 10 and .NET 6 – Modern Cross-Platform Development, 
+6. C# 10 and .NET 6 – Modern Cross-Platform Development, 
 6th Edition, 2021
-- C# 11 and .NET 7 – Modern Cross-Platform Development Fundamentals, 
+7. C# 11 and .NET 7 – Modern Cross-Platform Development Fundamentals, 
 7th Edition, 2022
-- Apps and Services with .NET 7, 1st Edition, 2022
-- C# 12 and .NET 8 – Modern Cross-Platform Development Fundamentals, 
+8. Apps and Services with .NET 7, 1st Edition, 2022
+9. C# 12 and .NET 8 – Modern Cross-Platform Development Fundamentals, 
 8th Edition, 2023
-- Apps and Services with .NET 8, 2nd Edition, 2023
+10. Apps and Services with .NET 8, 2nd Edition, 2023
+11. Tools and Skills for .NET 8, 1st Edition, 2024
+12. C# 13 and .NET 9 – Modern Cross-Platform Development Fundamentals, 
+9th Edition, 2024
+13. Real-World Web Development with .NET 9, 1st Edition, 2024
+14. C# 14 and .NET 10 – Modern Cross-Platform Development Fundamentals, 
+10th Edition, 2025
+15. Real-World Web Development with .NET 10, 2nd Edition, 2025
+16. Apps and Services with .NET 10, 3rd Edition, 2026
+17. Tools and Skills for .NET 10, 2nd Edition, 2026
 """;
   }
 

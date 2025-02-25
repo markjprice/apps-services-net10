@@ -1,16 +1,16 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient; // To use SqlConnection and so on.
-using Northwind.Models; // To use Product.
+using Northwind.ViewModels; // To use Product.
 using System.Data; // To use CommandType.
 using System.Text.Json; // To use Utf8JsonWriter, JsonSerializer.
 
 using static System.Environment;
 using static System.IO.Path;
 
-//ConfigureConsole(); // US English by default.
+ConfigureConsole(); // US English by default.
 
 // Simulate the French culture to test Euro symbol.
-ConfigureConsole(culture: "fr-FR");
+//ConfigureConsole(culture: "fr-FR");
 
 //ConfigureConsole(useComputerCulture: true);
 
@@ -28,7 +28,7 @@ SqlConnectionStringBuilder builder = new()
 WriteLine("Connect to:");
 WriteLine("  1 - SQL Server on local machine");
 WriteLine("  2 - Azure SQL Database");
-WriteLine("  3 – Azure SQL Edge");
+WriteLine("  3 – SQL Server in container");
 WriteLine();
 Write("Press a key: ");
 
@@ -277,18 +277,26 @@ WriteLineInColor(JsonSerializer.Serialize(suppliers),
 
 OutputStatistics(connection);
 
-IEnumerable<Product> productsFromDapper =
-  connection.Query<Product>(sql: "GetExpensiveProducts",
-  param: new { price = 100M, count = 0 },
-  commandType: CommandType.StoredProcedure);
-
-foreach (Product p in productsFromDapper)
+try
 {
-  WriteLine("{0}: {1}, {2}",
-    p.ProductId, p.ProductName, p.UnitPrice);
-}
+  IEnumerable<Product> productsFromDapper =
+    connection.Query<Product>(sql: "GetExpensiveProducts",
+    param: new { price = 100M, count = 0 },
+    commandType: CommandType.StoredProcedure);
 
-WriteLineInColor(JsonSerializer.Serialize(productsFromDapper),
-  ConsoleColor.Green);
+  foreach (Product p in productsFromDapper)
+  {
+    WriteLine("{0}: {1}, {2}",
+      p.ProductId, p.ProductName, p.UnitPrice);
+  }
+
+  WriteLineInColor(JsonSerializer.Serialize(productsFromDapper),
+    ConsoleColor.Green);
+}
+catch (SqlException ex)
+{
+  WriteLineInColor($"SQL exception: {ex.Message}",
+    ConsoleColor.Red);
+}
 
 #endregion

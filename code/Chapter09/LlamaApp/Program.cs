@@ -14,7 +14,7 @@ table.AddColumn("Name");
 table.AddColumn("Size");
 
 // Get the list of models.
-IEnumerable<Model> models = await ollama.ListLocalModels();
+IEnumerable<Model> models = await ollama.ListLocalModelsAsync();
 foreach (Model model in models)
 {
   table.AddRow(model.Name, model.Size.ToString("N0"));
@@ -22,28 +22,38 @@ foreach (Model model in models)
 
 AnsiConsole.Write(table);
 
-string modelName = "llama3:latest";
+string modelName = "llama3.1:latest";
 
 WriteLine();
 WriteLine($"Selected model: {modelName}");
 ollama.SelectedModel = modelName;
 
-Write("Please enter your prompt: ");
-string? prompt = ReadLine();
-if (string.IsNullOrWhiteSpace(prompt))
+ConsoleKey key = ConsoleKey.A;
+
+while (key is not ConsoleKey.X)
 {
-  WriteLine("Prompt is required. Exiting the app.");
-  return;
-} 
+  Write("Please enter your prompt: ");
+  string? prompt = ReadLine();
+  if (string.IsNullOrWhiteSpace(prompt))
+  {
+    WriteLine("Prompt is required. Exiting the app.");
+    return;
+  }
 
-Stopwatch timer = Stopwatch.StartNew();
+  Stopwatch timer = Stopwatch.StartNew();
 
-ConversationContext context = new([]);
-context = await ollama.StreamCompletion(
-  prompt, context, stream => Write(stream.Response));
+  await foreach (GenerateResponseStream? response in
+    ollama.GenerateAsync(prompt))
+  {
+    Write(response?.Response);
+  }
 
-timer.Stop();
+  timer.Stop();
+  WriteLine();
+  WriteLine($"Elapsed time: {timer.ElapsedMilliseconds:N0} ms");
+  timer.Restart();
 
-WriteLine();
-WriteLine();
-WriteLine($"Elapsed time: {timer.ElapsedMilliseconds:N0} ms");
+  WriteLine();
+  WriteLine("Press X to exit or any other key to ask another question.");
+  key = ReadKey(intercept: true).Key;
+}

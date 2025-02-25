@@ -14,7 +14,7 @@ Write("Enter your groups (optional): ");
 string? groups = ReadLine();
 
 HubConnection hubConnection = new HubConnectionBuilder()
-  .WithUrl("https://localhost:5111/chat")
+  .WithUrl("https://localhost:5121/chat")
   .Build();
 
 hubConnection.On<MessageModel>("ReceiveMessage", message =>

@@ -1,7 +1,4 @@
-﻿// Disable experimental warnings.
-#pragma warning disable SKEXP0003, SKEXP0011, SKEXP0028, SKEXP0052, SKEXP0055
-
-using Microsoft.SemanticKernel; // To use Kernel.
+﻿using Microsoft.SemanticKernel; // To use Kernel.
 
 // To use ChatHistory and so on.
 using Microsoft.SemanticKernel.ChatCompletion;
@@ -22,12 +19,12 @@ if (settings is null)
 Kernel kernel = GetKernel(settings);
 
 // $question will be defined as an argument.
-//KernelFunction function = kernel.CreateFunctionFromPrompt("""
-//  Author biography: {{ authorInformation.getAuthorBiography }}.
-//  {{ $question }}
-//  """);
+KernelFunction function = kernel.CreateFunctionFromPrompt("""
+  Author biography: {{ authorInformation.getAuthorBiography }}.
+  {{ $question }}
+  """);
 
-//KernelArguments arguments = new();
+KernelArguments arguments = new();
 
 ConsoleKey key = ConsoleKey.A;
 
@@ -37,7 +34,7 @@ IChatCompletionService completion =
 ChatHistory history = new(systemMessage: "You are an AI assistant based on Mark J Price's knowledge, skills, and experience.");
 
 OpenAIPromptExecutionSettings options = new()
-{ ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions };
+  { ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions };
 
 // To help implement async streaming output.
 StringBuilder builder = new();
@@ -49,14 +46,14 @@ while (key is not ConsoleKey.X)
 
   // WriteLine(await kernel.InvokePromptAsync(question));
 
-  // arguments["question"] = question;
+  arguments["question"] = question;
   // Call a single function.
   // WriteLine(await function.InvokeAsync(kernel, arguments));
-
+  
   history.AddUserMessage(question);
 
-  //ChatMessageContent answer = await 
-  //  completion.GetChatMessageContentAsync(history);
+  ChatMessageContent answer = await 
+    completion.GetChatMessageContentAsync(history);
 
   builder.Clear();
   await foreach (StreamingChatMessageContent message
@@ -68,7 +65,7 @@ while (key is not ConsoleKey.X)
   }
 
   history.AddAssistantMessage(builder.ToString());
-
+  
   WriteLine();
   WriteLine("Press X to exit or any other key to ask another question.");
   key = ReadKey(intercept: true).Key;

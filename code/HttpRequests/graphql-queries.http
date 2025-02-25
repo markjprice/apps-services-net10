@@ -1,5 +1,5 @@
 ### Configure a variable for the GraphQL service base address.
-@base_address = https://localhost:5121/graphql
+@base_address = https://localhost:5131/graphql
 
 ### Get all products in the specified category.
 POST {{base_address}}

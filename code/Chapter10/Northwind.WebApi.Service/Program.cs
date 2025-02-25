@@ -1,4 +1,5 @@
 using Northwind.EntityModels; // To use the AddNorthwindContext method.
+using Scalar.AspNetCore; // To use MapScalarApiReference method.
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +12,8 @@ builder.Services.AddCustomRateLimiting(builder.Configuration);
 builder.Services.AddCustomCors();
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
 
 builder.Services.AddNorthwindContext();
 
@@ -26,24 +26,24 @@ app.UseAuthorization();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-  app.UseSwagger();
-  app.UseSwaggerUI();
+  app.MapOpenApi();
+  app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();
 
 app.UseHttpLogging();
 
-await app.UseCustomClientRateLimiting();
+//await app.UseCustomClientRateLimiting();
 
 // app.UseCors(policyName: "Northwind.Mvc.Policy");
 
 // Without a named policy the middleware is added but not active.
 app.UseCors();
 
-app.MapGets(); // Default pageSize: 10.
-app.MapPosts();
-app.MapPuts();
-app.MapDeletes();
+app.MapGets() // Default pageSize: 10.
+  .MapPosts()
+  .MapPuts()
+  .MapDeletes();
 
 app.Run();

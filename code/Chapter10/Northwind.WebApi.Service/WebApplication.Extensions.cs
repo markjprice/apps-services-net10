@@ -6,7 +6,7 @@ using System.Security.Claims; // To use ClaimsPrincipal.
 
 public static class WebApplicationExtensions
 {
-  public static void MapGets(this WebApplication app,
+  public static WebApplication MapGets(this WebApplication app,
     int pageSize = 10)
   {
     app.MapGet("/", () => "Hello World!")
@@ -71,9 +71,11 @@ public static class WebApplicationExtensions
       .WithOpenApi()
       .Produces<Product[]>(StatusCodes.Status200OK)
       .RequireCors(policyName: "Northwind.Mvc.Policy");
+
+    return app;
   }
 
-  public static void MapPosts(this WebApplication app)
+  public static WebApplication MapPosts(this WebApplication app)
   {
     app.MapPost("api/products", async ([FromBody] Product product,
       [FromServices] NorthwindContext db) =>
@@ -83,9 +85,11 @@ public static class WebApplicationExtensions
         return Results.Created($"api/products/{product.ProductId}", product);
       }).WithOpenApi()
       .Produces<Product>(StatusCodes.Status201Created);
+
+    return app;
   }
 
-  public static void MapPuts(this WebApplication app)
+  public static WebApplication MapPuts(this WebApplication app)
   {
     app.MapPut("api/products/{id:int}", async (
       [FromRoute] int id,
@@ -112,9 +116,11 @@ public static class WebApplicationExtensions
     }).WithOpenApi()
       .Produces(StatusCodes.Status404NotFound)
       .Produces(StatusCodes.Status204NoContent);
+
+    return app;
   }
 
-  public static void MapDeletes(this WebApplication app)
+  public static WebApplication MapDeletes(this WebApplication app)
   {
     app.MapDelete("api/products/{id:int}", async (
       [FromRoute] int id,
@@ -130,6 +136,8 @@ public static class WebApplicationExtensions
     }).WithOpenApi()
       .Produces(StatusCodes.Status404NotFound)
       .Produces(StatusCodes.Status204NoContent);
+
+    return app;
   }
 
   public static async Task UseCustomClientRateLimiting(this WebApplication app)

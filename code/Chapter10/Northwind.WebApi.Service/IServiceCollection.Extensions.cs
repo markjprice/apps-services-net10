@@ -29,7 +29,7 @@ public static class IServiceCollectionExtensions
       options.AddPolicy(name: "Northwind.Mvc.Policy",
         policy =>
         {
-          policy.WithOrigins("https://localhost:5082");
+          policy.WithOrigins("https://localhost:5102");
         });
     });
     return services;

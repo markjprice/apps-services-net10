@@ -10,7 +10,7 @@ if (string.IsNullOrEmpty(stock))
 }
 
 HubConnection hubConnection = new HubConnectionBuilder()
-  .WithUrl("https://localhost:5111/stockprice")
+  .WithUrl("https://localhost:5121/stockprice")
   .Build();
 
 await hubConnection.StartAsync();

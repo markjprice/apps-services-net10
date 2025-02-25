@@ -7,7 +7,7 @@ ServiceCollection serviceCollection = new();
 serviceCollection
   .AddNorthwindClient() // Strawberry Shake extension method.
   .ConfigureHttpClient(client =>
-    client.BaseAddress = new Uri("https://localhost:5121/graphql"));
+    client.BaseAddress = new Uri("https://localhost:5131/graphql"));
 
 IServiceProvider services = serviceCollection.BuildServiceProvider();
 
