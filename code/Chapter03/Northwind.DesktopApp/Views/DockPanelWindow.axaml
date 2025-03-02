@@ -1,0 +1,15 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Northwind.DesktopApp.Views.DockPanelWindow"
+        Title="DockPanelWindow">
+  <DockPanel LastChildFill="True">
+    <TextBlock DockPanel.Dock="Top" Background="LightBlue" Text="Top Docked" />
+    <TextBlock DockPanel.Dock="Bottom" Background="LightGreen" Text="Bottom Docked" />
+    <TextBlock DockPanel.Dock="Left" Background="LightCoral" Text="Left Docked" />
+    <TextBlock DockPanel.Dock="Right" Background="LightGoldenrodYellow" Text="Right Docked" />
+    <TextBlock Background="LightGray" Text="Main Content Area (Last Child Fill)" />
+  </DockPanel>
+</Window>

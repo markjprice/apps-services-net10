@@ -4,10 +4,10 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
-using Northwind.Avalonia.Client.ViewModels;
-using Northwind.Avalonia.Client.Views;
+using Northwind.DesktopApp.ViewModels;
+using Northwind.DesktopApp.Views;
 
-namespace Northwind.Avalonia.Client;
+namespace Northwind.DesktopApp;
 
 public partial class App : Application
 {

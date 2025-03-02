@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using Northwind.Avalonia.Client.ViewModels;
+using Northwind.DesktopApp.ViewModels;
 
-namespace Northwind.Avalonia.Client;
+namespace Northwind.DesktopApp;
 
 public class ViewLocator : IDataTemplate
 {
