@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
@@ -30,6 +29,9 @@
     <Compile Update="Views\DockPanelWindow.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AlignmentPaddingMargins.axaml.cs">
+      <DependentUpon>AlignmentPaddingMargins.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
