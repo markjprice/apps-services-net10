@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.BlazorLibraries.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.BlazorLibraries.Client", "Northwind.BlazorLibraries\Client\Northwind.BlazorLibraries.Client.csproj", "{12961FF2-3083-40E2-BEFB-E382D5C7471A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.MinimalApi.Service", "Northwind.MinimalApi.Service\Northwind.MinimalApi.Service.csproj", "{BF645774-93F8-43B8-B64B-EB42B3950677}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Blazor", "Northwind.Blazor\Northwind.Blazor.csproj", "{43931284-587C-4ADB-A488-7F80543C114B}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{12961FF2-3083-40E2-BEFB-E382D5C7471A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12961FF2-3083-40E2-BEFB-E382D5C7471A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12961FF2-3083-40E2-BEFB-E382D5C7471A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF645774-93F8-43B8-B64B-EB42B3950677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF645774-93F8-43B8-B64B-EB42B3950677}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF645774-93F8-43B8-B64B-EB42B3950677}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF645774-93F8-43B8-B64B-EB42B3950677}.Release|Any CPU.Build.0 = Release|Any CPU
 		{43931284-587C-4ADB-A488-7F80543C114B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{43931284-587C-4ADB-A488-7F80543C114B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43931284-587C-4ADB-A488-7F80543C114B}.Release|Any CPU.ActiveCfg = Release|Any CPU
