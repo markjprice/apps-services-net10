@@ -34,6 +34,8 @@ Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution fi
 
 **Introduction**
 - Chapter 1 Introducing Apps and Services with .NET: [code/Chapter01](code/Chapter01)
+  - [code/nuget.config](code/nuget.config)
+  - [code/Directory.Packages.props](code/Directory.Packages.props)
 
 **Apps**
 - Chapter 2 Building Mobile Apps Using .NET MAUI: [code/Chapter02](code/Chapter02)
