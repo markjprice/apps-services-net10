@@ -6,11 +6,26 @@ Repository for the Packt Publishing book titled "Apps and Services with .NET 10"
 
 > **[FAQs](https://github.com/markjprice/markjprice/blob/main/FAQs.md)**
 
-If you have purchased the paperback or Kindle edition, then you can request a free PDF copy at the following link: https://www.packtpub.com/page/free-ebook.
+> Join the Packt community on Discord: https://packt.link/apps_and_services_dotnet10. After accepting the Discord invite, find the channel for this book named **apps_and_services_3e**.
 
-Join the Packt community on Discord: https://packt.link/apps_and_services_dotnet10. After accepting the Discord invite, find the channel for this book named **apps_and_services_3e**: https://discord.com/channels/963343534323269662/1166070194398048286.
+
+- [Apps and Services with .NET 10, Third Edition](#apps-and-services-with-net-10-third-edition)
+- [Free PDF of the book and how to contact the publisher Packt](#free-pdf-of-the-book-and-how-to-contact-the-publisher-packt)
+- [Author's books](#authors-books)
+  - [Technologies covered in the book](#technologies-covered-in-the-book)
+  - [Code solutions](#code-solutions)
+  - [Chapters and code solutions](#chapters-and-code-solutions)
+  - [Important](#important)
+  - [Microsoft .NET community support](#microsoft-net-community-support)
+  - [Interviews with me](#interviews-with-me)
+
+# Free PDF of the book and how to contact the publisher Packt
+
+If you have purchased the paperback or Kindle edition, then you can request a free PDF copy and its supplementary content (like Appendix - Answers to the Test Your Knowledge Questions and Graphics Bundle PDF) at the following link: https://packt.link/supplementary-content-9781835462201. 
 
 For questions about book pricing, distribution, and so on, please contact the publisher Packt at the following email address: customercare@packt.com
+
+# Author's books
 
 My author page on Amazon: https://www.amazon.com/Mark-J-Price/e/B071DW3QGN/ 
 
@@ -58,16 +73,13 @@ Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution fi
 - Chapter 13 Combining Data Sources Using GraphQL: [code/Chapter13](code/Chapter13)
 - Chapter 14 Building Efficient Microservices Using gRPC: [code/Chapter14](code/Chapter14)
 
+**Appendices**
+- Appendix A, Answers to the Test Your Knowledge Questions, is included in the free PDF bundle: https://packt.link/supplementary-content-9781835462201.
+- Appendix B, Setting Up Your Development Environment, is included in the free PDF bundle: https://packt.link/supplementary-content-9781835462201.
+
 **Extra**
 - Chapter X1 Building Serverless Nanoservices Using Azure Functions: [code/ChapterX1](code/ChapterX1)
 - Chapter X2 Managing NoSQL Data Using Azure Cosmos DB: [code/ChapterX2](code/ChapterX2)
-
-## Extra content to download
-
-The appendix and color figures are available to download as PDFs:
-
-- Appendix, Answers to the Test Your Knowledge Questions: coming December 2025.
-- Color images of the screenshots/diagrams used in this book: coming December 2025.
 
 ## Important
 Corrections for typos and other mistakes and improvements like refactoring code. Useful links to other related material. 
