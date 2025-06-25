@@ -21,7 +21,7 @@ Repository for the Packt Publishing book titled "Apps and Services with .NET 10"
 
 # Free PDF of the book and how to contact the publisher Packt
 
-If you have purchased the paperback or Kindle edition, then you can request a free PDF copy and its supplementary content (like Appendix - Answers to the Test Your Knowledge Questions and Graphics Bundle PDF) at the following link: https://packt.link/supplementary-content-9781835462201. 
+If you have purchased the paperback or Kindle edition, then you can request a free PDF copy and its supplementary content (like Appendix - Answers to the Test Your Knowledge Questions and Graphics Bundle PDF) at the following link: https://download.packt.com/free-ebook/9781835462201. If the book-specific link doesn't work, you can always use this general link that works for all Packt books: https://download.packt.com/free-ebook
 
 For questions about book pricing, distribution, and so on, please contact the publisher Packt at the following email address: customercare@packt.com
 
@@ -74,8 +74,9 @@ Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution fi
 - Chapter 14 Building Efficient Microservices Using gRPC: [code/Chapter14](code/Chapter14)
 
 **Appendices**
-- Appendix A, Answers to the Test Your Knowledge Questions, is included in the free PDF bundle: https://packt.link/supplementary-content-9781835462201.
-- Appendix B, Setting Up Your Development Environment, is included in the free PDF bundle: https://packt.link/supplementary-content-9781835462201.
+- Appendix A, Answers to the Test Your Knowledge Questions
+- Appendix B, Setting Up Your Development Environment
+- Both are included with the PDF bundle: https://download.packt.com/free-ebook/9781835462201
 
 **Extra**
 - Chapter X1 Building Serverless Nanoservices Using Azure Functions: [code/ChapterX1](code/ChapterX1)
