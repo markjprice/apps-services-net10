@@ -1,13 +1,13 @@
 <Project>
   
-  <!--Last updated package versions: July 25, 2025.-->
+  <!--Last updated package versions: September 20, 2025.-->
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <Net10>10.0.0-preview.6.25358.103</Net10>
-    <Avalonia>11.3.2</Avalonia>
-    <Hangfire>1.8.20</Hangfire>
-    <HotChocolate>15.1.7</HotChocolate>
+    <Net10>10.0.0-rc.1.25451.107</Net10>
+    <Avalonia>11.3.6</Avalonia>
+    <Hangfire>1.8.21</Hangfire>
+    <HotChocolate>15.1.10</HotChocolate>
   </PropertyGroup>
   
   <ItemGroup Label="Common packages in multiple chapters.">
@@ -20,31 +20,31 @@
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="$(Net10)" />
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.7.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.9.0" />
     
     <!--For logging to console.-->
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="$(Net10)" />
-    <PackageVersion Include="Spectre.Console" Version="0.50.0" />
+    <PackageVersion Include="Spectre.Console" Version="0.51.1" />
     
     <!--For unit testing.-->
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="xunit" Version="2.9.3" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.4" />
     
     <!--For JSON processing.-->
-    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 1 Introducing Apps and Services with .NET">
-    <PackageVersion Include="BenchmarkDotNet" Version="0.15.2" />
+    <PackageVersion Include="BenchmarkDotNet" Version="0.15.3" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 2 Building Mobile Apps Using .NET MAUI.">
-    <PackageVersion Include="Microsoft.Maui.Controls" Version="10.0.0-preview.6.25359.8" />
+    <PackageVersion Include="Microsoft.Maui.Controls" Version="10.0.0-rc.1.25452.6" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageVersion Include="CommunityToolkit.Maui" Version="12.1.0" />
+    <PackageVersion Include="CommunityToolkit.Maui" Version="12.2.0" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 3 Building Desktop Apps Using Avalonia.">
@@ -60,11 +60,11 @@
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="$(Net10)" />
-    <PackageVersion Include="Radzen.Blazor" Version="7.1.6" />
+    <PackageVersion Include="Radzen.Blazor" Version="7.3.5" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 5 Using Popular Third-Party Libraries">
-    <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.10" />
+    <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.11" />
     <PackageVersion Include="Humanizer" Version="3.0.0-beta.96" />
     <PackageVersion Include="Serilog" Version="4.3.0" />
     <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0" />
@@ -82,7 +82,7 @@
     <PackageVersion Include="QuestPDF" Version="2022.12.15" />
 
     <!-- A 2023.* or later version requires setting the Settings.License property. -->
-    <!--<PackageReference Include="QuestPDF" Version="2025.1.2" />-->
+    <!--<PackageReference Include="QuestPDF" Version="2025.7.1" />-->
   </ItemGroup>
   
   <ItemGroup Label="Chapter 6 Handling Dates, Times, and Internationalization">
@@ -94,7 +94,7 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 7 Managing Relational Data Using SQL">
-    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.0.2" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.1.1" />
     <PackageVersion Include="Npgsql" Version="9.0.3" />
     <PackageVersion Include="Dapper" Version="2.1.66" />
   </ItemGroup>
@@ -106,19 +106,19 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 9 Building an LLM-Based Chat Service">
-    <PackageVersion Include="Microsoft.SemanticKernel" Version="1.61.0" />
-    <PackageVersion Include="OllamaSharp" Version="5.3.3" />
+    <PackageVersion Include="Microsoft.SemanticKernel" Version="1.65.0" />
+    <PackageVersion Include="OllamaSharp" Version="5.4.5" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 10 Building and Securing Minimal API Web Services">
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(Net10)" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="2.6.4" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.8.5" />
     <PackageVersion Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(Net10)" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 11 Caching, Queuing, and Resilient Background Services">
-    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="9.7.0" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="9.9.0" />
     <PackageVersion Include="Microsoft.Extensions.Http.Polly" Version="$(Net10)" />
     <PackageVersion Include="Polly.Contrib.WaitAndRetry" Version="1.1.1" />
     <PackageVersion Include="RabbitMQ.Client" Version="7.1.2" />
@@ -138,7 +138,7 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 14 Building Efficient Microservices Using gRPC">
-    <PackageVersion Include="Google.Protobuf" Version="3.31.1" />
+    <PackageVersion Include="Google.Protobuf" Version="3.32.1" />
     <PackageVersion Include="Grpc.AspNetCore" Version="2.71.0" />
     <PackageVersion Include="Grpc.Net.ClientFactory" Version="2.71.0" />
     <PackageVersion Include="Grpc.Tools" Version="2.72.0" />
@@ -146,20 +146,20 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter X1 Managing NoSQL Data Using Azure Cosmos DB">
-    <PackageVersion Include="Microsoft.Azure.Cosmos" Version="3.52.1" />
-    <PackageVersion Include="Gremlin.net" Version="3.7.3" />
+    <PackageVersion Include="Microsoft.Azure.Cosmos" Version="3.53.1" />
+    <PackageVersion Include="Gremlin.net" Version="3.7.4" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter X2 Building Serverless Nanoservices Using Azure Functions">
-    <PackageVersion Include="NCrontab.Signed" Version="3.3.3" />
+    <PackageVersion Include="NCrontab.Signed" Version="3.4.0" />
     <PackageVersion Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
-    <PackageVersion Include="Microsoft.Azure.Functions.Worker" Version="2.0.0" />
+    <PackageVersion Include="Microsoft.Azure.Functions.Worker" Version="2.1.0" />
     <PackageVersion Include="Microsoft.Azure.Functions.Worker.Sdk" Version="2.0.5" />
     <PackageVersion Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.3.0" />
     <PackageVersion Include="Microsoft.Azure.Functions.Worker.Extensions.Timer" Version="4.3.1" />
-    <PackageVersion Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Queues" Version="5.5.2" />
-    <PackageVersion Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Blobs" Version="6.7.0" />
-    <PackageVersion Include="SixLabors.ImageSharp.Drawing" Version="2.1.6" />
+    <PackageVersion Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Queues" Version="5.5.3" />
+    <PackageVersion Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Blobs" Version="6.8.0" />
+    <PackageVersion Include="SixLabors.ImageSharp.Drawing" Version="2.1.7" />
   </ItemGroup>
   
 </Project>
