@@ -142,6 +142,15 @@
 - [Modernize your WPF and Windows Forms application with Blazor | .NET Conf 2022](https://www.youtube.com/watch?v=niX1DbFwgq4)
 
 # Chapter 3 - Building Desktop Apps Using Avalonia
+- [Avalonia Docs](https://docs.avaloniaui.net/): Comprehensive starting point: overview + supported platforms + walkthroughs.
+- [Get Started](https://docs.avaloniaui.net/docs/get-started/): Practical steps to set up your environment, editors, first project etc.
+- [Basics](https://docs.avaloniaui.net/docs/basics/): Great for understanding the foundational concepts (UI tree, visual vs logical tree, data, styling & layout etc.).
+- [Samples & Tutorials](https://docs.avaloniaui.net/docs/tutorials/): Real app examples (ToDo, Music Store etc.), which are very helpful to see patterns in practice.
+- [Avalonia GitHub repository](https://github.com/AvaloniaUI/Avalonia): Source code, issues, how to build the framework itself, track new features or breaking changes.
+- [Avalonia Docs repository](https://github.com/AvaloniaUI/avalonia-docs): Markdown + source files for the docs site; useful if you want to see how the docs are written or submit documentation improvements.
+- [Awesome-Avalonia (community curated)](https://github.com/AvaloniaCommunity/awesome-avalonia): A huge collection of libraries, extensions, sample apps, tools etc. Very handy when you need something not in core.
+- [AvaloniaEdit](https://github.com/AvaloniaUI/AvaloniaEdit): A powerful, customizable text editor control (syntax highlighting, folding etc.), if your app needs code editor-like functionality.
+- [AvaloniaVS](https://github.com/AvaloniaUI/AvaloniaVS): Adds XAML preview-er, tooling (templates, code completion) to Visual Studio.
 
 # Chapter 4 - Building Web Apps Using Blazor
 
