@@ -192,6 +192,8 @@
 - [Serilog](https://serilog.net/)
 - [AutoMapper, a convention-based object-object mapper](https://automapper.org)
 - [FluentValidation documentation](https://docs.fluentvalidation.net/en/latest/)
+- [Automatic data validation with ASP.NET Core using FluentValidation](https://cecilphillip.com/fluent-validation-rules-with-asp-net-core/)
+
 - [Fluent Assertions - Introduction](https://fluentassertions.com/introduction)
 - [Modern .NET library for PDF document generation](https://www.questpdf.com/)
 
