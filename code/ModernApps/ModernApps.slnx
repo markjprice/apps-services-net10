@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="Northwind.DataContext/Northwind.DataContext.csproj" />
+  <Project Path="Northwind.EntityModels/Northwind.EntityModels.csproj" />
+  <Project Path="Northwind.Maui.Client/Northwind.Maui.Client.csproj" />
+  <Project Path="Northwind.DesktopApp/Northwind.DesktopApp.csproj" />
+  <Project Path="Northwind.Blazor/Northwind.Blazor.csproj" />
+  <Project Path="Northwind.Console.SqlClient/Northwind.Console.SqlClient.csproj" />
+  <Project Path="Northwind.Console.EFCore/Northwind.Console.EFCore.csproj" />
+  <Project Path="Northwind.Console.HierarchyMapping/Northwind.Console.HierarchyMapping.csproj" />
+  <Project Path="Northwind.EntityModels.Tests/Northwind.EntityModels.Tests.csproj" />
+
+</Solution>

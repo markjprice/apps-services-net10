@@ -1,0 +1,39 @@
+﻿@rendermode InteractiveServer
+@page "/employees/{country?}"
+@inject NorthwindContext db
+<h1>
+	Employees @(string.IsNullOrWhiteSpace(Country)
+		? "Worldwide" : "in " + Country)
+</h1>
+<QuickGrid Items="@employees" Class="table table-striped table-bordered">
+	<PropertyColumn Property="@(emp => emp.EmployeeId)"
+									Title="ID" />
+	<PropertyColumn Property="@(emp => emp.FirstName)" />
+	<PropertyColumn Property="@(emp => emp.LastName)" />
+	<PropertyColumn Property="@(emp => emp.City)" />
+	<PropertyColumn Property="@(emp => emp.Country)" />
+	<PropertyColumn Property="@(emp => emp.HireDate)"
+									Format="yyyy-MM-dd" />
+</QuickGrid>
+@code {
+	[Parameter]
+	public string? Country { get; set; }
+
+	// QuickGrid works best if it binds to an IQueryable<T> sequence.
+	private IQueryable<Employee>? employees;
+
+	protected override async Task OnParametersSetAsync()
+	{
+		if (Country is null)
+		{
+			employees = (await db.Employees
+				.ToArrayAsync()).AsQueryable();
+		}
+		else
+		{
+			employees = (await db.Employees
+				.Where(emp => emp.Country == Country)
+				.ToArrayAsync()).AsQueryable();
+		}
+	}
+}

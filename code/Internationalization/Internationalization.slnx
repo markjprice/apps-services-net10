@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="TestingWithTimeProvider/TestingWithTimeProvider.csproj" />
+  <Project Path="TimeFunctionsLib/TimeFunctionsLib.csproj" />
+  <Project Path="WorkingWithCultures/WorkingWithCultures.csproj" />
+  <Project Path="WorkingWithNodaTime/WorkingWithNodaTime.csproj" />
+  <Project Path="WorkingWithTime/WorkingWithTime.csproj" />
+  <Project Path="WorkingWithTimeZones/WorkingWithTimeZones.csproj" />
+</Solution>

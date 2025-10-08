@@ -1,0 +1,16 @@
+<Solution>
+  <Project Path="FluentTests/FluentTests.csproj" />
+  <Project Path="FluentValidation.Console/FluentValidation.Console.csproj" />
+  <Project Path="FluentValidation.Models/FluentValidation.Models.csproj" />
+  <Project Path="FluentValidation.Validators/FluentValidation.Validators.csproj" />
+  <Project Path="GeneratingPdf.Console/GeneratingPdf.Console.csproj" />
+  <Project Path="GeneratingPdf.Document/GeneratingPdf.Document.csproj" />
+  <Project Path="GeneratingPdf.Models/GeneratingPdf.Models.csproj" />
+  <Project Path="HumanizingData/HumanizingData.csproj" />
+  <Project Path="MappingObjects.Console/MappingObjects.Console.csproj" />
+  <Project Path="MappingObjects.Mappers/MappingObjects.Mappers.csproj" />
+  <Project Path="MappingObjects.Models/MappingObjects.Models.csproj" />
+  <Project Path="MappingObjects.Tests/MappingObjects.Tests.csproj" />
+  <Project Path="Serilogging/Serilogging.csproj" />
+  <Project Path="WorkingWithImages/WorkingWithImages.csproj" />
+</Solution>
