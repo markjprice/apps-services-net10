@@ -75,8 +75,9 @@ Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution fi
 
 **Appendices**
 - Appendix A, Answers to the Test Your Knowledge Questions
-- Appendix B, Setting Up Your Development Environment
-- Both are included with the PDF bundle: https://download.packt.com/free-ebook/9781835462201
+- [*Appendix B, Setting Up Your Development Environment*](docs/B31467_Appendix%20B.pdf)
+- [*Appendix C, Looking for help*](https://github.com/markjprice/markjprice/blob/main/articles/getting-help.md) and [PDF](docs/B31467_Appendix%20C.pdf)
+- Appendices are included with your purchase. Visit https://packtpub.com/unlock, then use the search bar to find this book by name. Double-check the edition shown to make sure you get the right one.
 
 **Extra**
 - Chapter X1 Building Serverless Nanoservices Using Azure Functions: [code/ChapterX1](code/ChapterX1)
