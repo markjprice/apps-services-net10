@@ -1,13 +1,13 @@
 <Project>
   
-  <!--Last updated package versions: October 6, 2025.-->
+  <!--Last updated package versions: December 10, 2025.-->
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <Net10>10.0.0-rc.1.25451.107</Net10>
-    <Avalonia>11.3.6</Avalonia>
-    <Hangfire>1.8.21</Hangfire>
-    <HotChocolate>15.1.10</HotChocolate>
+    <Net10>10.0.1</Net10>
+    <Avalonia>11.3.9</Avalonia>
+    <Hangfire>1.8.22</Hangfire>
+    <HotChocolate>15.1.11</HotChocolate>
   </PropertyGroup>
   
   <ItemGroup Label="Common packages in multiple chapters.">
@@ -20,31 +20,31 @@
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="$(Net10)" />
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.9.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.1.0" />
     
     <!--For logging to console.-->
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="$(Net10)" />
-    <PackageVersion Include="Spectre.Console" Version="0.51.1" />
+    <PackageVersion Include="Spectre.Console" Version="0.54.0" />
     
     <!--For unit testing.-->
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="xunit" Version="2.9.3" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.4" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     
     <!--For JSON processing.-->
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 1 Introducing Apps and Services with .NET">
-    <PackageVersion Include="BenchmarkDotNet" Version="0.15.3" />
+    <PackageVersion Include="BenchmarkDotNet" Version="0.15.8" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 2 Building Mobile Apps Using .NET MAUI.">
-    <PackageVersion Include="Microsoft.Maui.Controls" Version="10.0.0-rc.1.25452.6" />
+    <PackageVersion Include="Microsoft.Maui.Controls" Version="10.0.11" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageVersion Include="CommunityToolkit.Maui" Version="12.2.0" />
+    <PackageVersion Include="CommunityToolkit.Maui" Version="13.0.0" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 3 Building Desktop Apps Using Avalonia.">
@@ -60,17 +60,18 @@
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="$(Net10)" />
-    <PackageVersion Include="Radzen.Blazor" Version="7.3.5" />
+    <PackageVersion Include="Radzen.Blazor" Version="8.3.9" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 5 Using Popular Third-Party Libraries">
-    <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.11" />
-    <PackageVersion Include="Humanizer" Version="3.0.0-beta.96" />
+    <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.12" />
+    <PackageVersion Include="Humanizer" Version="3.0.1" />
     <PackageVersion Include="Serilog" Version="4.3.0" />
-    <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0" />
-		<PackageVersion Include="Serilog.Sinks.File" Version="7.0.0" />
-		<PackageVersion Include="Serilog.Sinks.Async" Version="2.1.0" />
-		<!--AutoMapper version 15 or later requires a license.-->
+    <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
+    <PackageVersion Include="Serilog.Sinks.File" Version="7.0.0" />
+    <PackageVersion Include="Serilog.Sinks.Async" Version="2.1.0" />
+
+    <!--AutoMapper version 15 or later requires a license.-->
     <PackageVersion Include="AutoMapper" Version="14.0.0" />
     <PackageVersion Include="Mapster" Version="7.4.0" />
     
@@ -78,7 +79,7 @@
     <!--Minimum 7.2.0 (inclusive) up to maximum 8.0.0 (exclusive).-->
     <PackageVersion Include="FluentAssertions" Version="[7.2.0,8.0.0)" />
     
-    <PackageVersion Include="FluentValidation" Version="12.0.0" />
+    <PackageVersion Include="FluentValidation" Version="12.1.1" />
     
     <!-- The newest version with an MIT license (07/02/2024). -->
     <PackageVersion Include="QuestPDF" Version="2022.12.15" />
@@ -96,34 +97,35 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 7 Managing Relational Data Using SQL">
-    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.1.1" />
-    <PackageVersion Include="Npgsql" Version="9.0.3" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.1.3" />
+    <PackageVersion Include="Npgsql" Version="10.0.0" />
     <PackageVersion Include="Dapper" Version="2.1.66" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 8 Building Entity Models Using EF Core">
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(Net10)" />
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(Net10)" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 9 Building an LLM-Based Chat Service">
     <PackageVersion Include="Microsoft.SemanticKernel" Version="1.65.0" />
-    <PackageVersion Include="OllamaSharp" Version="5.4.5" />
+    <PackageVersion Include="OllamaSharp" Version="5.4.12" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 10 Building and Securing Minimal API Web Services">
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(Net10)" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="2.8.5" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.11.2" />
     <PackageVersion Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(Net10)" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 11 Caching, Queuing, and Resilient Background Services">
-    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="9.9.0" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="10.1.0" />
     <PackageVersion Include="Microsoft.Extensions.Http.Polly" Version="$(Net10)" />
     <PackageVersion Include="Polly.Contrib.WaitAndRetry" Version="1.1.1" />
-    <PackageVersion Include="RabbitMQ.Client" Version="7.1.2" />
+    <PackageVersion Include="RabbitMQ.Client" Version="7.2.0" />
+
     <PackageVersion Include="Hangfire.Core" Version="$(Hangfire)" />
     <PackageVersion Include="Hangfire.SqlServer" Version="$(Hangfire)" />
     <PackageVersion Include="Hangfire.AspNetCore" Version="$(Hangfire)" />
@@ -140,10 +142,10 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 14 Building Efficient Microservices Using gRPC">
-    <PackageVersion Include="Google.Protobuf" Version="3.32.1" />
+    <PackageVersion Include="Google.Protobuf" Version="3.33.2" />
     <PackageVersion Include="Grpc.AspNetCore" Version="2.71.0" />
     <PackageVersion Include="Grpc.Net.ClientFactory" Version="2.71.0" />
-    <PackageVersion Include="Grpc.Tools" Version="2.72.0" />
+    <PackageVersion Include="Grpc.Tools" Version="2.76.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Grpc.JsonTranscoding" Version="$(Net10)" />
   </ItemGroup>
   
