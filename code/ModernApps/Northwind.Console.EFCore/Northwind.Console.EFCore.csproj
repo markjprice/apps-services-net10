@@ -5,12 +5,20 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-  </PropertyGroup>
 
-	<ItemGroup Label="Versions are set in Directory.Build.props.">
+		<!--Microsoft.Build.Tasks.Core 17.14.8 has a known security vulnerability.
+    I expect this to be fixed by November so we will ignore it for now.-->
+		<NoWarn>NU1903</NoWarn>
+	</PropertyGroup>
+
+	<!--<ItemGroup Label="Versions are set in Directory.Build.props.">
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
-  </ItemGroup>
+  </ItemGroup>-->
+
+	<ItemGroup>
+		<ProjectReference Include="..\Northwind.DataContext\Northwind.DataContext.csproj" />
+	</ItemGroup>
 
 	<ItemGroup Label="To simplify use of WriteLine.">
     <Using Include="System.Console" Static="true" />

@@ -1,14 +1,12 @@
 ﻿using Microsoft.Data.SqlClient; // To use SqlConnectionStringBuilder.
 using Microsoft.EntityFrameworkCore; // GenerateCreateScript()
-using Microsoft.Extensions.Options;
-using Northwind.Models; // HierarchyDb, Person, Student, Employee
+using Northwind.Models; // To use HierarchyDb, Person, Student, Employee.
 
 DbContextOptionsBuilder<HierarchyDb> options = new();
 
 SqlConnectionStringBuilder builder = new();
 
-builder.DataSource = "tcp:127.0.0.1,1433"; //  "ServerName\InstanceName" e.g. @".\sqlexpress"
-
+builder.DataSource = "tcp:127.0.0.1,1433";
 builder.InitialCatalog = "HierarchyMapping";
 builder.TrustServerCertificate = true;
 builder.MultipleActiveResultSets = true;
@@ -17,7 +15,7 @@ builder.MultipleActiveResultSets = true;
 builder.ConnectTimeout = 3;
 
 // If using Windows Integrated authentication.
-//builder.IntegratedSecurity = true;
+// builder.IntegratedSecurity = true;
 
 // If using SQL Server authentication.
 builder.UserID = Environment.GetEnvironmentVariable("MY_SQL_USR");

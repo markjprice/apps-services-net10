@@ -1,0 +1,23 @@
+<Solution>
+  <Project Path="../ModernApps/Northwind.DataContext/Northwind.DataContext.csproj" />
+  <Project Path="../ModernApps/Northwind.EntityModels/Northwind.EntityModels.csproj" />
+  <Project Path="Northwind.Background.Hangfire/Northwind.Background.Hangfire.csproj" />
+  <Project Path="Northwind.Background.Workers/Northwind.Background.Workers.csproj" />
+  <Project Path="Northwind.Client.Resilient/Northwind.Client.Resilient.csproj" />
+  <Project Path="Northwind.Common/Northwind.Common.csproj" />
+  <Project Path="Northwind.GraphQL.Client.Console/Northwind.GraphQL.Client.Console.csproj" />
+  <Project Path="Northwind.GraphQL.Client.Mvc/Northwind.GraphQL.Client.Mvc.csproj" />
+  <Project Path="Northwind.GraphQL.Service/Northwind.GraphQL.Service.csproj" />
+  <Project Path="Northwind.Grpc.Client.Mvc/Northwind.Grpc.Client.Mvc.csproj" />
+  <Project Path="Northwind.Grpc.Service/Northwind.Grpc.Service.csproj" />
+  <Project Path="Northwind.MinimalAot.Service/Northwind.MinimalAot.Service.csproj" />
+  <Project Path="Northwind.Queue.Consumer/Northwind.Queue.Consumer.csproj" />
+  <Project Path="Northwind.Queue.Models/Northwind.Queue.Models.csproj" />
+  <Project Path="Northwind.SignalR.Client.Console.Streams/Northwind.SignalR.Client.Console.Streams.csproj" />
+  <Project Path="Northwind.SignalR.Client.Console/Northwind.SignalR.Client.Console.csproj" />
+  <Project Path="Northwind.SignalR.Service/Northwind.SignalR.Service.csproj" />
+  <Project Path="Northwind.WebApi.Client.Console/Northwind.WebApi.Client.Console.csproj" />
+  <Project Path="Northwind.WebApi.Client.Mvc/Northwind.WebApi.Client.Mvc.csproj" />
+  <Project Path="Northwind.WebApi.Controllers/Northwind.WebApi.Controllers.csproj" />
+  <Project Path="Northwind.WebApi.Service/Northwind.WebApi.Service.csproj" />
+</Solution>

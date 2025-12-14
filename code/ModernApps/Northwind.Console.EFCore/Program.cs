@@ -1,6 +1,6 @@
-﻿using Microsoft.Data.SqlClient; // SqlConnectionStringBuilder
+﻿using Microsoft.Data.SqlClient; // To use SqlConnectionStringBuilder.
 using Microsoft.EntityFrameworkCore; // ToQueryString, GetConnectionString
-using Northwind.Models; // NorthwindDb
+using Northwind.EntityModels; // To use NorthwindContext.
 
 SqlConnectionStringBuilder builder = new();
 
@@ -8,7 +8,9 @@ builder.InitialCatalog = "Northwind";
 builder.MultipleActiveResultSets = true;
 builder.Encrypt = true;
 builder.TrustServerCertificate = true;
-builder.ConnectTimeout = 10;
+
+// Because we want to fail faster. Default is 15 seconds.
+builder.ConnectTimeout = 3;
 
 WriteLine("Connect to:");
 WriteLine("  1 - SQL Server on local machine");
@@ -32,7 +34,7 @@ else if (key is ConsoleKey.D2 or ConsoleKey.NumPad2)
 }
 else if (key is ConsoleKey.D3 or ConsoleKey.NumPad3)
 {
-  builder.DataSource = "tcp:127.0.0.1,1433"; // Azure SQL Edge
+  builder.DataSource = "tcp:127.0.0.1,1433"; // SQL Server in a container
 }
 else
 {
@@ -82,10 +84,10 @@ else
   return;
 }
 
-DbContextOptionsBuilder<NorthwindDb> options = new();
+DbContextOptionsBuilder<NorthwindContext> options = new();
 options.UseSqlServer(builder.ConnectionString);
 
-using (NorthwindDb db = new(options.Options))
+using (NorthwindContext db = new(options.Options))
 {
   Write("Enter a unit price: ");
   string? priceText = ReadLine();
