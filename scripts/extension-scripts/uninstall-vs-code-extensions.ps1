@@ -4,3 +4,4 @@ code --uninstall-extension tintoy.msbuild-project-tools
 code --uninstall-extension humao.rest-client
 code --uninstall-extension icsharpcode.ilspy-vscode
 code --uninstall-extension microsoft-aspire.aspire-vscode
+code --uninstall-extension drblury.protobuf-vsc
