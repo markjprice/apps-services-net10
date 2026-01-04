@@ -22,7 +22,7 @@ foreach (Model model in models)
 
 AnsiConsole.Write(table);
 
-string modelName = "llama3.1:latest";
+string modelName = "gemma3:1b";
 
 WriteLine();
 WriteLine($"Selected model: {modelName}");

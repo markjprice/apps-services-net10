@@ -9,5 +9,6 @@
   <Project Path="Northwind.DesktopApp/Northwind.DesktopApp.csproj" />
   <Project Path="Northwind.EntityModels.Tests/Northwind.EntityModels.Tests.csproj" />
   <Project Path="Northwind.EntityModels/Northwind.EntityModels.csproj" />
-  <Project Path="Northwind.Maui.Client/Northwind.Maui.Client.csproj" />
+  <Project Path="Northwind.Maui.Client/Northwind.Maui.Client.csproj" Id="2608f0c0-12ea-4b67-be7f-2f0001269d81" />
+  <Project Path="NorthwindMcp/NorthwindMcp.csproj" Id="21462937-6739-4ae9-9942-f823ae39e93a" />
 </Solution>

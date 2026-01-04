@@ -1,0 +1,242 @@
+﻿@page "/"
+@using System.ComponentModel
+@using Microsoft.EntityFrameworkCore; @* To use Include. *@
+@using Northwind.EntityModels; @* To use NorthwindContext. *@
+@using System.Text.Json; @* To use JsonSerializer. *@
+
+@inject IChatClient ChatClient
+@inject NavigationManager Nav
+@inject SemanticSearch Search
+@implements IDisposable
+
+<PageTitle>Chat</PageTitle>
+
+<ChatHeader OnNewChat="@ResetConversationAsync" />
+
+<ChatMessageList Messages="@messages" InProgressMessage="@currentResponseMessage">
+	<NoMessagesContent>
+		<div>To get started, try asking about these example documents. You can replace these with your own data and replace this message.</div>
+		<ChatCitation File="B31467_Appendix_A.pdf" />
+		<ChatCitation File="getting-help.md" />
+	</NoMessagesContent>
+</ChatMessageList>
+
+<div class="chat-container">
+	<ChatSuggestions OnSelected="@AddUserMessageAsync" @ref="@chatSuggestions" />
+	<ChatInput OnSend="@AddUserMessageAsync" @ref="@chatInput" />
+	<SurveyPrompt /> @* Remove this line to eliminate the template survey message *@
+</div>
+
+@code {
+	private string GetAuthorBiography()
+	{
+		return """
+Mark J Price is a former Microsoft Certified Trainer (MCT) and current
+Microsoft Specialist: Programming in C# and Architecting Microsoft
+Azure Solutions, with more than 20 years' of educational and
+programming experience.
+
+Since 1993 Mark has passed more than 80 Microsoft programming exams
+and specializes in preparing others to pass them too. His students
+range from professionals with decades of experience to 16-year-old
+apprentices with none. Mark successfully guides all of them by
+combining educational skills with real-world experience consulting
+and developing systems for enterprises worldwide.
+
+Between 2001 and 2003 Mark was employed full-time to write official
+courseware for Microsoft in Redmond, USA. Mark's team wrote the
+first training courses for C# while it was still an early alpha
+version. While with Microsoft he taught "train-the-trainer" classes
+to get other MCTs up-to-speed on C# and .NET.
+
+Between 2016 and 2022, Mark created and delivered training courses
+for Optimizely's Digital Experience Platform, the best .NET CMS for
+Digital Marketing and E-commerce.
+
+In 2010 Mark studied for a Post-Graduate Certificate in Education
+(PGCE). He taught GCSE and A-Level mathematics in two London
+secondary schools. Mark holds a Computer Science BSc. Hons. Degree
+from the University of Bristol, UK.
+
+Mark J Price has authored the following books:
+1. C# 6 and .NET Core 1.0 – Modern Cross-Platform Development,
+1st Edition, 2016
+2. C# 7 and .NET Core – Modern Cross-Platform Development,
+2nd Edition, 2017
+3. C# 7.1 and .NET Core 2.0 – Modern Cross-Platform Development,
+3rd Edition, 2017
+4. C# 8.0 and .NET Core 3.0 – Modern Cross-Platform Development,
+4th Edition, 2019
+5. C# 9 and .NET 5 – Modern Cross-Platform Development,
+5th Edition, 2020
+6. C# 10 and .NET 6 – Modern Cross-Platform Development,
+6th Edition, 2021
+7. C# 11 and .NET 7 – Modern Cross-Platform Development Fundamentals,
+7th Edition, 2022
+8. Apps and Services with .NET 7, 1st Edition, 2022
+9. C# 12 and .NET 8 – Modern Cross-Platform Development Fundamentals,
+8th Edition, 2023
+10. Apps and Services with .NET 8, 2nd Edition, 2023
+11. Tools and Skills for .NET 8, 1st Edition, 2024
+12. C# 13 and .NET 9 – Modern Cross-Platform Development Fundamentals,
+9th Edition, 2024
+13. Real-World Web Development with .NET 9, 1st Edition, 2024
+14. C# 14 and .NET 10 – Modern Cross-Platform Development Fundamentals,
+10th Edition, 2025
+15. Real-World Web Development with .NET 10, 2nd Edition, 2025
+16. Apps and Services with .NET 10, 3rd Edition, 2026
+17. Tools and Skills for .NET 10, 2nd Edition, 2026
+""";
+	}
+
+	// It is more efficient to cache this than create it every time.
+	private JsonSerializerOptions jsonSerializerOptions =
+		new() { WriteIndented = true };
+
+	private string GetProductsInCategory(string categoryName)
+	{
+		using NorthwindContext db = new();
+
+		var products = db.Products
+			.Include(p => p.Category)
+			.Where(p => p.Category!.CategoryName == categoryName)
+			.Select(p => new
+			{
+				p.ProductId,
+				p.ProductName,
+				p.Category!.CategoryName,
+				p.UnitPrice,
+				p.UnitsInStock,
+				p.UnitsOnOrder,
+				p.Discontinued
+			})
+			.ToArray();
+
+		// Convert the array of products to a JSON string.
+		string json = JsonSerializer.Serialize(
+			products, jsonSerializerOptions);
+
+		return json;
+	}
+
+	private const string SystemPrompt = @"
+        You are an assistant who answers questions about information you retrieve.
+        Do not answer questions about anything else.
+        Use only simple markdown to format your responses.
+
+        Use the GetAuthorBiography tool to get the biography of Mark Price.
+   	    Use the GetProductsInCategory tool to get products from the Northwind database.
+
+        Use the LoadDocuments tool to prepare for searches before answering any questions.
+
+        Use the Search tool to find relevant information. When you do this, end your
+        reply with citations in the special XML format:
+
+        <citation filename='string'>exact quote here</citation>
+
+        Always include the citation in your response if there are results.
+
+        The quote must be max 5 words, taken word-for-word from the search result, and is the basis for why the citation is relevant.
+        Don't refer to the presence of citations; just emit these tags right at the end, with no surrounding text.
+        ";
+
+	private int statefulMessageCount;
+	private readonly ChatOptions chatOptions = new();
+	private readonly List<ChatMessage> messages = new();
+	private CancellationTokenSource? currentResponseCancellation;
+	private ChatMessage? currentResponseMessage;
+	private ChatInput? chatInput;
+	private ChatSuggestions? chatSuggestions;
+
+	protected override void OnInitialized()
+	{
+		statefulMessageCount = 0;
+		messages.Add(new(ChatRole.System, SystemPrompt));
+		chatOptions.Tools = [
+			AIFunctionFactory.Create(
+				method: GetAuthorBiography,
+				name: nameof(GetAuthorBiography),
+				description: "Gets the biography of the author Mark Price."),
+
+			AIFunctionFactory.Create(
+				method: GetProductsInCategory,
+				name: nameof(GetProductsInCategory),
+				description: "Get the products in a category from the Northwind database."),
+
+			AIFunctionFactory.Create(LoadDocumentsAsync),
+			AIFunctionFactory.Create(SearchAsync)
+		];
+	}
+
+	private async Task AddUserMessageAsync(ChatMessage userMessage)
+	{
+		CancelAnyCurrentResponse();
+
+		// Add the user message to the conversation
+		messages.Add(userMessage);
+		chatSuggestions?.Clear();
+		await chatInput!.FocusAsync();
+
+		// Stream and display a new response from the IChatClient
+		var responseText = new TextContent("");
+		currentResponseMessage = new ChatMessage(ChatRole.Assistant, [responseText]);
+		currentResponseCancellation = new();
+		await foreach (var update in ChatClient.GetStreamingResponseAsync(messages.Skip(statefulMessageCount), chatOptions, currentResponseCancellation.Token))
+		{
+			messages.AddMessages(update, filter: c => c is not TextContent);
+			responseText.Text += update.Text;
+			chatOptions.ConversationId = update.ConversationId;
+			ChatMessageItem.NotifyChanged(currentResponseMessage);
+		}
+
+		// Store the final response in the conversation, and begin getting suggestions
+		messages.Add(currentResponseMessage!);
+		statefulMessageCount = chatOptions.ConversationId is not null ? messages.Count : 0;
+		currentResponseMessage = null;
+		chatSuggestions?.Update(messages);
+	}
+
+	private void CancelAnyCurrentResponse()
+	{
+		// If a response was cancelled while streaming, include it in the conversation so it's not lost
+		if (currentResponseMessage is not null)
+		{
+			messages.Add(currentResponseMessage);
+		}
+
+		currentResponseCancellation?.Cancel();
+		currentResponseMessage = null;
+	}
+
+	private async Task ResetConversationAsync()
+	{
+		CancelAnyCurrentResponse();
+		messages.Clear();
+		messages.Add(new(ChatRole.System, SystemPrompt));
+		chatOptions.ConversationId = null;
+		statefulMessageCount = 0;
+		chatSuggestions?.Clear();
+		await chatInput!.FocusAsync();
+	}
+
+	[Description("Loads the documents needed for performing searches. Must be completed before a search can be executed, but only needs to be completed once.")]
+	private async Task LoadDocumentsAsync()
+	{
+		await InvokeAsync(StateHasChanged);
+		await Search.LoadDocumentsAsync();
+	}
+
+	[Description("Searches for information using a phrase or keyword. Relies on documents already being loaded.")]
+	private async Task<IEnumerable<string>> SearchAsync(
+			[Description("The phrase to search for.")] string searchPhrase,
+			[Description("If possible, specify the filename to search that file only. If not provided or empty, the search includes all files.")] string? filenameFilter = null)
+	{
+		await InvokeAsync(StateHasChanged);
+		var results = await Search.SearchAsync(searchPhrase, filenameFilter, maxResults: 5);
+		return results.Select(result =>
+				$"<result filename=\"{result.DocumentId}\">{result.Text}</result>");
+	}
+
+	public void Dispose()
+			=> currentResponseCancellation?.Cancel();
+}

@@ -1,72 +1,53 @@
-﻿using Microsoft.SemanticKernel; // To use Kernel.
+using System.ClientModel;
+using Microsoft.Extensions.AI;
+using OpenAI;
+using ChatApp.Components;
+using ChatApp.Services;
+using ChatApp.Services.Ingestion;
 
-// To use ChatHistory and so on.
-using Microsoft.SemanticKernel.ChatCompletion;
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
-// To use OpenAIPromptExecutionSettings.
-using Microsoft.SemanticKernel.Connectors.OpenAI;
+// You will need to set the endpoint and key to your own values
+// You can do this using Visual Studio's "Manage User Secrets" UI, or on the command line:
+//   cd this-project-directory
+//   dotnet user-secrets set OpenAI:Key YOUR-API-KEY
 
-using Microsoft.SemanticKernel.Memory; // To use ISemanticTextMemory.
-using System.Text; // To use StringBuilder.
+var openAIClient = new OpenAIClient(
+    new ApiKeyCredential(builder.Configuration["OpenAI:Key"] ?? throw new InvalidOperationException("Missing configuration: OpenAI:Key. See the README for details.")));
 
-Settings? settings = GetSettings();
-if (settings is null)
+#pragma warning disable OPENAI001 // GetResponsesClient(string) is experimental and subject to change or removal in future updates.
+var chatClient = openAIClient.GetResponsesClient("gpt-5-nano").AsIChatClient();
+#pragma warning restore OPENAI001
+
+var embeddingGenerator = openAIClient.GetEmbeddingClient("text-embedding-3-small").AsIEmbeddingGenerator();
+
+var vectorStorePath = Path.Combine(AppContext.BaseDirectory, "vector-store.db");
+var vectorStoreConnectionString = $"Data Source={vectorStorePath}";
+builder.Services.AddSqliteVectorStore(_ => vectorStoreConnectionString);
+builder.Services.AddSqliteCollection<string, IngestedChunk>(IngestedChunk.CollectionName, vectorStoreConnectionString);
+
+builder.Services.AddSingleton<DataIngestor>();
+builder.Services.AddSingleton<SemanticSearch>();
+builder.Services.AddKeyedSingleton("ingestion_directory", new DirectoryInfo(Path.Combine(builder.Environment.WebRootPath, "Data")));
+builder.Services.AddChatClient(chatClient).UseFunctionInvocation().UseLogging();
+builder.Services.AddEmbeddingGenerator(embeddingGenerator);
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
 {
-  WriteLine("Settings not found or not valid. Exiting the app.");
-  return; // Exit the app.
+  app.UseExceptionHandler("/Error", createScopeForErrors: true);
+  // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+  app.UseHsts();
 }
 
-Kernel kernel = GetKernel(settings);
+app.UseHttpsRedirection();
+app.UseAntiforgery();
 
-// $question will be defined as an argument.
-KernelFunction function = kernel.CreateFunctionFromPrompt("""
-  Author biography: {{ authorInformation.getAuthorBiography }}.
-  {{ $question }}
-  """);
+app.UseStaticFiles();
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
 
-KernelArguments arguments = new();
-
-ConsoleKey key = ConsoleKey.A;
-
-IChatCompletionService completion =
-  kernel.GetRequiredService<IChatCompletionService>();
-
-ChatHistory history = new(systemMessage: "You are an AI assistant based on Mark J Price's knowledge, skills, and experience.");
-
-OpenAIPromptExecutionSettings options = new()
-  { ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions };
-
-// To help implement async streaming output.
-StringBuilder builder = new();
-
-while (key is not ConsoleKey.X)
-{
-  Write("Enter your question: ");
-  string question = ReadLine()!;
-
-  // WriteLine(await kernel.InvokePromptAsync(question));
-
-  arguments["question"] = question;
-  // Call a single function.
-  // WriteLine(await function.InvokeAsync(kernel, arguments));
-  
-  history.AddUserMessage(question);
-
-  ChatMessageContent answer = await 
-    completion.GetChatMessageContentAsync(history);
-
-  builder.Clear();
-  await foreach (StreamingChatMessageContent message
-    in completion.GetStreamingChatMessageContentsAsync(
-      history, options, kernel))
-  {
-    Write(message.Content);
-    builder.Append(message.Content);
-  }
-
-  history.AddAssistantMessage(builder.ToString());
-  
-  WriteLine();
-  WriteLine("Press X to exit or any other key to ask another question.");
-  key = ReadKey(intercept: true).Key;
-}
+app.Run();

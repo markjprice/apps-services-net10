@@ -1,3 +1,0 @@
-# Do not store sensitive credentials in the repository.
-launchSettings.json
-**/Properties/launchSettings.json

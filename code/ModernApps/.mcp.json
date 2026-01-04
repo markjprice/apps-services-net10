@@ -1,0 +1,14 @@
+{
+  "inputs": [],
+  "servers": {
+    "NorthwindMcp": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "C:\\apps-services-net10\\ModernApps\\NorthwindMcp\\NorthwindMcp.csproj"
+      ]
+    }
+  }
+}
