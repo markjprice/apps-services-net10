@@ -13,7 +13,7 @@ Microsoft will release previews of .NET 11 regularly starting in February 2026 u
 
 - [Download .NET 11.0 SDK](https://dotnet.microsoft.com/download/dotnet/11.0)
 - .NET 11 Release Index
-- February 13, 2026: [Our Vision for .NET 11(https://devblogs.microsoft.com/dotnet/our-vision-for-dotnet-11/)
+- February 13, 2026: [Our Vision for .NET 11](https://devblogs.microsoft.com/dotnet/our-vision-for-dotnet-11/)
 - March 12, 2026: .NET 9 Preview 2
 - April, 2026: Announcing .NET 11 Preview 3
 - May, 2026: Announcing .NET 11 Preview 4
