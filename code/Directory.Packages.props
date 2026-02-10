@@ -25,7 +25,7 @@
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="$(Net10)" />
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.2.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.3.0" />
     
     <!--For logging to console.-->
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(Net10)" />
