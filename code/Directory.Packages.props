@@ -1,17 +1,21 @@
 <Project>
   
-  <!--Last updated package versions: January 13, 2026.-->
+  <!--Last updated package versions: February 10, 2026.-->
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <Net10>10.0.2</Net10>
+    <Net10>10.0.3</Net10>
+    <Net11>11.0.0-preview.1.26104.118</Net11>
     <Avalonia>11.3.11</Avalonia>
     <AI>10.2.0-preview.1.26063.2</AI>
-    <Hangfire>1.8.22</Hangfire>
-    <HotChocolate>15.1.11</HotChocolate>
+    <Hangfire>1.8.23</Hangfire>
+    <HotChocolate>15.1.12</HotChocolate>
   </PropertyGroup>
   
   <ItemGroup Label="Common packages in multiple chapters.">
+    <!-- To use the .NET 11 preview packages, change the versions below from $(Net10) to $(Net11). -->
+    <!-- Your projects should also target net11 and you must install .NET 11 Preview SDK. -->
+
     <!--For binding configuration from appsettings.json and environment variables-->
     <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="$(Net10)" />
@@ -29,8 +33,8 @@
     <PackageVersion Include="Spectre.Console" Version="0.54.0" />
     
     <!--For unit testing.-->
-    <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     
@@ -43,9 +47,9 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 2 Building Mobile Apps Using .NET MAUI.">
-    <PackageVersion Include="Microsoft.Maui.Controls" Version="10.0.20" />
+    <PackageVersion Include="Microsoft.Maui.Controls" Version="10.0.31" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageVersion Include="CommunityToolkit.Maui" Version="13.0.0" />
+    <PackageVersion Include="CommunityToolkit.Maui" Version="14.0.0" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 3 Building Desktop Apps Using Avalonia.">
@@ -61,7 +65,7 @@
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="$(Net10)" />
-    <PackageVersion Include="Radzen.Blazor" Version="8.6.0" />
+    <PackageVersion Include="Radzen.Blazor" Version="9.0.2" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 5 Using Popular Third-Party Libraries">
@@ -98,7 +102,7 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 7 Managing Relational Data Using SQL">
-    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.1.3" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.1.4" />
     <PackageVersion Include="Npgsql" Version="10.0.1" />
     <PackageVersion Include="Dapper" Version="2.1.66" />
   </ItemGroup>
@@ -111,20 +115,20 @@
   
   <ItemGroup Label="Chapter 9 Building an LLM-Based Chat Service">
     <PackageVersion Include="Microsoft.Extensions.AI.OpenAI" Version="$(AI)" />
-    <PackageVersion Include="Microsoft.Extensions.AI" Version="10.1.1" />
+    <PackageVersion Include="Microsoft.Extensions.AI" Version="10.2.0" />
     <PackageVersion Include="Microsoft.Extensions.DataIngestion" Version="$(AI)" />
     <PackageVersion Include="Microsoft.Extensions.DataIngestion.Markdig" Version="$(AI)" />
     <PackageVersion Include="PdfPig" Version="0.1.13" />
     <PackageVersion Include="Microsoft.ML.Tokenizers.Data.Cl100kBase" Version="1.0.1" />
     <PackageVersion Include="Microsoft.ML.Tokenizers.Data.O200kBase" Version="1.0.1" />
     <PackageVersion Include="Microsoft.SemanticKernel.Connectors.SqliteVec" Version="1.67.1-preview" />
-    <PackageVersion Include="ModelContextProtocol" Version="0.5.0-preview.1" />
-    <PackageVersion Include="OllamaSharp" Version="5.4.12" />
+    <PackageVersion Include="ModelContextProtocol" Version="0.8.0-preview.1" />
+    <PackageVersion Include="OllamaSharp" Version="5.4.16" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 10 Building and Securing Minimal API Web Services">
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(Net10)" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="2.12.6" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.12.36" />
     <PackageVersion Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(Net10)" />
   </ItemGroup>
