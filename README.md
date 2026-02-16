@@ -2,7 +2,7 @@
 
 # Apps and Services with .NET 10, Third Edition
 
-Repository for the Packt Publishing book titled "Apps and Services with .NET 10" by Mark J. Price. This book is planned to be published in December 2025.
+Repository for the Packt Publishing book titled "Apps and Services with .NET 10" by Mark J. Price. Published on February 17, 2026.
 
 > **[FAQs](https://github.com/markjprice/markjprice/blob/main/FAQs.md)**
 
@@ -74,7 +74,7 @@ Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution fi
 - Chapter 14 Building Efficient Microservices Using gRPC: [code/Chapter14](code/Chapter14)
 
 **Appendices**
-- Appendix A, Answers to the Test Your Knowledge Questions
+- [*Appendix A, Answers to the Test Your Knowledge Questions*](docs/B31467_Appendix%20A.pdf))
 - [*Appendix B, Setting Up Your Development Environment*](docs/B31467_Appendix%20B.pdf)
 - [*Appendix C, Looking for help*](https://github.com/markjprice/markjprice/blob/main/articles/getting-help.md) and [PDF](docs/B31467_Appendix%20C.pdf)
 - Appendices are included with your purchase. Visit https://packtpub.com/unlock, then use the search bar to find this book by name. Double-check the edition shown to make sure you get the right one.
