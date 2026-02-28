@@ -1,13 +1,19 @@
-**Errata** (3 items)
+**Errata** (5 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
+- [Page 38 - Treating warnings as errors](#page-38---treating-warnings-as-errors)
 - [Page 74 - Using future versions of .NET with this book](#page-74---using-future-versions-of-net-with-this-book)
 - [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
+- [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
 
 > **Warning!** Avoid copying and pasting links that break over multiple lines and include hyphens or dashes because your PDF reader might remove a hyphen thinking that it being helpful but break the link! Just click on the links and they will work. Or carefully check that your PDF reader has not removed a hyphen after pasting into your web browser address bar. [See an example of this issue here](https://github.com/markjprice/cs13net9/issues/77).
+
+# Page 38 - Treating warnings as errors
+
+In the output at the bottom of the page, the path includes `Chapter14` instead of `ModernServices`.
 
 # Page 74 - Using future versions of .NET with this book
 
@@ -41,6 +47,6 @@ In Step 1, I wrote, "In the `\cs14net10\Chapter01` folder" but there is no `Chap
 
 In Step 3, replace "the `Chapter01` solution" with "the `ModernApps` solution".
 
-On page 780, in Step 1, replace "open the solution/folder named `Chapter01`" with "open the solution/folder named `ModernApps`".
+# Page 780 - Getting definitions of types and their members
 
-On page 38, in the output at the bottom of the page, the path includes `Chapter14` instead of `ModernServices`.
+In Step 1, replace "open the solution/folder named `Chapter01`" with "open the solution/folder named `ModernApps`".
