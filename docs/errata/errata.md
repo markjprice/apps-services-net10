@@ -1,6 +1,11 @@
-**Errata** (1 item)
+**Errata** (3 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
+
+- [Page 74 - Using future versions of .NET with this book](#page-74---using-future-versions-of-net-with-this-book)
+- [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
+- [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
+
 
 > **Warning!** Avoid copying and pasting links that break over multiple lines and include hyphens or dashes because your PDF reader might remove a hyphen thinking that it being helpful but break the link! Just click on the links and they will work. Or carefully check that your PDF reader has not removed a hyphen after pasting into your web browser address bar. [See an example of this issue here](https://github.com/markjprice/cs13net9/issues/77).
 
@@ -21,3 +26,21 @@ But EF Core 11 is now explicitly saying that it requires the .NET 11 SDK to buil
 Why? The EF team’s own platform guidance acknowledges that sometimes they must depend on the latest .NET due to runtime features. In practice, “won’t run on earlier .NET” usually means they’re compiling against and taking dependencies on assemblies/APIs that simply are not present (or not the same versions) on earlier runtimes, and the team has decided not to carry the extra compatibility shims or multi-targeting.
 
 Net result: EF Core 11 only running on .NET 11 is the documented requirement. If you want to stay on .NET 10 LTS, EF Core 10 is the ceiling. If you move to .NET 11 (STS), EF Core 11 becomes available.
+
+# Page 97 - Adding shell navigation and more content pages
+
+> Thanks to [Sammy Lastre Silveira](https://github.com/Sammy-Lastre) for raising [this issue on February 28, 2026](https://github.com/markjprice/apps-services-net10/issues/7).
+
+In Step 4, the information box includes a link to download some images, but the link is wrong. It should be: https://github.com/markjprice/apps-services-net10/tree/main/code/ModernApps/Northwind.Maui.Client/Resources/Images
+
+# Page 776 - Microsoft Learn documentation MCP server
+
+During writing, I decided to replace individual solutions for each chapter named `Chapter01`, `Chapter02`, and so on, with larger solutions that could share projects across multiple chapters. But there are a few places were I forgot to rename the solution or folder names.
+
+In Step 1, I wrote, "In the `\cs14net10\Chapter01` folder" but there is no `Chapter01` folder. I should have written "In the `\cs14net10\ModernApps` folder" as shown in the following link: https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/.mcp.json
+
+In Step 3, replace "the `Chapter01` solution" with "the `ModernApps` solution".
+
+On page 780, in Step 1, replace "open the solution/folder named `Chapter01`" with "open the solution/folder named `ModernApps`".
+
+On page 38, in the output at the bottom of the page, the path includes `Chapter14` instead of `ModernServices`.
