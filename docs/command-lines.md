@@ -3,102 +3,141 @@
 To make it easier to enter commands at the prompt, this page lists all commands as a single line that can be copied and pasted. 
 
 - [Chapter 1 - Introducing Apps and Services with .NET](#chapter-1---introducing-apps-and-services-with-net)
-  - [Page 20 - Managing Visual Studio Code extensions at the command prompt](#page-20---managing-visual-studio-code-extensions-at-the-command-prompt)
-  - [Page 22 - Using other project templates](#page-22---using-other-project-templates)
-  - [Page 29 - Getting help for the dotnet tool](#page-29---getting-help-for-the-dotnet-tool)
-- [Chapter 3 - Building Entity Models for SQL Server Using EF Core](#chapter-3---building-entity-models-for-sql-server-using-ef-core)
-  - [Page 85 - Setting up the dotnet-ef tool](#page-85---setting-up-the-dotnet-ef-tool)
-  - [Page 90 - Defining the Northwind database model](#page-90---defining-the-northwind-database-model)
-  - [Page 117 - Creating a class library for entity models using SQL Server](#page-117---creating-a-class-library-for-entity-models-using-sql-server)
-  - [Page 126 - Running unit tests using Visual Studio Code](#page-126---running-unit-tests-using-visual-studio-code)
-- [Chapter 8 - Building and Securing Web Services Using Minimal APIs](#chapter-8---building-and-securing-web-services-using-minimal-apis)
-  - [Page 363 - Authenticating service clients using JWT bearer authentication](#page-363---authenticating-service-clients-using-jwt-bearer-authentication)
-- [Chapter 9 - Caching, Queuing, and Resilient Background Services](#chapter-9---caching-queuing-and-resilient-background-services)
-  - [Page 402 - Setting up RabbitMQ using Docker](#page-402---setting-up-rabbitmq-using-docker)
-  - [Page 419 - Processing queued message using a worker service](#page-419---processing-queued-message-using-a-worker-service)
-- [Chapter 10 - Building Serverless Nanoservices Using Azure Functions](#chapter-10---building-serverless-nanoservices-using-azure-functions)
-  - [Page 444 - Testing locally with Azurite](#page-444---testing-locally-with-azurite)
-  - [Page 447 - Using the func CLI](#page-447---using-the-func-cli)
-- [Chapter 11 - Broadcasting Real-Time Communication Using SignalR](#chapter-11---broadcasting-real-time-communication-using-signalr)
-  - [Page 484 - Building a web client using the SignalR JavaScript library](#page-484---building-a-web-client-using-the-signalr-javascript-library)
-- [Chapter 12 - Combining Data Sources Using GraphQL](#chapter-12---combining-data-sources-using-graphql)
-  - [Page 544 - Creating a console app client using Strawberry Shake](#page-544---creating-a-console-app-client-using-strawberry-shake)
-- [Chapter 13 - Building Efficient Microservices Using gRPC](#chapter-13---building-efficient-microservices-using-grpc)
-  - [Page 594 - Improving a gRPC service with native AOT publish](#page-594---improving-a-grpc-service-with-native-aot-publish)
-- [Chapter 14 - Building Web User Interfaces Using ASP.NET Core](#chapter-14---building-web-user-interfaces-using-aspnet-core)
-  - [Page 623 - Creating an ASP.NET Core MVC website](#page-623---creating-an-aspnet-core-mvc-website)
-- [Chapter 15 - Building Web Components Using Blazor](#chapter-15---building-web-components-using-blazor)
-  - [Page 672 - Reviewing the new Blazor project template](#page-672---reviewing-the-new-blazor-project-template)
-- [Chapter 16 - Building Mobile and Desktop Apps Using .NET MAUI](#chapter-16---building-mobile-and-desktop-apps-using-net-maui)
-- [Page 710 - Installing .NET MAUI workloads manually](#page-710---installing-net-maui-workloads-manually)
-  - [Page 723 - Adding shell navigation and more content pages](#page-723---adding-shell-navigation-and-more-content-pages)
-  - [Page 729 - Defining resources to share across an app](#page-729---defining-resources-to-share-across-an-app)
+  - [Page 19 - Managing Visual Studio Code extensions at the command prompt](#page-19---managing-visual-studio-code-extensions-at-the-command-prompt)
+  - [Page 20 - Using other project templates](#page-20---using-other-project-templates)
+  - [Page 25 - Defining project properties to reuse version numbers](#page-25---defining-project-properties-to-reuse-version-numbers)
+  - [Page 40 - Installing Docker and an SQL Server container image](#page-40---installing-docker-and-an-sql-server-container-image)
+  - [Page 42 - Running the SQL Server container image](#page-42---running-the-sql-server-container-image)
+  - [Page 50 - Removing Docker resources](#page-50---removing-docker-resources)
+  - [Page 50 - Setting up the EF Core CLI tool](#page-50---setting-up-the-ef-core-cli-tool)
+  - [Page 52 - Creating a class library for entity models](#page-52---creating-a-class-library-for-entity-models)
+  - [Page 58 - Setting the user and password for SQL Server authentication](#page-58---setting-the-user-and-password-for-sql-server-authentication)
+  - [Page 66 - Getting help for the dotnet tool](#page-66---getting-help-for-the-dotnet-tool)
+- [Chapter 2 - Buildling Mobile Apps Using .NET MAUI](#chapter-2---buildling-mobile-apps-using-net-maui)
+  - [Page 86 - Installing .NET MAUI workloads manually](#page-86---installing-net-maui-workloads-manually)
+  - [Page 99 - Adding shell navigation and more content pages](#page-99---adding-shell-navigation-and-more-content-pages)
+  - [Page 104 - Defining resources to share across an app](#page-104---defining-resources-to-share-across-an-app)
+- [Chapter 3 - Building Desktop Apps Using Avalonia](#chapter-3---building-desktop-apps-using-avalonia)
+  - [Page 122 - Installing the Avalonia project templates](#page-122---installing-the-avalonia-project-templates)
+- [Chapter 4 - Building Web Apps Using Blazor](#chapter-4---building-web-apps-using-blazor)
+  - [Page 161 - Reviewing the new Blazor project template](#page-161---reviewing-the-new-blazor-project-template)
+  - [Page 167 - Reviewing the new Blazor project template](#page-167---reviewing-the-new-blazor-project-template)
+- [Chapter 9 - Building an LLM-Based Chat Service](#chapter-9---building-an-llm-based-chat-service)
+  - [Page 385 - Understanding the AI Chat Web App project template](#page-385---understanding-the-ai-chat-web-app-project-template)
+  - [Page 387 - Building the chat app](#page-387---building-the-chat-app)
+  - [Page 408 - Ollama models](#page-408---ollama-models)
+  - [Page 409 - Ollama CLI](#page-409---ollama-cli)
+- [Chapter 10 - Building and Securing Web Services Using Minimal APIs](#chapter-10---building-and-securing-web-services-using-minimal-apis)
+  - [Page 488 - Authenticating service clients using JWT bearer authentication](#page-488---authenticating-service-clients-using-jwt-bearer-authentication)
+- [Chapter 11 - Caching, Queuing, and Resilient Background Services](#chapter-11---caching-queuing-and-resilient-background-services)
+  - [Page 528 - Setting up RabbitMQ using Docker](#page-528---setting-up-rabbitmq-using-docker)
+  - [Page 544 - Processing queued message using a worker service](#page-544---processing-queued-message-using-a-worker-service)
+- [Chapter 12 - Broadcasting Real-Time Communication Using SignalR](#chapter-12---broadcasting-real-time-communication-using-signalr)
+  - [Page 570 - Building a web client using the SignalR JavaScript library](#page-570---building-a-web-client-using-the-signalr-javascript-library)
+- [Chapter 13 - Combining Data Sources Using GraphQL](#chapter-13---combining-data-sources-using-graphql)
+  - [Page 633 - Creating a console app client using Strawberry Shake](#page-633---creating-a-console-app-client-using-strawberry-shake)
+- [Chapter 14 - Building Efficient Microservices Using gRPC](#chapter-14---building-efficient-microservices-using-grpc)
+  - [Page 686 - Improving a gRPC service with native AOT publish](#page-686---improving-a-grpc-service-with-native-aot-publish)
 
 # Chapter 1 - Introducing Apps and Services with .NET
 
-## Page 20 - Managing Visual Studio Code extensions at the command prompt
+## Page 19 - Managing Visual Studio Code extensions at the command prompt
 
-```
+```shell
 code --list-extensions
 ```
 
-```
+```shell
 code --install-extension ms-dotnettools.csdevkit
 ```
 
-## Page 22 - Using other project templates
+## Page 20 - Using other project templates
 
 Listing all installed project templates:
-```
+```shell
 dotnet new list
 ```
 
 Installing a new project template:
-```
+```shell
 dotnet new --install "Vue.Simple.Template"
 ```
 
-## Page 29 - Getting help for the dotnet tool
+## Page 25 - Defining project properties to reuse version numbers
 
-Getting help for a `dotnet` command like `build` in a web browser:
-```
-dotnet help build
-```
-
-Getting help for a `dotnet` command like `build` at the command prompt:
-```
-dotnet build -?
+After making changes, at the terminal or command prompt, run the following command:
+```shell
+dotnet restore
 ```
 
-# Chapter 3 - Building Entity Models for SQL Server Using EF Core
+## Page 40 - Installing Docker and an SQL Server container image
 
-## Page 85 - Setting up the dotnet-ef tool
-
-To check if you have already installed `dotnet-ef` as a global tool:
+Pull down the latest container image for SQL Server 2025, as shown in the following command:
+```shell
+docker pull mcr.microsoft.com/mssql/server:2025-latest
 ```
+
+## Page 42 - Running the SQL Server container image
+
+Run the container image for SQL Server with a strong password and name the container `nw-container`, as shown in the following command:
+```shell
+docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=s3cret-Ninja' -p 1433:1433 --name nw-container -d mcr.microsoft.com/mssql/server:2025-latest
+```
+
+Ask Docker to list all containers, both running and stopped, as shown in the following command:
+```shell
+docker ps -a
+```
+
+## Page 50 - Removing Docker resources
+
+Stop the `nw-container` container, as shown in the following command:
+```shell
+docker stop nw-container
+```
+
+Remove the `nw-container` container, as shown in the following command:
+```shell
+docker rm nw-container
+```
+
+Remove the image to release its disk space, as shown in the following command:
+```shell
+docker rmi mcr.microsoft.com/mssql/server:2025-latest
+```
+
+## Page 50 - Setting up the EF Core CLI tool
+
+Check if you have already installed `dotnet-ef` as a global tool, as shown in the following command:
+```shell
 dotnet tool list --global
 ```
 
-To uninstall an existing global tool:
-```
-dotnet tool uninstall --global dotnet-ef
+If an old version is installed, then update the tool, as shown in the following command:
+```shell
+dotnet tool update --global dotnet-ef
 ```
 
-To install the latest version as a global tool:
-```
+If it is not already installed, then install the latest version, as shown in the following command:
+```shell
 dotnet tool install --global dotnet-ef
 ```
 
-To install the latest preview version 9 as a global tool:
-```
-dotnet tool install --global dotnet-ef --version 9-*
+To update to the latest .NET 11 preview or release candidate version (which will be available from February 2026 to October 2026), use the following command with a version wildcard:
+```shell
+dotnet tool update --global dotnet-ef --version 11.0-*
 ```
 
-## Page 90 - Defining the Northwind database model
-
-Generate an entity model (from a local SQL Server):
+You can also remove the tool, as shown in the following command:
+```shell
+dotnet tool uninstall --global dotnet-ef
 ```
-dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=true;" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --namespace Northwind.Models --data-annotations --context NorthwindDb
+
+## Page 52 - Creating a class library for entity models
+
+Generate entity class models for all tables, as shown in the following command:
+```shell
+dotnet ef dbcontext scaffold "Data Source=tcp:127.0.0.1,1433;Initial Catalog=Northwind;User Id=sa;Password=s3cret-Ninja;TrustServerCertificate=true;" Microsoft.EntityFrameworkCore.SqlServer --namespace Northwind.EntityModels --data-annotations
 ```
 
 **Common connection strings**
@@ -118,180 +157,213 @@ Azure SQL Database (replace `<your_server_name>`, `<your_user_name>`, and `<your
 "Data Source=tcp:<your_server_name>.database.windows.net,1433;Initial Catalog=Northwind;User ID=<your_user_name>;Password=<your_password>;Persist Security Info=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;"
 ```
 
-## Page 117 - Creating a class library for entity models using SQL Server
+## Page 58 - Setting the user and password for SQL Server authentication
 
+Set the two environment variables at the command prompt or terminal, as shown in the following commands:
+- On Windows:
+```shell
+setx MY_SQL_USR <your_user_name>
+setx MY_SQL_PWD <your_password>
 ```
-dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer --namespace Northwind.EntityModels --data-annotations
-```
-
-## Page 126 - Running unit tests using Visual Studio Code
-
-```
-dotnet test
-```
-
-# Chapter 8 - Building and Securing Web Services Using Minimal APIs
-
-## Page 363 - Authenticating service clients using JWT bearer authentication
-
-Create a local JWT, as shown in the following command:
-```
-dotnet user-jwts create
+- On macOS and Linux:
+```shell
+export MY_SQL_USR=<your_user_name>
+export MY_SQL_PWD=<your_password>
 ```
 
-Print all the information for the ID that was assigned, as shown in the following command:
-```
-dotnet user-jwts print d7e22000 --show-all
-```
+## Page 66 - Getting help for the dotnet tool
 
-# Chapter 9 - Caching, Queuing, and Resilient Background Services
-
-## Page 402 - Setting up RabbitMQ using Docker
-
-Pull down the latest container image for RabbitMQ on Docker and run it, opening ports 5672 and 15672 to the container, which are used by default by AMQP, as shown in the following command:
+Getting help for a `dotnet` command like `build` in a web browser:
 ```
-docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+dotnet help build
 ```
 
-## Page 419 - Processing queued message using a worker service
-
-Start the RabbitMQ container, as shown in the following command:
+Getting help for a `dotnet` command like `build` at the command prompt:
 ```
-docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+dotnet build -?
 ```
 
-# Chapter 10 - Building Serverless Nanoservices Using Azure Functions
+# Chapter 2 - Buildling Mobile Apps Using .NET MAUI
 
-## Page 444 - Testing locally with Azurite
+## Page 86 - Installing .NET MAUI workloads manually
 
-To install Azurite at the command prompt:
-```
-npm install -g azurite
-```
-
-## Page 447 - Using the func CLI
-
-Create a new Azure Functions project using C#, as shown in the following command:
-```
-func init --csharp
+To see which workloads are currently installed, enter the following command:
+```shell
+dotnet workload list
 ```
 
-Create a new Azure Functions function using HTTP trigger that can be called anonymously, as shown in the following command:
-```
-func new --name NumbersToWordsFunction --template "HTTP trigger" --authlevel "anonymous"
-```
-
-Start the function locally, as shown in the following command:
-```
-func start
+To install the .NET MAUI workloads for all platforms, enter the following command at the command line or terminal:
+```shell
+dotnet workload install maui
 ```
 
-# Chapter 11 - Broadcasting Real-Time Communication Using SignalR
-
-## Page 484 - Building a web client using the SignalR JavaScript library
-
-Install the Library Manager CLI tool, as shown in the following command:
-```
-dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+To update all existing workload installations, enter the following command:
+```shell
+dotnet workload update
 ```
 
-Add the signalr.js and signalr.min.js libraries to the project from the unpkg source, as shown in the following command:
-```
-libman install @microsoft/signalr@latest -p unpkg -d wwwroot/js/signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
-```
-
-# Chapter 12 - Combining Data Sources Using GraphQL
-
-## Page 544 - Creating a console app client using Strawberry Shake
-
-Create a tools manifest file, as shown in the following command:
-```
-dotnet new tool-manifest
+To add missing workload installations required for a project, in the folder containing the project file, enter the following command:
+```shell
+dotnet workload restore <projectname>
 ```
 
-Install Strawberry Shake tools for the local project, as shown in the following command:
-```
-dotnet tool install StrawberryShake.Tools --local
-```
-
-Add a client for your GraphQL service, as shown in the following command:
-```
-dotnet graphql init https://localhost:5121/graphql/ -n NorthwindClient
+To remove leftover and unneeded workloads, as shown in the following command:
+```shell
+dotnet workload clean
 ```
 
-# Chapter 13 - Building Efficient Microservices Using gRPC
+## Page 99 - Adding shell navigation and more content pages
 
-## Page 594 - Improving a gRPC service with native AOT publish
-
-Run `Northwind.Grpc.Service.exe` and explicitly specify the URL with the port number to use, as shown in the following command:
-```
-Northwind.Grpc.Service.exe --urls "https://localhost:5131"
+You can create this item using the CLI, as shown in the following command:
+```shell
+dotnet new maui-page-xaml --name SettingsPage.xaml
 ```
 
-# Chapter 14 - Building Web User Interfaces Using ASP.NET Core
+## Page 104 - Defining resources to share across an app
 
-## Page 623 - Creating an ASP.NET Core MVC website
-
-Run database migrations so that the database used to store credentials for authentication is created, as shown in the following command:
-```
-dotnet ef database update
+You can create this item using the CLI, as shown in the following command:
+```shell
+dotnet new maui-dict-xaml --name Northwind.xaml
 ```
 
-# Chapter 15 - Building Web Components Using Blazor
+# Chapter 3 - Building Desktop Apps Using Avalonia
 
-## Page 672 - Reviewing the new Blazor project template
+## Page 122 - Installing the Avalonia project templates
+
+To install the Avalonia project templates, as shown in the following command:
+```shell
+dotnet new install Avalonia.Templates
+```
+
+# Chapter 4 - Building Web Apps Using Blazor
+
+## Page 161 - Reviewing the new Blazor project template
 
 Create a new project using the Blazor Web App project template:
 ```
 dotnet new blazor --interactivity None -o Northwind.Blazor
 ```
 
-# Chapter 16 - Building Mobile and Desktop Apps Using .NET MAUI
+## Page 167 - Reviewing the new Blazor project template
 
-# Page 710 - Installing .NET MAUI workloads manually
-
-To see which workloads are currently installed, enter the following command:
-```
-dotnet workload list
+Start the `Northwind.Blazor` project, using its `https` profile without debugging:
+```shell
+dotnet run --launch-profile https
 ```
 
-To see which workloads are available to install, enter the following command:
-```
-dotnet workload search
+# Chapter 9 - Building an LLM-Based Chat Service
+
+## Page 385 - Understanding the AI Chat Web App project template
+
+To install the AI Chat Web App project template, at the command prompt or terminal, enter the following command:
+```shell
+dotnet new install Microsoft.Extensions.AI.Templates
 ```
 
-To install the .NET MAUI workloads for all platforms, enter the following command at the command line or terminal:
-```
-dotnet workload install maui
+## Page 387 - Building the chat app
+
+Add a user secrets entry for your OpenAI key, as shown in the following command:
+```shell
+dotnet user-secrets set OpenAi:Key <your-OpenAI-key>
 ```
 
-To update all existing workload installations, enter the following command:
-```
-dotnet workload update
+## Page 408 - Ollama models
+
+To quickly download and run an Ollama model in interactive mode, use the following command:
+```shell
+ollama run <model>
 ```
 
-To add missing workload installations required for a project, in the folder containing the project file,
-enter the following command:
-```
-dotnet workload restore <projectname>
+## Page 409 - Ollama CLI
+
+To check its version, as shown in the following command:
+```shell
+ollama --version
 ```
 
-To remove leftover and unneeded workloads, as shown in the following command:
-```
-dotnet workload clean
-```
-
-## Page 723 - Adding shell navigation and more content pages
-
-Create a **.NET MAUI ContentPage (XAML)** item using the CLI:
-```
-dotnet new maui-page-xaml --name SettingsPage.xaml
+To pull down a named model like Meta’s Llama3 or Google’s Gemma3, as shown in the following command:
+```shell
+ollama pull gemma3:1b
 ```
 
-## Page 729 - Defining resources to share across an app
-
-Create a **.NET MAUI Resource Dictionary** item using the CLI:
-```
-dotnet new maui-dict-xaml --name Northwind.xaml
+To list the available local models:
+```shell
+ollama list
 ```
 
+To run a named model (which will also download it if not already pulled), as shown in the following command:
+```shell
+ollama run gemma3:1b
+```
+
+# Chapter 10 - Building and Securing Web Services Using Minimal APIs
+
+## Page 488 - Authenticating service clients using JWT bearer authentication
+
+Create a local JWT, as shown in the following command:
+```shell
+dotnet user-jwts create
+```
+
+Print all the information for the ID that was assigned, as shown in the following command:
+```shell
+dotnet user-jwts print d7e22000 --show-all
+```
+
+# Chapter 11 - Caching, Queuing, and Resilient Background Services
+
+## Page 528 - Setting up RabbitMQ using Docker
+
+Pull down the latest container image for RabbitMQ on Docker and run it, opening ports `5672` and `15672` to the container, which are used by default by AMQP, as shown in the following command:
+```shell
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13.7-management
+```
+
+## Page 544 - Processing queued message using a worker service
+
+Start the RabbitMQ container, as shown in the following command:
+```shell
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13.7-management
+```
+
+# Chapter 12 - Broadcasting Real-Time Communication Using SignalR
+
+## Page 570 - Building a web client using the SignalR JavaScript library
+
+Install the Library Manager CLI tool, as shown in the following command:
+```shell
+dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+```
+
+Add the `signalr.js` and `signalr.min.js` libraries to the project from the unpkg source, as shown in the following command:
+```shell
+libman install @microsoft/signalr@latest -p unpkg -d wwwroot/js/signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
+```
+
+# Chapter 13 - Combining Data Sources Using GraphQL
+
+## Page 633 - Creating a console app client using Strawberry Shake
+
+Create a tools manifest file, as shown in the following command:
+```shell
+dotnet new tool-manifest
+```
+
+Install Strawberry Shake tools for the local project, as shown in the following command:
+```shell
+dotnet tool install StrawberryShake.Tools --local
+```
+
+Add a client for your GraphQL service, as shown in the following command:
+```shell
+dotnet graphql init https://localhost:5131/graphql/ -n NorthwindClient
+```
+
+# Chapter 14 - Building Efficient Microservices Using gRPC
+
+## Page 686 - Improving a gRPC service with native AOT publish
+
+Run `Northwind.Grpc.Service.exe` and explicitly specify the URL with the port number to use, as shown in the following command:
+```shell
+Northwind.Grpc.Service.exe --urls "https://localhost:5141"
+```
