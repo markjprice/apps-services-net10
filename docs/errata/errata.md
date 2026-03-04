@@ -1,8 +1,9 @@
-**Errata** (5 items)
+**Errata** (6 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 38 - Treating warnings as errors](#page-38---treating-warnings-as-errors)
+- [Page 72 - Customizing Copilot responses](#page-72---customizing-copilot-responses)
 - [Page 74 - Using future versions of .NET with this book](#page-74---using-future-versions-of-net-with-this-book)
 - [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
@@ -14,6 +15,20 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 # Page 38 - Treating warnings as errors
 
 In the output at the bottom of the page, the path includes `Chapter14` instead of `ModernServices`.
+
+# Page 72 - Customizing Copilot responses
+
+> Thanks to [Giuseppe Guerra](https://github.com/giuseppe-guerra) for raising [this issue on March 4, 2026](https://github.com/markjprice/apps-services-net10/issues/8).
+
+I wrote, "We can do this for Copilot using a special Markdown file:"
+```
+<project_folder>\.gihub\copilot-instructions.md"
+```
+
+The path is missing a "t" in ".gihub". It should be:
+```
+<project_folder>\.github\copilot-instructions.md"
+```
 
 # Page 74 - Using future versions of .NET with this book
 
