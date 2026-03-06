@@ -26,8 +26,9 @@
   - [EF Core querying and manipulating](#ef-core-querying-and-manipulating)
 - [Chapter 9 - Building a Custom LLM-based Chat Service](#chapter-9---building-a-custom-llm-based-chat-service)
   - [OpenAI](#openai)
-  - [Semantic Kernel](#semantic-kernel)
+  - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
   - [Local models](#local-models)
+  - [Local models with Olama](#local-models-with-olama)
 - [Chapter 10 - Building and Securing Minimal API Web Services](#chapter-10---building-and-securing-minimal-api-web-services)
   - [Web service technologies and design](#web-service-technologies-and-design)
   - [Web service routing](#web-service-routing)
@@ -225,12 +226,13 @@
 
 ## EF Core
 - [EF Core documentation](https://learn.microsoft.com/en-us/ef/core/)
+- [New features in EF Core 11](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew)
+- [New features in EF Core 10](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew)
+- [New features in EF Core 9](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew)
 - [New features in EF Core 8](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/whatsnew)
 - [New features in EF Core 7](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-7.0/whatsnew)
 - [New features in EF Core 6](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-6.0/whatsnew)
 - [New features in EF Core 5](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/whatsnew)
-- [Get to Know EF Core 6](https://devblogs.microsoft.com/dotnet/get-to-know-ef-core-6/)
-- [Plans for Entity Framework Core 6.0 revealed as Microsoft admits it is unlikely to match Dapper for performance](https://www.theregister.com/2021/01/19/entity_framework_core_6/)
 - [Entity Framework Community Standup - Performance Tuning an EF Core App](https://www.youtube.com/watch?v=VgNFFEqwZPU)
 
 ## EF Core database providers
@@ -259,43 +261,33 @@
 # Chapter 9 - Building a Custom LLM-based Chat Service
 
 ## OpenAI
-- [Announcing the stable release of the official OpenAI library for .NET](https://devblogs.microsoft.com/dotnet/announcing-the-stable-release-of-the-official-open-ai-library-for-dotnet/)
-- [Stack Overflow and OpenAI’s partnership](https://stackoverflow.co/company/press/archive/openaipartnership)
-- [OpenAI and Reddit’s partnership](https://openai.com/index/openai-and-redditpartnership/)
-- [Microsoft Designer](https://designer.microsoft.com/)
-- [GPT 3.5 Turbo model](https://platform.openai.com/docs/models/gpt-3-5-turbo)
-- [Create an Azure OpenAI resource](https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource)
 - [OpenAI platform signup](https://platform.openai.com/signup)
 - [OpenAI account API keys](https://platform.openai.com/api-keys)
 - [OpenAI account billing](https://platform.openai.com/account/billing/overview)
 - [OpenAI Playground](https://platform.openai.com/playground?model=gpt-3.5-turbo)
 - [OpenAI usage](https://platform.openai.com/usage)
 - [OpenAI official .NET package](https://github.com/openai/openai-dotnet)
+- [Announcing the stable release of the official OpenAI library for .NET](https://devblogs.microsoft.com/dotnet/announcing-the-stable-release-of-the-official-open-ai-library-for-dotnet/)
+- [Stack Overflow and OpenAI’s partnership](https://stackoverflow.co/company/press/archive/openaipartnership)
+- [OpenAI and Reddit’s partnership](https://openai.com/index/openai-and-redditpartnership/)
+- [Create an Azure OpenAI resource](https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource)
 
-## Semantic Kernel
-- [Semantic Kernel NuGet package](https://www.nuget.org/packages/Microsoft.SemanticKernel)
-- [Working with Environment Variables](https://github.com/markjprice/cs12dotnet8/blob/main/docs/ch09-environment-variables.md)
-- [Introducing Semantic Kernel](https://devblogs.microsoft.com/semantic-kernel/hello-world/)
-- [Semantic Kernel Embeddings and Memories: Explore GitHub Repos with Chat UI](https://devblogs.microsoft.com/semantic-kernel/semantic-kernel-embeddings-and-memories-explore-github-repos-with-chat-ui/)
-- [Making AI powered .NET apps more consistent and intelligent with Redis](https://devblogs.microsoft.com/semantic-kernel/making-ai-powered-net-apps-more-consistent-and-intelligent-with-redis/)
-- [Building AI-powered Microsoft Copilot with SignalR and other open-source tools](https://devblogs.microsoft.com/dotnet/building-ai-powered-bing-chat-with-signalr-and-other-open-source-tools/)
-- [Build Intelligent Applications using ChatGPT & Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/chatgpt-azure-cosmos-db/)
-- [Using Hugging Face models with the Semantic Kernel](https://devblogs.microsoft.com/semantic-kernel/how-to-use-hugging-face-models-with-semantic-kernel/)
-- [Semantic Kernel documentation](https://learn.microsoft.com/en-us/semantic-kernel/)
-- [Planning with Semantic Kernel using Automatic Function Calling](https://devblogs.microsoft.com/semantic-kernel/planning-with-semantic-kernel-using-automatic-function-calling/)
-- [The future of Planners in Semantic Kernel](https://devblogs.microsoft.com/semantic-kernel/the-future-of-planners-in-semantic-kernel/)
-- [Model as a Service (MaaS) Available for Semantic Kernel](https://devblogs.microsoft.com/semantic-kernel/model-as-a-service-maas-available-for-semantic-kernel/)
+## Model Context Protocol (MCP)
+- [What is the Model Context Protocol (MCP)?](https://modelcontextprotocol.io/docs/getting-started/intro)
+- [Anthropic - Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol)
+- [Release v1.0 of the official MCP C# SDK](https://devblogs.microsoft.com/dotnet/release-v10-of-the-official-mcp-csharp-sdk/)
 
 ## Local models
-- [.NET 9 tokenizers](https://github.com/dotnet/core/blob/main/release-notes/9.0/preview/preview4/libraries.md#tokenizer-library-enhancements)
 - [Hugging Face](https://huggingface.co/)
-- [Ollama](https://ollama.com/)
 - [Llama 2 Uncensored](https://erichartford.com/uncensored-models)
 - [Llama 3 license](https://llama.meta.com/llama3/license/)
+- [LM Studio](https://lmstudio.ai/)
+
+## Local models with Olama
+- [Ollama](https://ollama.com/)
 - [Ollama CLI reference](https://github.com/ollama/ollama#cli-reference)
 - [OllamaSharp](https://github.com/awaescher/OllamaSharp)
 - [OllamaSharp NuGet package](https://www.nuget.org/packages/OllamaSharp)
-- [LM Studio](https://lmstudio.ai/)
 
 # Chapter 10 - Building and Securing Minimal API Web Services
 
