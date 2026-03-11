@@ -1,7 +1,9 @@
-**Errata** (6 items)
+**Errata** (8 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
+- [Page 6 - Building web and other services](#page-6---building-web-and-other-services)
+- [Page 67 - Getting help on Discord and other chat forums](#page-67---getting-help-on-discord-and-other-chat-forums)
 - [Page 38 - Treating warnings as errors](#page-38---treating-warnings-as-errors)
 - [Page 72 - Customizing Copilot responses](#page-72---customizing-copilot-responses)
 - [Page 74 - Using future versions of .NET with this book](#page-74---using-future-versions-of-net-with-this-book)
@@ -11,6 +13,19 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 
 
 > **Warning!** Avoid copying and pasting links that break over multiple lines and include hyphens or dashes because your PDF reader might remove a hyphen thinking that it being helpful but break the link! Just click on the links and they will work. Or carefully check that your PDF reader has not removed a hyphen after pasting into your web browser address bar. [See an example of this issue here](https://github.com/markjprice/cs13net9/issues/77).
+
+# Page 6 - Building web and other services
+
+> Thanks to [Kris](https://github.com/kprikratki) for raising [this issue on March 11, 2026](https://github.com/markjprice/apps-services-net10/issues/9).
+
+The second time I mention Roy Fielding, I mistyped his last name, "...defined by Roy Field in his dissertation about REST APIs." It should be "...defined by Roy Fielding in his dissertation about REST APIs."
+
+# Page 67 - Getting help on Discord and other chat forums
+
+> Thanks to [Kris](https://github.com/kprikratki) for raising [this issue on March 11, 2026](https://github.com/markjprice/apps-services-net10/issues/9).
+
+In the second bullet, **Research before asking**, I mistakenly used the errata page link for my other book, *C# 14 and .NET 10*. The link should be:
+https://github.com/markjprice/apps-services-net10/blob/main/docs/errata/README.md
 
 # Page 38 - Treating warnings as errors
 
