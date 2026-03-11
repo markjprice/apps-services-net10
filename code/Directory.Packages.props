@@ -25,7 +25,7 @@
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="$(Net10)" />
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.3.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.4.0" />
     
     <!--For logging to console.-->
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(Net10)" />
@@ -134,7 +134,7 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 11 Caching, Queuing, and Resilient Background Services">
-    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="10.3.0" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="10.4.0" />
     <PackageVersion Include="Microsoft.Extensions.Http.Polly" Version="$(Net10)" />
     <PackageVersion Include="Polly.Contrib.WaitAndRetry" Version="1.1.1" />
     <PackageVersion Include="RabbitMQ.Client" Version="7.2.1" />
