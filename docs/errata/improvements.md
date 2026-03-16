@@ -1,6 +1,6 @@
 **Improvements** (2 items)
 
-If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net8/issues) or email me at markjprice (at) gmail.com.
+If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 38 - Treating warnings as errors](#page-38---treating-warnings-as-errors)
 - [Page 40 - Installing Docker and an SQL Server container image](#page-40---installing-docker-and-an-sql-server-container-image)
@@ -18,7 +18,7 @@ I might remove this section completely in the next edition since I explain it in
 
 > Thanks to [DrAvriLev](https://github.com/DrAvriLev) for raising [this issue on March 16, 2026](https://github.com/markjprice/apps-services-net10/issues/10) that suggested this improvement.
 
-In the next edition, I will add a note to explain that although I provide SQL scripts to set up the Northwind database on any of: a Docker container, a local SQL Server, or SQL Azure in the cloud, one reason that I recommend using Docker for the SQL Server is because experience with Docker is an important developer skill and the reader can also use Docker to set up other containers for use later in the book. 
+In the next edition, I will add a note to explain that although I provide SQL scripts to set up the Northwind database on any of: a Docker container, a local SQL Server, or SQL Azure in the cloud, the reason that I recommend using Docker for the SQL Server is because experience with Docker is an important developer skill and the reader can also use Docker to set up other containers for use later in the book. 
 
 For example, in *Chapter 11, Caching, Queuing, and Resilient Background Services*, the reader will set up RabbitMQ in a Docker container to implement queuing, and there is an optional exercise to implement Redis for distributed caching. Of course, if the reader already has SQL Server installed locally, they can use it instead of a Docker-hosted SQL Server. And/or if the reader already has or is willing to install Redis and RabbitMQ locally then they don't need Docker for those either. 
 
