@@ -1,4 +1,4 @@
-**Errata** (8 items)
+**Errata** (9 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -8,6 +8,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 72 - Customizing Copilot responses](#page-72---customizing-copilot-responses)
 - [Page 74 - Using future versions of .NET with this book](#page-74---using-future-versions-of-net-with-this-book)
 - [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
+- [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
@@ -68,6 +69,39 @@ Net result: EF Core 11 only running on .NET 11 is the documented requirement. If
 > Thanks to [Sammy Lastre Silveira](https://github.com/Sammy-Lastre) for raising [this issue on February 28, 2026](https://github.com/markjprice/apps-services-net10/issues/7).
 
 In Step 4, the information box includes a link to download some images, but the link is wrong. It should be: https://github.com/markjprice/apps-services-net10/tree/main/code/ModernApps/Northwind.Maui.Client/Resources/Images
+
+# Page 212 - Avoid logging sensitive data
+
+> Thanks to [Kris](https://github.com/kprikratki) for raising [this issue on March 16, 2026](https://github.com/markjprice/apps-services-net10/issues/12).
+
+The API for the `Serilog.Enrichers.Sensitive` package has changed so that you must now always provide an `options` parameter to configure it, although you can supply an empty object. 
+
+For example, to use it in the `Serilogging` project:
+
+1. In `Directory.Packages.props`, define the package version:
+    ```xml
+    <PackageVersion Include="Serilog.Enrichers.Sensitive" Version="2.1.0" />
+    ```
+2. In `Serilogging.csproj`, add a package reference:
+    ```xml
+    <PackageReference Include="Serilog.Enrichers.Sensitive" />
+    ```
+3. In `Program.cs`, import the namespace to use the extension method:
+   ```cs
+   using Serilog.Enrichers.Sensitive; // To use WithSensitiveDataMasking().
+   ```
+4. In the statement that creates the `Logger`, access the `Enrich` object and call the `WithSensitiveDataMasking` method with an empty `options` parameter:
+   ```cs
+   // Create a new logger that will write to the console and to
+   // a text file, one-file-per-day, named with the date.
+   using Logger log = new LoggerConfiguration()
+     .Enrich.WithSensitiveDataMasking(options => { }) // add the enricher
+        
+     // console and file both executed on a background worker.
+     .WriteTo.Async(a => a.Console())
+     .WriteTo.Async(a => a.File("log.txt", rollingInterval: RollingInterval.Day))
+     .CreateLogger();
+   ```
 
 # Page 776 - Microsoft Learn documentation MCP server
 

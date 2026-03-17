@@ -75,6 +75,7 @@
     <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
     <PackageVersion Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageVersion Include="Serilog.Sinks.Async" Version="2.1.0" />
+    <PackageVersion Include="Serilog.Enrichers.Sensitive" Version="2.1.0" />
 
     <!--AutoMapper version 15 or later requires a license.-->
     <PackageVersion Include="AutoMapper" Version="14.0.0" />
