@@ -1,4 +1,6 @@
-﻿namespace Northwind.Maui.Client
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace Northwind.Maui.Client
 {
     public partial class App : Application
     {
