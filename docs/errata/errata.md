@@ -1,4 +1,4 @@
-**Errata** (10 items)
+**Errata** (11 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -7,6 +7,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 38 - Treating warnings as errors](#page-38---treating-warnings-as-errors)
 - [Page 72 - Customizing Copilot responses](#page-72---customizing-copilot-responses)
 - [Page 74 - Using future versions of .NET with this book](#page-74---using-future-versions-of-net-with-this-book)
+- [Page 92 - Enabling Windows developer mode](#page-92---enabling-windows-developer-mode)
 - [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
 - [Page 117 - Exercise 2.3 – Implementing Model-View-ViewModel for .NET MAUI](#page-117---exercise-23--implementing-model-view-viewmodel-for-net-maui)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
@@ -64,6 +65,14 @@ But EF Core 11 is now explicitly saying that it requires the .NET 11 SDK to buil
 Why? The EF team’s own platform guidance acknowledges that sometimes they must depend on the latest .NET due to runtime features. In practice, “won’t run on earlier .NET” usually means they’re compiling against and taking dependencies on assemblies/APIs that simply are not present (or not the same versions) on earlier runtimes, and the team has decided not to carry the extra compatibility shims or multi-targeting.
 
 Net result: EF Core 11 only running on .NET 11 is the documented requirement. If you want to stay on .NET 10 LTS, EF Core 10 is the ceiling. If you move to .NET 11 (STS), EF Core 11 becomes available.
+
+# Page 92 - Enabling Windows developer mode
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on March 31, 2026](https://github.com/markjprice/apps-services-net10/issues/15).
+
+In Step 1, I wrote, "Navigate to **Start** | **Settings** | **Privacy & security** | **For developers**, and then switch on **Developer Mode**. (You can also search for “developers”.)"
+
+This setting has moved, so it should say, "Navigate to **Start** | **Settings** | **System** | **Advanced**, and then in the **For developers** section, toggle on **Developer Mode**. (You can also search for “developers”.)"
 
 # Page 97 - Adding shell navigation and more content pages
 
