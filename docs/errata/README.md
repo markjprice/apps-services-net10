@@ -18,3 +18,4 @@ Who|Errata|Improvements
 [DrAvriLev](https://github.com/DrAvriLev)|1|2
 [Sammy Lastre Silveira](https://github.com/Sammy-Lastre)|1|0
 [Giuseppe Guerra](https://github.com/giuseppe-guerra)|1|0
+[zkazz](https://github.com/zkazz)|1|0
