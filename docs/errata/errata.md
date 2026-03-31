@@ -1,4 +1,4 @@
-**Errata** (11 items)
+**Errata** (12 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -8,6 +8,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 72 - Customizing Copilot responses](#page-72---customizing-copilot-responses)
 - [Page 74 - Using future versions of .NET with this book](#page-74---using-future-versions-of-net-with-this-book)
 - [Page 92 - Enabling Windows developer mode](#page-92---enabling-windows-developer-mode)
+- [Page 96 - Adding shell navigation and more content pages](#page-96---adding-shell-navigation-and-more-content-pages)
 - [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
 - [Page 117 - Exercise 2.3 – Implementing Model-View-ViewModel for .NET MAUI](#page-117---exercise-23--implementing-model-view-viewmodel-for-net-maui)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
@@ -73,6 +74,48 @@ Net result: EF Core 11 only running on .NET 11 is the documented requirement. If
 In Step 1, I wrote, "Navigate to **Start** | **Settings** | **Privacy & security** | **For developers**, and then switch on **Developer Mode**. (You can also search for “developers”.)"
 
 This setting has moved, so it should say, "Navigate to **Start** | **Settings** | **System** | **Advanced**, and then in the **For developers** section, toggle on **Developer Mode**. (You can also search for “developers”.)"
+
+# Page 96 - Adding shell navigation and more content pages
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on March 31, 2026](https://github.com/markjprice/apps-services-net10/issues/16).
+
+In Step 2, I mistakenly showed the .NET 8 generation MAUI code where you must set the `MainPage` property:
+```cs
+namespace Northwind.Maui.Client;
+
+public partial class App : Application
+{
+  public App()
+  {
+    InitializeComponent();
+    MainPage = new AppShell();
+  }
+}
+```
+
+The .NET 10 generation MAUI code overrides the `CreateWindow` method:
+```cs
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Northwind.Maui.Client
+{
+  public partial class App : Application
+  {
+    public App()
+    {
+      InitializeComponent();
+    }
+
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+      return new Window(new AppShell());
+    }
+  }
+}
+```
+
+The code was correct in the GitHub repository:
+https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/Northwind.Maui.Client/App.xaml.cs
 
 # Page 97 - Adding shell navigation and more content pages
 
