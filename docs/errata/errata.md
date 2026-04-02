@@ -1,4 +1,4 @@
-**Errata** (12 items)
+**Errata** (13 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -11,6 +11,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 96 - Adding shell navigation and more content pages](#page-96---adding-shell-navigation-and-more-content-pages)
 - [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
 - [Page 117 - Exercise 2.3 – Implementing Model-View-ViewModel for .NET MAUI](#page-117---exercise-23--implementing-model-view-viewmodel-for-net-maui)
+- [Page 139 - Implementing a simple desktop app for data](#page-139---implementing-a-simple-desktop-app-for-data)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
@@ -128,6 +129,13 @@ In Step 4, the information box includes a link to download some images, but the 
 > Thanks to [DrAvriLev](https://github.com/DrAvriLev) for raising [this issue on March 17, 2026](https://github.com/markjprice/apps-services-net10/issues/14).
 
 The link is broken. It should be: https://github.com/markjprice/apps-services-net10/blob/main/docs/ch02-mvvm.md
+
+# Page 139 - Implementing a simple desktop app for data
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 2, 2026](https://github.com/markjprice/apps-services-net10/issues/17).
+
+In Step 1, `Northwind.Blazor.csproj` should be `Northwind.DesktopApp.csproj`.
+In Step 2, `Northwind.Blazor` should be `Northwind.DesktopApp`.
 
 # Page 212 - Avoid logging sensitive data
 
