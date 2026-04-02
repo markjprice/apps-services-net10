@@ -1,4 +1,4 @@
-**Errata** (13 items)
+**Errata** (14 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -12,6 +12,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
 - [Page 117 - Exercise 2.3 – Implementing Model-View-ViewModel for .NET MAUI](#page-117---exercise-23--implementing-model-view-viewmodel-for-net-maui)
 - [Page 139 - Implementing a simple desktop app for data](#page-139---implementing-a-simple-desktop-app-for-data)
+- [Page 141 - Implementing a simple desktop app for data](#page-141---implementing-a-simple-desktop-app-for-data)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
@@ -135,7 +136,22 @@ The link is broken. It should be: https://github.com/markjprice/apps-services-ne
 > Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 2, 2026](https://github.com/markjprice/apps-services-net10/issues/17).
 
 In Step 1, `Northwind.Blazor.csproj` should be `Northwind.DesktopApp.csproj`.
+
 In Step 2, `Northwind.Blazor` should be `Northwind.DesktopApp`.
+
+# Page 141 - Implementing a simple desktop app for data
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 2, 2026](https://github.com/markjprice/apps-services-net10/issues/18).
+
+In Step 6, inclusion of `ConverterCulture='en-US'` causes an error in the following text block:
+```xml
+<TextBlock Text="{Binding UnitPrice, StringFormat='C2',
+                 ConverterCulture='en-US'}"
+           Width="100" TextAlignment="Right"/>
+```
+
+This element was already correct in the GitHub repository:
+https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/Northwind.DesktopApp/Views/MainWindow.axaml#L65
 
 # Page 212 - Avoid logging sensitive data
 
