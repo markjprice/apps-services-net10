@@ -1,4 +1,4 @@
-**Errata** (14 items)
+**Errata** (15 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -13,6 +13,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 117 - Exercise 2.3 – Implementing Model-View-ViewModel for .NET MAUI](#page-117---exercise-23--implementing-model-view-viewmodel-for-net-maui)
 - [Page 139 - Implementing a simple desktop app for data](#page-139---implementing-a-simple-desktop-app-for-data)
 - [Page 141 - Implementing a simple desktop app for data](#page-141---implementing-a-simple-desktop-app-for-data)
+- [Page 161 - Reviewing the new Blazor project template](#page-161---reviewing-the-new-blazor-project-template)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
@@ -152,6 +153,14 @@ In Step 6, inclusion of `ConverterCulture='en-US'` causes an error in the follow
 
 This element was already correct in the GitHub repository:
 https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/Northwind.DesktopApp/Views/MainWindow.axaml#L65
+
+# Page 161 - Reviewing the new Blazor project template
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 12, 2026](https://github.com/markjprice/apps-services-net10/issues/19).
+
+In Step 1, in the bullet list of project options, I included **Interactivity location: Per page/component**. But when the previous option **Interactive render mode: None** is set, the **Interactivity location** option disappears because it is not relevant when there is no interactivity. 
+
+In the next edition, I will remove the **Interactivity location** bullet.
 
 # Page 212 - Avoid logging sensitive data
 
