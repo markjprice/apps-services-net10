@@ -1,15 +1,15 @@
 <Project>
   
-  <!--Last updated package versions: March 10, 2026.-->
+  <!--Last updated package versions: April 14, 2026.-->
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <Net10>10.0.4</Net10>
-    <Net11>11.0.0-preview.2.26159.112</Net11>
-    <Avalonia>11.3.12</Avalonia>
-    <AI>10.3.0</AI>
+    <Net10>10.0.6</Net10>
+    <Net11>11.0.0-preview.3.26207.106</Net11>
+    <Avalonia>11.3.14</Avalonia>
+    <AI>10.4.1</AI>
     <Hangfire>1.8.23</Hangfire>
-    <HotChocolate>15.1.12</HotChocolate>
+    <HotChocolate>15.1.14</HotChocolate>
   </PropertyGroup>
   
   <ItemGroup Label="Common packages in multiple chapters.">
@@ -30,11 +30,11 @@
     <!--For logging to console.-->
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="$(Net10)" />
-    <PackageVersion Include="Spectre.Console" Version="0.54.0" />
+    <PackageVersion Include="Spectre.Console" Version="0.55.0" />
     
     <!--For unit testing.-->
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
-    <PackageVersion Include="coverlet.collector" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+    <PackageVersion Include="coverlet.collector" Version="8.0.1" />
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     
@@ -47,9 +47,9 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 2 Building Mobile Apps Using .NET MAUI.">
-    <PackageVersion Include="Microsoft.Maui.Controls" Version="10.0.41" />
-    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageVersion Include="CommunityToolkit.Maui" Version="14.0.1" />
+    <PackageVersion Include="Microsoft.Maui.Controls" Version="10.0.51" />
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageVersion Include="CommunityToolkit.Maui" Version="14.1.0" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 3 Building Desktop Apps Using Avalonia.">
@@ -65,7 +65,7 @@
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="$(Net10)" />
-    <PackageVersion Include="Radzen.Blazor" Version="9.1.0" />
+    <PackageVersion Include="Radzen.Blazor" Version="10.2.3" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 5 Using Popular Third-Party Libraries">
@@ -103,33 +103,33 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 7 Managing Relational Data Using SQL">
-    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.1.4" />
-    <PackageVersion Include="Npgsql" Version="10.0.1" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="7.0.0" />
+    <PackageVersion Include="Npgsql" Version="10.0.2" />
     <PackageVersion Include="Dapper" Version="2.1.72" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 8 Building Entity Models Using EF Core">
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(Net10)" />
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 9 Building an LLM-Based Chat Service">
     <PackageVersion Include="Microsoft.Extensions.AI.OpenAI" Version="$(AI)" />
     <PackageVersion Include="Microsoft.Extensions.AI" Version="$(AI)" />
-    <PackageVersion Include="Microsoft.Extensions.DataIngestion" Version="10.3.0-preview.1.26109.11" />
-    <PackageVersion Include="Microsoft.Extensions.DataIngestion.Markdig" Version="10.3.0-preview.1.26109.11" />
-    <PackageVersion Include="PdfPig" Version="0.1.13" />
-    <PackageVersion Include="Microsoft.ML.Tokenizers.Data.Cl100kBase" Version="2.0.0" />
-    <PackageVersion Include="Microsoft.ML.Tokenizers.Data.O200kBase" Version="2.0.0" />
-    <PackageVersion Include="Microsoft.SemanticKernel.Connectors.SqliteVec" Version="1.73.0-preview" />
-    <PackageVersion Include="ModelContextProtocol" Version="1.1.0" />
-    <PackageVersion Include="OllamaSharp" Version="5.4.23" />
+    <PackageVersion Include="Microsoft.Extensions.DataIngestion" Version="10.4.0-preview.1.26160.2" />
+    <PackageVersion Include="Microsoft.Extensions.DataIngestion.Markdig" Version="10.4.0-preview.1.26160.2" />
+    <PackageVersion Include="PdfPig" Version="0.1.14" />
+    <PackageVersion Include="Microsoft.ML.Tokenizers.Data.Cl100kBase" Version="3.0.0-preview.26160.2" />
+    <PackageVersion Include="Microsoft.ML.Tokenizers.Data.O200kBase" Version="3.0.0-preview.26160.2" />
+    <PackageVersion Include="Microsoft.SemanticKernel.Connectors.SqliteVec" Version="1.74.0-preview" />
+    <PackageVersion Include="ModelContextProtocol" Version="1.2.0" />
+    <PackageVersion Include="OllamaSharp" Version="5.4.25" />
   </ItemGroup>
   
   <ItemGroup Label="Chapter 10 Building and Securing Minimal API Web Services">
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(Net10)" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="2.13.3" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.13.22" />
     <PackageVersion Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(Net10)" />
   </ItemGroup>
@@ -156,7 +156,7 @@
   </ItemGroup>
   
   <ItemGroup Label="Chapter 14 Building Efficient Microservices Using gRPC">
-    <PackageVersion Include="Google.Protobuf" Version="3.34.0" />
+    <PackageVersion Include="Google.Protobuf" Version="3.34.1" />
     <PackageVersion Include="Grpc.AspNetCore" Version="2.76.0" />
     <PackageVersion Include="Grpc.Net.ClientFactory" Version="2.76.0" />
     <PackageVersion Include="Grpc.Tools" Version="2.76.0" />
