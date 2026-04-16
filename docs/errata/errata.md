@@ -1,4 +1,4 @@
-**Errata** (15 items)
+**Errata** (16 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -14,6 +14,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 139 - Implementing a simple desktop app for data](#page-139---implementing-a-simple-desktop-app-for-data)
 - [Page 141 - Implementing a simple desktop app for data](#page-141---implementing-a-simple-desktop-app-for-data)
 - [Page 161 - Reviewing the new Blazor project template](#page-161---reviewing-the-new-blazor-project-template)
+- [Page 185 - Getting entities into a Blazor component](#page-185---getting-entities-into-a-blazor-component)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
@@ -161,6 +162,19 @@ https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/Nort
 In Step 1, in the bullet list of project options, I included **Interactivity location: Per page/component**. But when the previous option **Interactive render mode: None** is set, the **Interactivity location** option disappears because it is not relevant when there is no interactivity. 
 
 In the next edition, I will remove the **Interactivity location** bullet.
+
+# Page 185 - Getting entities into a Blazor component
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 15, 2026](https://github.com/markjprice/apps-services-net10/issues/20).
+
+In Step 4, in the code at the top of page 185, in the `OnParametersSetAsync()` method, I declared a variable and set a local variable:
+```cs
+Employee[]? employeesArray = null;
+```
+This causes an error since the variable `employeesArray` is assigned but never used. This statement is not included in the code on GitHub. It should be deleted in the book. 
+
+Also, Step 6 should be deleted because there is no `Northwind.MinimalApi.Service` project:
+6. Start the `Northwind.MinimalApi.Service` project, using its `https` profile without debugging.
 
 # Page 212 - Avoid logging sensitive data
 
