@@ -1,4 +1,4 @@
-**Errata** (16 items)
+**Errata** (17 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -16,6 +16,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 161 - Reviewing the new Blazor project template](#page-161---reviewing-the-new-blazor-project-template)
 - [Page 185 - Getting entities into a Blazor component](#page-185---getting-entities-into-a-blazor-component)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
+- [Page 216 - Defining mappers for an AutoMapper configuration](#page-216---defining-mappers-for-an-automapper-configuration)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
@@ -208,6 +209,18 @@ For example, to use it in the `Serilogging` project:
      .WriteTo.Async(a => a.File("log.txt", rollingInterval: RollingInterval.Day))
      .CreateLogger();
    ```
+
+# Page 216 - Defining mappers for an AutoMapper configuration
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 27, 2026](https://github.com/markjprice/apps-services-net10/issues/21).
+
+In Step 5, if you reference the latest version of AutoMapper then you will get a compile error because the API has changed. 
+
+The book uses AutoMapper `14.0.0` because that is the last version that does not require a license. This is why downloads have dramatically dropped: from `12.0.1` with 135 million downloads, `13.0.1` with 138 million downloads, and `14.0.0` with 40 million downloads, down to the latest version `16.1.1` with only 2 million downloads. Unfortunately all versions except `15.1.3` and `16.1.1` now have a security vulnerability. 
+
+I have temporarily disabled the warning for this in the project file so that the project compiles but that isn't a good solution. I recommend avoiding AutoMapper completely and skipping the AutoMapper section of my book.
+
+In the next edition, I will replace the AutoMapper example with an alternative.
 
 # Page 776 - Microsoft Learn documentation MCP server
 
