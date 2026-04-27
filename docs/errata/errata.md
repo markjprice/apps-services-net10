@@ -220,7 +220,7 @@ The book uses [AutoMapper `14.0.0`](https://github.com/markjprice/apps-services-
 
 I have temporarily [disabled the warning for this in the project file](https://github.com/markjprice/apps-services-net10/blob/main/code/PopularPackages/MappingObjects.Mappers/MappingObjects.Mappers.csproj#L8) so that the project compiles but that isn't a good solution. I recommend avoiding AutoMapper completely and skipping the AutoMapper section of my book.
 
-In the next edition, I will replace the AutoMapper example with an alternative.
+In the next edition, I will replace the AutoMapper example with an alternative, or more likely, turn the mapping section into a discussion of why almost all mapping libraries should be avoided but you need to know about them because so many legacy projects use them. And expand on the content about using manual mappings with extension methods and similar.
 
 # Page 776 - Microsoft Learn documentation MCP server
 
