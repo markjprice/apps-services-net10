@@ -17,6 +17,11 @@ WriteLine($"DateTime.Today:     {DateTime.Today:d}");
 WriteLine($"DateTime.Today:     {DateTime.Today:D}");
 
 DateTime xmas = new(year: 2024, month: 12, day: 25);
+
+// Alternatively, to dynamically set the next future Christmas.
+// DateTime xmas = new(year: DateTime.Today.Year, month: 12, day: 25);
+// if (DateTime.Today >= xmas) xmas = xmas.AddYears(1);
+
 WriteLine($"Christmas (default format): {xmas}");
 WriteLine($"Christmas (custom short format): {xmas:ddd, d/M/yy}");
 WriteLine($"Christmas (custom long format): {
