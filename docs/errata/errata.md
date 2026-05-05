@@ -1,4 +1,4 @@
-**Errata** (17 items)
+**Errata** (18 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -17,6 +17,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 185 - Getting entities into a Blazor component](#page-185---getting-entities-into-a-blazor-component)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 216 - Defining mappers for an AutoMapper configuration](#page-216---defining-mappers-for-an-automapper-configuration)
+- [Page 250 - Date and time calculations](#page-250---date-and-time-calculations)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
@@ -221,6 +222,41 @@ The book uses [AutoMapper `14.0.0`](https://github.com/markjprice/apps-services-
 Unfortunately all versions except `15.1.3` and `16.1.1` now have a security vulnerability. I have temporarily [disabled the warning for this in the project file](https://github.com/markjprice/apps-services-net10/blob/main/code/PopularPackages/MappingObjects.Mappers/MappingObjects.Mappers.csproj#L8) so that the project compiles but that isn't a good solution. I recommend avoiding AutoMapper completely and skipping the AutoMapper section of my book.
 
 In the next edition, I will replace the AutoMapper example with an alternative, or more likely, turn the mapping section into a discussion of why almost all mapping libraries should be avoided but you need to know about them because so many legacy projects use them. And expand on the content about using manual mappings with extension methods and similar.
+
+# Page 250 - Date and time calculations
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 5, 2026](https://github.com/markjprice/apps-services-net10/issues/22).
+
+In Step 1, in the code, the following statement is missing an end brace `}` after `xmas.Year`:
+```cs
+WriteLine($"There are {untilXmas.Days} days and {untilXmas.Hours
+  } hours until Christmas {xmas.Year.");
+```
+It should be:
+```cs
+WriteLine($"There are {untilXmas.Days} days and {untilXmas.Hours
+  } hours until Christmas {xmas.Year}.");
+```
+
+The next `WriteLine` statement is missing the `$` prefix that makes the first string interpolated:
+```cs
+WriteLine("There are {untilXmas.TotalHours:N0} hours " +
+  $"until Christmas {xmas.Year}.");
+```
+It should be:
+```cs
+WriteLine($"There are {untilXmas.TotalHours:N0} hours " +
+  $"until Christmas {xmas.Year}.");
+```
+
+Or we could combine the two strings by moving the line break inside the braces:
+```cs
+WriteLine($"There are {untilXmas.TotalHours:N0
+  } hours "until Christmas {xmas.Year}.");
+```
+
+Both these coding mistakes were only in the print book. They were correct in the GitHub repository:
+https://github.com/markjprice/apps-services-net10/blob/main/code/Internationalization/WorkingWithTime/Program.cs#L41
 
 # Page 776 - Microsoft Learn documentation MCP server
 

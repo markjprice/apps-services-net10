@@ -1,10 +1,11 @@
-**Improvements** (3 items)
+**Improvements** (4 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 38 - Treating warnings as errors](#page-38---treating-warnings-as-errors)
 - [Page 40 - Installing Docker and an SQL Server container image](#page-40---installing-docker-and-an-sql-server-container-image)
 - [Page 79 - Building Mobile Apps Using .NET MAUI](#page-79---building-mobile-apps-using-net-maui)
+- [Page 249 - Formatting date and time values](#page-249---formatting-date-and-time-values)
 
 
 # Page 38 - Treating warnings as errors
@@ -36,3 +37,20 @@ The largest right-to-left (RTL) languages are Arabic, Urdu, Persian (Farsi), and
 In practical UI terms, software localization experts often treat RTL support as covering about one out of every eight to ten potential users globally. That is why most major UI frameworks explicitly support RTL layout mirroring.
 
 In the next edition, I will add a note to explain this and point to a potential code solution to the .NET MAUI bug that causes these button to overlap the burger menu. Or hopefully the .NET MAUI team will just fix their bug in RTL layouts. 
+
+# Page 249 - Formatting date and time values
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 5, 2026](https://github.com/markjprice/apps-services-net10/issues/22) that prompted this improvement.
+
+In Step 1, I tell the reader to add statements to define Christmas Day in 2024:
+```cs
+DateTime xmas = new(year: 2024, month: 12, day: 25);
+```
+
+The reader later performs calculations like, how many days until Chrismas? Since `xmas` is from 2024, those calculations now return negative numbers.
+
+In the next edition, I will use a calculation for the initial value of Christmas so that it is always a future Christmas. To do that, we can start with "this year's Christmas", and then add a year if we have already reached Christmas for this year:
+```cs
+DateTime xmas = new(year: DateTime.Today.Year, month: 12, day: 25);
+if (DateTime.Today >= xmas) xmas = xmas.AddYears(1);
+```
