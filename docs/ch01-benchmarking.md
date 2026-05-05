@@ -49,17 +49,15 @@ The `System.Diagnostics` namespace has lots of useful types for monitoring your 
 
 1.	Use your preferred coding tool to create a class library project, as defined in the following list:
     - Project template: **Class Library** / `classlib`
-    - Solution file and folder: `Chapter1`
+    - Solution file and folder: `ModernApps`
     - Project file and folder: `MonitoringLib`
 2.	Add a console app project, as defined in the following list:
     - Project template: **Console App** / `console`
-    - Solution file and folder: `Chapter1`
+    - Solution file and folder: `ModernApps`
     - Project file and folder: `MonitoringApp`
-3.	Use your preferred coding tool to set which project is active:
-    - If you are using Visual Studio 2022, set the startup project for the solution to the current selection.
-4.	In the `MonitoringLib` project, rename the `Class1.cs` file to `Recorder.cs`.
-5.	In the `MonitoringLib` project, globally and statically import the `System.Console` class.
-6.	In the `MonitoringApp` project, globally and statically import the `System.Console` class and add a project reference to the `MonitoringLib` class library, as shown in the following markup:
+3.	In the `MonitoringLib` project, rename the `Class1.cs` file to `Recorder.cs`.
+4.	In the `MonitoringLib` project, globally and statically import the `System.Console` class.
+5.	In the `MonitoringApp` project, globally and statically import the `System.Console` class and add a project reference to the `MonitoringLib` class library, as shown in the following markup:
 ```xml
 <ItemGroup>
   <Using Include="System.Console" Static="true" />
@@ -69,7 +67,7 @@ The `System.Diagnostics` namespace has lots of useful types for monitoring your 
   <ProjectReference Include="..\MonitoringLib\MonitoringLib.csproj" />
 </ItemGroup>
 ```
-7.	Build the `MonitoringApp` project.
+6.	Build the `MonitoringApp` project.
 
 ## Useful members of the Stopwatch and Process types
 
@@ -274,11 +272,11 @@ There is a popular benchmarking NuGet package for .NET that Microsoft uses in it
 
 Let's see how we could use it to compare performance between `string` concatenation and `StringBuilder`:
 
-1.	Use your preferred code editor to add a new console app to the `Chapter1` solution named `Benchmarking`.
+1.	Use your preferred code editor to add a new console app to the `ModernApps` solution named `Benchmarking`.
 2.	In the `Benchmarking` project, add a package reference to Benchmark.NET, remembering that you can find out the latest version and use that instead of the version I used, as shown in the following markup:
 ```xml
 <ItemGroup>
-  <PackageReference Include="BenchmarkDotNet" Version="0.13.10" />
+  <PackageReference Include="BenchmarkDotNet" />
 </ItemGroup>
 ```
 3.	Build the project to restore packages.
@@ -336,8 +334,8 @@ BenchmarkRunner.Run<StringBenchmarks>();
 ## Running a console app with Benchmark.NET
 
 1.	Use your preferred coding tool to run the console app with its release configuration:
-    - In Visual Studio 2022, in the toolbar, set **Solution Configurations** to **Release**, and then navigate to **Debug** | **Start Without Debugging**.
-    - In Visual Studio Code, in a terminal, enter the `dotnet run --configuration Release` command.
+    - In Visual Studio, in the toolbar, set **Solution Configurations** to **Release**, and then navigate to **Debug** | **Start Without Debugging**.
+    - In VS Code, in a terminal, enter the `dotnet run --configuration Release` command.
 
 > **Important!** You must build the benchmarks in a **Release** build. This is important for performance testing, as most optimizations are disabled in **Debug** builds, in both the C# compiler and the JIT compiler.
 
