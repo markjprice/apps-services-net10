@@ -15,6 +15,10 @@
     <vm:MainWindowViewModel/>
   </Design.DataContext>
 
+    <Window.Resources>
+        <vm:CategoryIdToBitmapConverter x:Key="CategoryIdToBitmapConverter" />
+    </Window.Resources>
+    
   <!--<Button Content="{Binding Greeting}"
           HorizontalAlignment="Center"
           VerticalAlignment="Center"
@@ -43,7 +47,8 @@
 		</Menu>
 
 		<StackPanel DockPanel.Dock="Left">
-			<Image Source="/Assets/categories-small.jpeg" Height="135" Width="200" />
+			<Image Source="{Binding CategoryId, Converter={StaticResource CategoryIdToBitmapConverter}}"
+                   Height="135" Width="200" />
 
 			<ListBox DockPanel.Dock="Left" Width="200" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Background="Gainsboro">
       <ListBox.ItemTemplate>
