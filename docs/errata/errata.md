@@ -1,4 +1,4 @@
-**Errata** (18 items)
+**Errata** (19 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -160,7 +160,54 @@ https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/Nort
 
 # Page 147 - Adding images to the project
 
+> Thanks to a reader who emailed my publisher about this issue.
 
+The image of the category in the top-left corner of the desktop app window is currently fixed showing a default image of all categories. To dynamically update the image, we can define a class to convert between the selected category ID and the image asset for that category.
+
+In the project folder, add a class file named `CategoryIdToBitmapConverter.cs` with the following code:
+```cs
+using Avalonia.Data.Converters; // To use IValueConverter.
+using Avalonia.Media.Imaging; // To use Bitmap.
+using Avalonia.Platform; // To use AssetLoader.
+using System; // To use Uri and Type.
+using System.Globalization; // To use CultureInfo.
+
+namespace Northwind.DesktopApp.ViewModels
+{
+  internal class CategoryIdToBitmapConverter : IValueConverter
+  {
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+      if (value == null)
+      {
+        return new Bitmap(AssetLoader.Open(new Uri($"avares://Northwind.DesktopApp/Assets/categories-small.jpeg")));
+      }
+
+      var categoryId = (int)value;
+
+      return new Bitmap(AssetLoader.Open(new Uri($"avares://Northwind.DesktopApp/Assets/category{categoryId}-small.jpeg")));
+    }
+
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+      throw new NotImplementedException();
+    }
+  }
+}
+```
+
+In the `Views` folder, in `MainWindow.axaml`, add markup to define an instance of the converter:
+```xaml
+<Window.Resources>
+  <vm:CategoryIdToBitmapConverter x:Key="CategoryIdToBitmapConverter" />
+</Window.Resources>
+```
+
+Also in `MainWindow.axaml`, change the `Source` of the image to use the converter:
+```xaml
+<Image Source="{Binding CategoryId, Converter={StaticResource CategoryIdToBitmapConverter}}"
+       Height="135" Width="200" />
+```
 
 # Page 161 - Reviewing the new Blazor project template
 
