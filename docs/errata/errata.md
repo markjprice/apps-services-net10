@@ -13,6 +13,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 117 - Exercise 2.3 – Implementing Model-View-ViewModel for .NET MAUI](#page-117---exercise-23--implementing-model-view-viewmodel-for-net-maui)
 - [Page 139 - Implementing a simple desktop app for data](#page-139---implementing-a-simple-desktop-app-for-data)
 - [Page 141 - Implementing a simple desktop app for data](#page-141---implementing-a-simple-desktop-app-for-data)
+- [Page 147 - Adding images to the project](#page-147---adding-images-to-the-project)
 - [Page 161 - Reviewing the new Blazor project template](#page-161---reviewing-the-new-blazor-project-template)
 - [Page 185 - Getting entities into a Blazor component](#page-185---getting-entities-into-a-blazor-component)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
@@ -156,6 +157,10 @@ In Step 6, inclusion of `ConverterCulture='en-US'` causes an error in the follow
 
 This element was already correct in the GitHub repository:
 https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/Northwind.DesktopApp/Views/MainWindow.axaml#L65
+
+# Page 147 - Adding images to the project
+
+
 
 # Page 161 - Reviewing the new Blazor project template
 
