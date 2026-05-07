@@ -1,4 +1,4 @@
-**Errata** (19 items)
+**Errata** (21 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -19,6 +19,8 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 216 - Defining mappers for an AutoMapper configuration](#page-216---defining-mappers-for-an-automapper-configuration)
 - [Page 250 - Date and time calculations](#page-250---date-and-time-calculations)
+- [Page 256 - Localizing the DayOfWeek enum](#page-256---localizing-the-dayofweek-enum)
+- [Page 259 - Unit testing with a time provider](#page-259---unit-testing-with-a-time-provider)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
@@ -309,6 +311,44 @@ WriteLine($"There are {untilXmas.TotalHours:N0
 
 Both these coding mistakes were only in the print book. They were correct in the GitHub repository:
 https://github.com/markjprice/apps-services-net10/blob/main/code/Internationalization/WorkingWithTime/Program.cs#L41
+
+# Page 256 - Localizing the DayOfWeek enum
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 7, 2026](https://github.com/markjprice/apps-services-net10/issues/23).
+
+In Step 1, in the code, I forgot the `$` prefix for two of the three `WriteLine` statements. The complete code for Step 1 should be:
+```cs
+SectionTitle("Localizing the DayOfWeek enum");
+
+CultureInfo previousCulture = Thread.CurrentThread.CurrentCulture;
+
+// Explicitly set culture to Danish (Denmark).
+Thread.CurrentThread.CurrentCulture =
+  CultureInfo.GetCultureInfo("da-DK");
+
+// DayOfWeek is not localized to Danish.
+WriteLine($"Culture: {Thread.CurrentThread.CurrentCulture
+  .NativeName}, DayOfWeek: {DateTime.Now.DayOfWeek}";
+
+// Use dddd format code to get day of the week localized.
+WriteLine($"Culture: {Thread.CurrentThread.CurrentCulture
+  .NativeName}, DayOfWeek: {DateTime.Now:dddd}");
+
+// Use GetDayName method to get day of the week localized.
+WriteLine($"Culture: {Thread.CurrentThread.CurrentCulture
+  .NativeName}, DayOfWeek: {DateTimeFormatInfo.CurrentInfo
+  .GetDayName(DateTime.Now.DayOfWeek)}");
+
+Thread.CurrentThread.CurrentCulture = previousCulture;
+```
+
+Both these coding mistakes were only in the print book (and online version). They were correct in the GitHub repository: https://github.com/markjprice/apps-services-net10/blob/main/code/Internationalization/WorkingWithTime/Program.cs#L120
+
+# Page 259 - Unit testing with a time provider
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 7, 2026](https://github.com/markjprice/apps-services-net10/issues/24).
+
+In Step 7, I wrote, "In the `TestingWithTimeProvider` project, rename `Test1.cs` to `TimeTests.cs`." But the default name of the example test file is `UnitTest1.cs` not `Test1.cs`."
 
 # Page 776 - Microsoft Learn documentation MCP server
 
