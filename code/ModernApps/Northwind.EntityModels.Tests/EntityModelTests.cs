@@ -2,7 +2,7 @@ using Northwind.EntityModels;
 
 namespace Northwind.Common.EntityModels.Tests
 {
-  public class NorthwindEntityModelsTests
+  public class EntityModelTests
   {
     [Fact]
     public void CanConnectIsTrue()
