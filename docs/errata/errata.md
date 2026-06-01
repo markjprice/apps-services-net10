@@ -1,4 +1,4 @@
-**Errata** (21 items)
+**Errata** (22 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -21,6 +21,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 250 - Date and time calculations](#page-250---date-and-time-calculations)
 - [Page 256 - Localizing the DayOfWeek enum](#page-256---localizing-the-dayofweek-enum)
 - [Page 259 - Unit testing with a time provider](#page-259---unit-testing-with-a-time-provider)
+- [Page 401 - Using .NET to build an MCP server](#page-401---using-net-to-build-an-mcp-server)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
@@ -349,6 +350,14 @@ Both these coding mistakes were only in the print book (and online version). The
 > Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 7, 2026](https://github.com/markjprice/apps-services-net10/issues/24).
 
 In Step 7, I wrote, "In the `TestingWithTimeProvider` project, rename `Test1.cs` to `TimeTests.cs`." But the default name of the example test file is `UnitTest1.cs` not `Test1.cs`."
+
+# Page 401 - Using .NET to build an MCP server
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on June 1, 2026](https://github.com/markjprice/apps-services-net10/issues/27).
+
+In Steps 6 and 7, I wrote `HelloMcpTool.cs` when I should have written `NorthwindTool.cs`.
+
+In Step 8, I wrote "add statements to x" but it should be "add statements to create a host application builder, add logging to the console, add an MCP server with tools automatically loaded from the current assembly, and then run the host asynchronously."
 
 # Page 776 - Microsoft Learn documentation MCP server
 
