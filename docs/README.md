@@ -13,7 +13,6 @@
 - Chapter 1 - Introducing Apps and Services with .NET
   - [What's New in Modern C# and .NET](ch01-whats-new.md)
   - [Benchmarking Performance and Testing](ch01-benchmarking.md)
-  - [Observing and Modifying Code Execution Dynamically](ch01-dynamic-code.md)
 
 - Chapter 3 - Building Progressive Web Apps Using Blazor
   - [Leveraging Open Source Blazor Component Libraries](ch03-blazor-libraries.md)
