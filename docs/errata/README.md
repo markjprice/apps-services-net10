@@ -2,7 +2,7 @@
 
 If you find any mistakes in the third edition, *Apps and Services with .NET 10*, or if you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
-[**Errata** (23 items)](errata.md): Typos, tool user interface and behavior changes, or mistakes in code that would cause a compilation error that prevents a successful build.
+[**Errata** (24 items)](errata.md): Typos, tool user interface and behavior changes, or mistakes in code that would cause a compilation error that prevents a successful build.
 
 [**Improvements** (4 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
 
@@ -17,6 +17,7 @@ Who|Errata|Improvements
 [zkazz](https://github.com/zkazz)|12|1
 [Kris](https://github.com/kprikratki)|3|1
 [DrAvriLev](https://github.com/DrAvriLev)|1|2
+[Moisés Sirvente](https://github.com/es-moises)|1|0
 [Sammy Lastre Silveira](https://github.com/Sammy-Lastre)|1|0
 [Giuseppe Guerra](https://github.com/giuseppe-guerra)|1|0
 Emailer|1|0

@@ -1,4 +1,4 @@
-**Errata** (23 items)
+**Errata** (24 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -7,6 +7,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 38 - Treating warnings as errors](#page-38---treating-warnings-as-errors)
 - [Page 72 - Customizing Copilot responses](#page-72---customizing-copilot-responses)
 - [Page 74 - Using future versions of .NET with this book](#page-74---using-future-versions-of-net-with-this-book)
+- [Page 80 - Simplifying code using XAML](#page-80---simplifying-code-using-xaml)
 - [Page 92 - Enabling Windows developer mode](#page-92---enabling-windows-developer-mode)
 - [Page 96 - Adding shell navigation and more content pages](#page-96---adding-shell-navigation-and-more-content-pages)
 - [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
@@ -77,6 +78,12 @@ But EF Core 11 is now explicitly saying that it requires the .NET 11 SDK to buil
 Why? The EF team’s own platform guidance acknowledges that sometimes they must depend on the latest .NET due to runtime features. In practice, “won’t run on earlier .NET” usually means they’re compiling against and taking dependencies on assemblies/APIs that simply are not present (or not the same versions) on earlier runtimes, and the team has decided not to carry the extra compatibility shims or multi-targeting.
 
 Net result: EF Core 11 only running on .NET 11 is the documented requirement. If you want to stay on .NET 10 LTS, EF Core 10 is the ceiling. If you move to .NET 11 (STS), EF Core 11 becomes available.
+
+# Page 80 - Simplifying code using XAML
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on June 4, 2026](https://github.com/markjprice/apps-services-net10/issues/31).
+
+In the XAML code example, the end tag should be `</HorizontalStackPanel>` not `</StackPanel>`.
 
 # Page 92 - Enabling Windows developer mode
 
