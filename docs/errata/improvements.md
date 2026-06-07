@@ -1,12 +1,18 @@
-**Improvements** (4 items)
+**Improvements** (5 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
+- [Page 17 - Downloading and installing Visual Studio](#page-17---downloading-and-installing-visual-studio)
 - [Page 38 - Treating warnings as errors](#page-38---treating-warnings-as-errors)
 - [Page 40 - Installing Docker and an SQL Server container image](#page-40---installing-docker-and-an-sql-server-container-image)
 - [Page 79 - Building Mobile Apps Using .NET MAUI](#page-79---building-mobile-apps-using-net-maui)
 - [Page 249 - Formatting date and time values](#page-249---formatting-date-and-time-values)
 
+# Page 17 - Downloading and installing Visual Studio
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on June 7, 2026](https://github.com/markjprice/apps-services-net10/issues/32).
+
+In the next edition, after step 8, I will add a notebox to tell readers that if they already have Visual Studio installed and they want to match the settings I use in the book, they can navigate to **Tools** | **Import and Export Settings...**, and then select **Reset all settings**, and then choose **Visual C#**. Otherwise they should expect different shortcuts.
 
 # Page 38 - Treating warnings as errors
 
