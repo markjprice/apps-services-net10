@@ -14,6 +14,8 @@ If you have suggestions for improvements, then please [raise an issue in this re
 
 In the next edition, after step 8, I will add a notebox to tell readers that if they already have Visual Studio installed and they want to match the settings I use in the book, they can navigate to **Tools** | **Import and Export Settings...**, and then select **Reset all settings**, and then choose **Visual C#**. Otherwise they should expect different shortcuts.
 
+I might also search for "or press" in the book and remove all instances of giving shortcuts like on page 99.
+
 # Page 38 - Treating warnings as errors
 
 > Thanks to [Kris](https://github.com/kprikratki) for raising [this issue on March 11, 2026](https://github.com/markjprice/apps-services-net10/issues/9) that suggested this improvement.
