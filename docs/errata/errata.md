@@ -1,4 +1,4 @@
-**Errata** (26 items)
+**Errata** (25 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
