@@ -1,4 +1,4 @@
-**Errata** (24 items)
+**Errata** (26 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -22,6 +22,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 250 - Date and time calculations](#page-250---date-and-time-calculations)
 - [Page 256 - Localizing the DayOfWeek enum](#page-256---localizing-the-dayofweek-enum)
 - [Page 259 - Unit testing with a time provider](#page-259---unit-testing-with-a-time-provider)
+- [Page 288 - Testing globalization and localization](#page-288---testing-globalization-and-localization)
 - [Page 317 - Executing queries and working with data readers using ADO.NET](#page-317---executing-queries-and-working-with-data-readers-using-adonet)
 - [Page 401 - Using .NET to build an MCP server](#page-401---using-net-to-build-an-mcp-server)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
@@ -358,6 +359,29 @@ Both these coding mistakes were only in the print book (and online version). The
 > Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 7, 2026](https://github.com/markjprice/apps-services-net10/issues/24).
 
 In Step 7, I wrote, "In the `TestingWithTimeProvider` project, rename `Test1.cs` to `TimeTests.cs`." But the default name of the example test file is `UnitTest1.cs` not `Test1.cs`."
+
+# Page 288 - Testing globalization and localization
+
+> Thanks to [nthnhwrdprmn](https://github.com/nthnhwrdprmn) for raising [this issue on June 10, 2026](https://github.com/markjprice/apps-services-net10/issues/36).
+
+I wrote, "Microsoft has an online tool (found at the following link: https://www.microsoft.com/en-us/Language/) that can help you translate text in your user interfaces."
+
+The Microsoft Language Portal has effectively been replaced by Microsoft’s Globalization documentation and Power BI-based terminology search.
+
+Use these links instead:
+
+Microsoft Terminology reference page:
+https://learn.microsoft.com/en-us/globalization/reference/microsoft-terminology
+
+Microsoft Language Resources page:
+https://learn.microsoft.com/en-us/globalization/reference/microsoft-language-resources
+
+Microsoft Terminology Search:
+https://msit.powerbi.com/view?r=eyJrIjoiODJmYjU4Y2YtM2M0ZC00YzYxLWE1YTktNzFjYmYxNTAxNjQ0IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9
+
+Microsoft says terminology can now be downloaded in `.tbx` format from the Microsoft Download Center, and the language resources page points users to the terminology search page for querying Microsoft terminology. https://learn.microsoft.com/en-us/globalization/reference/microsoft-terminology
+
+For ordinary machine translation rather than Microsoft product terminology, the current Microsoft Translator page is: https://www.microsoft.com/en-us/translator/
 
 # Page 317 - Executing queries and working with data readers using ADO.NET
 
