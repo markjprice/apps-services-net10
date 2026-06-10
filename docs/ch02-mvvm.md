@@ -125,7 +125,7 @@ Related to `INotifyPropertyChanged` is the `INotifyCollectionChanged` interface 
 
 We need to create a view model that will allow us to show and modify a customer entity, so the class should implement two-way data binding:
 
-1. In the `Chapter16` solution, in the `Northwind.Maui.Client` project folder, create two classes, one named `CustomerDetailViewModel.cs` to show the details of a single customer and one named `CustomersListViewModel.cs` to show a list of customers.
+1. In the `ModernApps` solution, in the `Northwind.Maui.Client` project folder, create two classes, one named `CustomerDetailViewModel.cs` to show the details of a single customer and one named `CustomersListViewModel.cs` to show a list of customers.
 2. In `CustomerDetailViewModel.cs`, modify the statements to define a class that implements the `INotifyPropertyChanged` interface and has six read-write properties that will support two-way data binding and one read-only property, as shown in the following code:
 ```cs
 using System.ComponentModel; // To use INotifyPropertyChanged.
@@ -300,7 +300,7 @@ Refreshing="Customers_Refreshing">
 Detail="{Binding Location}"
 TextColor="{DynamicResource PrimaryTextColor}"
 DetailColor="{DynamicResource PrimaryTextColor}" >
-<TextCell.ContextActions>Chapter 17 9
+<TextCell.ContextActions>
 <MenuItem Clicked="Customer_Phoned" Text="Phone" />
 <MenuItem Clicked="Customer_Deleted" Text="Delete"
 IsDestructive="True" />
@@ -371,7 +371,7 @@ public partial class CustomersPage : ContentPage
     if (menuItem.BindingContext is not CustomerDetailViewModel c)
 return;
     if (await DisplayAlert("Dial a Number",
-      "Would you like to call " + c.Phone + "?",Chapter 17 11
+      "Would you like to call " + c.Phone + "?",
       "Yes", "No"))
     {
       try
@@ -443,7 +443,7 @@ Note the following:
              VerticalOptions="Center" Margin="6" />
       <Entry Text="{Binding Country, Mode=TwoWay}"
              Grid.Column="1" Grid.Row="4" />
-      <Label Text="Phone" Grid.Row="5"Chapter 17 13
+      <Label Text="Phone" Grid.Row="5"
              VerticalOptions="Center" Margin="6" />
       <Entry Text="{Binding Phone, Mode=TwoWay}"
              Grid.Column="1" Grid.Row="5" />
@@ -518,7 +518,7 @@ Note the following:
 
 We will now test the app using the Android device emulator so that we can see the phone caller functionality:
 
-1. In Visual Studio 2022, to the right of the **Run** button in the toolbar, set the target framework to **net8.0-android** and select the Android emulator.
+1. In Visual Studio, to the right of the **Run** button in the toolbar, set the target framework to **Pixel 9 - API 36 (Android 16.0 - API 36)** and select the Android emulator.
 2. Start the project with debugging. The project will build and then, after five minutes or so, the latest version of your app will deploy, and the Android device emulator will appear with your running .NET MAUI app. Be patient because the old version may still be running in the saved state of the emulator.
 3. Navigate to **Customers**, as shown in *Figure 16A.1*:
 
@@ -759,7 +759,7 @@ internal partial class ProductsViewModel :
   }
 }
 ```
-8. In Solution Explorer, expand **Dependencies**, expand **net8.0-android**, expand **Analyzers**, expand
+8. In Solution Explorer, expand **Dependencies**, expand **net10.0-android**, expand **Analyzers**, expand
 **CommunityToolkit.Mvvm.SourceGenerators**, expand **CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator**, open `Northwind.Maui.Client.ProductViewModel.g.cs`, and note the public property named `ProductId` that was generated based on your private field `productId`, as shown in the following code and in *Figure 16A.5*:
 
 ```cs
@@ -907,7 +907,7 @@ We will create a web service for working with customers in the Northwind databas
 
 1. In your preferred code editor, add a web service project, as defined in the following list:
 - Project template: **ASP.NET Core Web API** / `webapi --use-minimal-apis`
-- Solution file and folder: `Chapter16`
+- Solution file and folder: `ModernApps`
 - Project file and folder: `Northwind.Maui.WebApi.Service`
 - **Authentication type**: **None**.
 - **Configure for HTTPS**: Selected.
@@ -916,21 +916,20 @@ We will create a web service for working with customers in the Northwind databas
 - **Do not use top-level statements**: Cleared.
 - **Use controllers**: Cleared.
 
-2. In the project file, set the invariant global to false, treat errors as warnings, and add a project reference to the Northwind database context project for SQL Server that you created in *Chapter
-3, Building Entity Models for SQL Server Using EF Core*, as shown in the following markup:
+1. In the project file, set the invariant global to false, treat errors as warnings, and add a project reference to the Northwind database context project for SQL Server that you created in *Chapter 1*, as shown in the following markup:
 ```xml
 <ItemGroup>
-  <ProjectReference Include="..\..\Chapter03\Northwind.Common.DataContext.SqlServer\Northwind.Common.DataContext.SqlServer.csproj" />
+  <ProjectReference Include="..\..\ModernApps\Northwind.DataContext\Northwind.DataContext.csproj" />
 </ItemGroup>
 ```
 
-4. At the command prompt or terminal, build the `Northwind.Maui.WebApi.Service` project to make sure the entity model class library projects outside the current solution are properly compiled, as shown in the following command: `dotnet build`.
-1. In the `Properties` folder, in `launchSettings.json`, for the `https` profile, modify `applicationUrl` to use port `5161` for `https` and port `5162` for `http`, as shown highlighted in the following configuration:
+1. At the command prompt or terminal, build the `Northwind.Maui.WebApi.Service` project to make sure the entity model class library projects outside the current solution are properly compiled, as shown in the following command: `dotnet build`.
+2. In the `Properties` folder, in `launchSettings.json`, for the `https` profile, modify `applicationUrl` to use port `5161` for `https` and port `5162` for `http`, as shown highlighted in the following configuration:
 ```json
 "applicationUrl": "https://localhost:5161;http://localhost:5162",
 ```
 
-6. For the `http` profile, modify `applicationUrl` to use port `5162` for `http`, as shown highlighted in the following configuration:
+1. For the `http` profile, modify `applicationUrl` to use port `5162` for `http`, as shown highlighted in the following configuration:
 ```json
 "applicationUrl": "http://localhost:5162",
 ```
@@ -975,7 +974,7 @@ app.MapGet("api/customers/{id}", (
   .Produces<Customer>(StatusCodes.Status200OK);
 
 app.MapPost("api/customers", async (
-    [FromBody] Customer customer,Chapter 17 29
+    [FromBody] Customer customer,
     [FromServices] NorthwindContext db) =>
   {
     db.Customers.Add(customer);

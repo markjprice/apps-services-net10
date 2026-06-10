@@ -49,9 +49,9 @@ I will add a comment to the top of each Word document for a chapter that specifi
 
 # Operating systems and code editors
 
-Inevitably there will be differences in .NET on different operating systems. Historically about 70% of readers use Visual Studio 2022 on Windows so that is the code editor and OS that I use while writing preliminary drafts (PDs) from May to July. 
+Inevitably there will be differences in .NET on different operating systems. Historically about 70% of readers use Visual Studio on Windows so that is the code editor and OS that I use while writing preliminary drafts (PDs) from May to July. 
 
-I often do not test on macOS with Visual Studio Code until final drafts (FDs) with Release Candidates 1 and 2 in September (RC1) and October (RC2). 
+I often do not test on macOS with VS Code until final drafts (FDs) with Release Candidates 1 and 2 in September (RC1) and October (RC2). 
 
 I may not test on Linux at all, so if you're willing to, that'd be awesome! 
 

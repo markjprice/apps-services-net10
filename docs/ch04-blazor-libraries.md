@@ -26,7 +26,7 @@ Once you have learned how one component library does this, the others are very s
 
 # Understanding open-source Blazor component libraries
 
-In *Chapter 15, Building Web Components Using Blazor*, you learned the key concepts around Blazor components and the practicalities of how to build them. Most of the time, you do not need to build your own components for common scenarios because there are plenty of Blazor component libraries, as shown in the following alphabetical list:
+In *Chapter 4, Building Web Apps Using Blazor*, you learned the key concepts around Blazor components and the practicalities of how to build them. Most of the time, you do not need to build your own components for common scenarios because there are plenty of Blazor component libraries, as shown in the following alphabetical list:
 - Ant Design Blazor: https://antblazor.com/
 - Blazored libraries and components: https://github.com/Blazored
 - Blazorise: https://blazorise.com/
@@ -47,7 +47,7 @@ First, we will create a Blazor Web App project that we will then explore some of
 
 1. Use your preferred code editor to create a new Blazor WebAssembly project, as defined in the following list:
     - Project template: **Blazor WebAssembly App Empty** / `blazorwasm-empty`
-    - Solution file and folder: `Chapter15`
+    - Solution file and folder: `ModernApps`
     - Project file and folder: `Northwind.BlazorLibraries`
     - Configure for HTTPS: Selected.
     - ASP.NET Core hosted: Selected or use the `--hosted` switch.
@@ -183,8 +183,8 @@ Let's use the context menu component to show a menu of shipping company items:
 ```
 
 2. Start the `Northwind.BlazorLibraries.Server` project without debugging.
-    - If you are using Visual Studio 2022, then in the Visual Studio 2022 toolbar, select the `https` profile as the **Startup Project**, and **Google Chrome** as the **Web Browser**.
-    - If you are using Visual Studio Code, then at the command line or terminal, enter the following command: `dotnet run --launch-profile https`
+    - If you are using Visual Studio, then in the toolbar, select the `https` profile as the **Startup Project**, and **Google Chrome** as the **Web Browser**.
+    - If you are using VS Code, then at the command line or terminal, enter the following command: `dotnet run --launch-profile https`
 3. In Chrome, show **Developer Tools** and view the **Console**.
 4. On the home page, right-click the heading and note the menu items are the shipping companies, as shown in *Figure 15A.1*:
 
@@ -288,7 +288,7 @@ Now that you have seen the minimum implementation of an entity component, we can
 1.	In `Northwind.BlazorLibraries.Server.csproj`, add a reference to the Northwind database context project for SQL Server, as shown in the following markup:
 ```xml
 <ItemGroup>
-  <ProjectReference Include="..\..\..\Chapter03\Northwind.Common.DataContext.SqlServer\Northwind.Common.DataContext.SqlServer.csproj" />
+  <ProjectReference Include="..\..\..\ModernApps\Northwind.DataContext\Northwind.DataContext.csproj" />
 </ItemGroup>
 ```
 
@@ -391,7 +391,7 @@ public static class NorthwindExtensionMethods
 2.	In `Northwind.BlazorLibrary.Client.csproj` project file, add a reference to the Northwind entities project for SQL Server, as shown in the following markup:
 ```xml
 <ItemGroup>
-  <ProjectReference Include="..\..\..\Chapter03\Northwind.Common.EntityModels.SqlServer\Northwind.Common.EntityModels.SqlServer.csproj" />
+  <ProjectReference Include="..\..\..\ModernApps\Northwind.EntityModels\Northwind.EntityModels.csproj" />
 </ItemGroup>
 ```
 

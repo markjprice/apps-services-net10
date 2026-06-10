@@ -213,8 +213,8 @@
 - [Download SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
 - [Quickstart: Connect and query a SQL Server instance using SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/quickstarts/ssms-connect-query-sql-server)
 - [Quickstart: Connect and query an Azure SQL Database or an Azure Managed Instance using SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/quickstarts/ssms-connect-query-azure-sql)
-- [Use Visual Studio Code to create and run Transact-SQL scripts](https://learn.microsoft.com/en-us/sql/tools/visual-studio-code/sql-server-develop-use-vscode)
-- [.NET Interactive with SQL!| .NET Notebooks in Visual Studio Code](https://devblogs.microsoft.com/dotnet/net-interactive-with-sql-net-notebooks-in-visual-studio-code/)
+- [Use VS Code to create and run Transact-SQL scripts](https://learn.microsoft.com/en-us/sql/tools/visual-studio-code/sql-server-develop-use-vscode)
+- [.NET Interactive with SQL!| .NET Notebooks in VS Code](https://devblogs.microsoft.com/dotnet/net-interactive-with-sql-net-notebooks-in-visual-studio-code/)
 
 ## Dapper and comparing to EF Core performance
 - [Dapper](https://github.com/DapperLib/Dapper)

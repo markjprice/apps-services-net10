@@ -425,7 +425,7 @@ Use the web to answer the following questions:
 ## Exercise 1B.2 – Explore topics
 
 Use the links on the following page to learn more about the topics covered in this chapter:
-https://github.com/markjprice/apps-services-net8/blob/main/docs/book-links.md#chapter-1b---benchmarking-performance-and-testing
+https://github.com/markjprice/apps-services-net10/blob/main/docs/book-links.md#chapter-1b---benchmarking-performance-and-testing
 
 # Summary
 

@@ -91,10 +91,10 @@ There were many language and library features introduced with C# 8 and .NET Core
 - You can use both $@"..." and @$"..." as valid interpolated verbatim strings.
 - There are more ways to perform pattern matching.
 - You can make local functions static.
-- You can create and consume async streams, meaning iterators that implement IAsyncEnumerable<T>, not streams that derive from the abstract Stream class. You will see an example in Chapter 4, Benchmarking Performance, Multitasking, and Concurrency.
-- You can use await using to work with an asynchronously disposable object that implements the System.IAsyncDisposable interface.
+- You can create and consume async streams, meaning iterators that implement `IAsyncEnumerable<T>`, not streams that derive from the abstract `Stream` class. 
+- You can use await using to work with an asynchronously disposable object that implements the `System.IAsyncDisposable` interface.
 There were some important language and library features introduced with C# 9 and .NET 5:
-- More pattern matching enhancements like type patterns, parenthesized patterns, use of and, or, and not in patterns, relational patterns with <, >, and so on.
+- More pattern matching enhancements like type patterns, parenthesized patterns, use of and, or, and not in patterns, relational patterns with `<`, `>`, and so on.
 - Support for source code generators. They can only add code, not modify existing code.
 
 There were many language and library features introduced with C# 10 and .NET 6:
@@ -247,7 +247,7 @@ To control the implicit generation of this file and to control which namespaces 
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -574,7 +574,7 @@ Use the web to answer the following questions:
 ## Exercise 1A.2 – Explore topics
 
 Use the links on the following page to learn more about the topics covered in this chapter:
-https://github.com/markjprice/apps-services-net8/blob/main/docs/book-links.md#chapter-1a---whats-new-in-modern-c-and-net
+https://github.com/markjprice/apps-services-net10/blob/main/docs/book-links.md#chapter-1a---whats-new-in-modern-c-and-net
 
 # Summary
 

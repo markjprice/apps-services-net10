@@ -3,7 +3,7 @@
 To make it easier to enter commands at the prompt, this page lists all commands as a single line that can be copied and pasted. 
 
 - [Chapter 1 - Introducing Apps and Services with .NET](#chapter-1---introducing-apps-and-services-with-net)
-  - [Page 19 - Managing Visual Studio Code extensions at the command prompt](#page-19---managing-visual-studio-code-extensions-at-the-command-prompt)
+  - [Page 19 - Managing VS Code extensions at the command prompt](#page-19---managing-vs-code-extensions-at-the-command-prompt)
   - [Page 20 - Using other project templates](#page-20---using-other-project-templates)
   - [Page 25 - Defining project properties to reuse version numbers](#page-25---defining-project-properties-to-reuse-version-numbers)
   - [Page 40 - Installing Docker and an SQL Server container image](#page-40---installing-docker-and-an-sql-server-container-image)
@@ -41,7 +41,7 @@ To make it easier to enter commands at the prompt, this page lists all commands 
 
 # Chapter 1 - Introducing Apps and Services with .NET
 
-## Page 19 - Managing Visual Studio Code extensions at the command prompt
+## Page 19 - Managing VS Code extensions at the command prompt
 
 ```shell
 code --list-extensions

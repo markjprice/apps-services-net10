@@ -39,7 +39,7 @@ By the end of this online-only section, you will be able to make sensible decisi
 
 # Building .NET MAUI Blazor Hybrid apps
 
-In *Chapter 16, Building Mobile and Desktop Apps Using .NET MAUI*, you learned how to build .NET MAUI apps with native controls. By native, I mean the controls provided by the operating system. So, when Apple updates the look and feel of iOS, your apps will update too because .NET MAUI uses those native controls. Supported operating systems and their native control libraries are shown in the following list:
+In *Chapter 2, Building Mobile Apps Using .NET MAUI*, you learned how to build .NET MAUI apps with native controls. By native, I mean the controls provided by the operating system. So, when Apple updates the look and feel of iOS, your apps will update too because .NET MAUI uses those native controls. Supported operating systems and their native control libraries are shown in the following list:
 
 - Windows: Windows App SDK, and WinUI 3
 - macOS: Catalyst, UIKit, and AppKit
@@ -55,14 +55,14 @@ and Blazor components in the same project.
 
 Let’s go!
 
-1. In Visual Studio 2022 for Windows, add a new project, as defined in the following list:
+1. In Visual Studio, add a new project, as defined in the following list:
 - Project template: **.NET MAUI Blazor App** / `maui-blazor`
-- Workspace/solution file and folder: `Chapter16`
+- Workspace/solution file and folder: `ModernApps`
 - Project file and folder: `Northwind.Maui.Blazor.Client`
 
-2. In the `Resources` folder, in the `Images` folder, add images for some icons that we will use for tab items in the navigation we are about to add.
+1. In the `Resources` folder, in the `Images` folder, add images for some icons that we will use for tab items in the navigation we are about to add.
 
-> You can download the images from the GitHub repository at the following link: https://github.com/markjprice/apps-services-net8/tree/main/code/Chapter16/Northwind.Maui.Blazor.Client/Resources/Images
+> You can download the images from the GitHub repository at the following link: https://github.com/markjprice/apps-services-net10/tree/main/code/ModernApps/Northwind.Maui.Blazor.Client/Resources/Images
 
 3. In the `Northwind.Maui.Blazor.Client` project, in `MauiProgram.cs`, note the extra statements compared to the equivalent project template for just .NET MAUI. The statements enable embedding Blazor components by adding support for a web view and registering a local weather
 service, as shown in the following code:
@@ -194,9 +194,9 @@ MainPage = new AppShell();
 
 Now we can make sure that the .NET MAUI views and navigation work correctly:
 
-1. To the right of the **Run** button in the toolbar, set the **Framework** to **net8.0-android**, and select the **Pixel 5 - API 33 (Android 13.0 - API 33)** emulator image.
+1. To the right of the **Run** button in the toolbar, set the **Framework** to **net10.0-android**, and select the **Pixel 9 - API 37 (Android 13.0 - API 33)** emulator image.
 1. Click the **Run** button in the toolbar and wait for the device emulator to start the Android operating system and launch your mobile app.
-2. In the app, note the title bar labeled **Home** at the top and the tab bar at the bottom that has four labeled icons provided by the .NET MAUI native controls. The **Home** page titled **Northwind.Maui.Blazor.Client** with its hamburger menu has a web user interface provided by Blazor, and a tab bar at the bottom with four icons visible in the **XAML Live Preview** in Visual Studio 2022, as shown in *Figure 16B.2*:
+2. In the app, note the title bar labeled **Home** at the top and the tab bar at the bottom that has four labeled icons provided by the .NET MAUI native controls. The **Home** page titled **Northwind.Maui.Blazor.Client** with its hamburger menu has a web user interface provided by Blazor, and a tab bar at the bottom with four icons visible in the **XAML Live Preview** in Visual Studio, as shown in *Figure 16B.2*:
 
 ![The app with a main page UI built with Blazor running on Android](assets/B19587_16B_02.png)
 *Figure 16B.2: The app with a main page UI built with Blazor running on Android*
@@ -206,16 +206,16 @@ Now we can make sure that the .NET MAUI views and navigation work correctly:
 3. In the Blazor hamburger menu, click **Fetch data** and note the table of weather forecasts.
 4. Click the icons in the bottom tab bar to navigate to the other blank MAUI views.
 5. Close the Android device emulator.
-6. In Visual Studio 2022, to the right of the **Run** button in the toolbar, select **Windows Machine**.
+6. In Visual Studio, to the right of the **Run** button in the toolbar, select **Windows Machine**.
 7.  Make sure that the **Debug** configuration is selected and then click the green triangle start button labeled **Windows Machine**.
-1.  After a few moments, note that the Windows app appears, with the tab bar at the top of the window instead of at the bottom, showing text labels instead of icons.
-1.  Navigate to the **Counter** page.
-2.  On the **Counter** page, click the **Click me** button to increment the counter three times.
-3.  In the Blazor hamburger menu, click **Fetch data** and note the table of weather forecasts.
-4.  Click the text labels like **Categories** and **Employees** in the top tab bar to navigate to the other blank MAUI views.
-1.  Close the Windows app.
+8.  After a few moments, note that the Windows app appears, with the tab bar at the top of the window instead of at the bottom, showing text labels instead of icons.
+9.  Navigate to the **Counter** page.
+10. On the **Counter** page, click the **Click me** button to increment the counter three times.
+11. In the Blazor hamburger menu, click **Fetch data** and note the table of weather forecasts.
+12. Click the text labels like **Categories** and **Employees** in the top tab bar to navigate to the other blank MAUI views.
+13. Close the Windows app.
 
-You could now replace the **Counter** or **Fetch data** Razor components with any of your own Blazor components, which you learned how to build in *Chapter 15, Building Web Components Using Blazor WebAssembly*.
+You could now replace the **Counter** or **Fetch data** Razor components with any of your own Blazor components, which you learned how to build in *Chapter 4, Building Web Apps Using Blazor*.
 
 # Integrating with native platforms
 
@@ -254,7 +254,7 @@ Let’s enable integration with the clipboard:
         <Entry x:Name="NotesTextBox"
                HorizontalOptions="Fill" />
         <HorizontalStackLayout Spacing="10">
-          <Button Text="Copy to Clipboard"Chapter 18 9
+          <Button Text="Copy to Clipboard"
                   x:Name="CopyToClipboardButton"
                   Clicked="CopyToClipboardButton_Clicked"
                   HorizontalOptions="Center" />
@@ -355,7 +355,7 @@ To enable media and file picking on Android:
 </queries>
 ```
 
-By default, Visual Studio 2022 opens a graphical editor for the `Package.appxmanifest` file in which you can check the boxes for **Microphone** and **Webcam**. To modify the XML directly, you must choose to open the file with the **XML (Text) Editor**.
+By default, Visual Studio opens a graphical editor for the `Package.appxmanifest` file in which you can check the boxes for **Microphone** and **Webcam**. To modify the XML directly, you must choose to open the file with the **XML (Text) Editor**.
 
 ### Enabling media and file picking on iOS
 
@@ -515,7 +515,7 @@ public partial class EmployeesPage : ContentPage
 1. Start the project in the Android emulator.
 2. In the .NET MAUI app, navigate to the **Employees** page.
 3. In the emulator, start the Chrome browser.
-4. Navigate to https://raw.githubusercontent.com/markjprice/apps-services-net8/main/docs/sample.txt.
+4. Navigate to https://raw.githubusercontent.com/markjprice/apps-services-net10/main/docs/sample.txt.
 1. Download the `sample.txt` file. In Chrome for Android, you can click the dots menu and then click the down-pointing arrow in the mini toolbar.
 1. Switch back to the .NET MAUI app.
 2. Tap **Pick Text File**.
@@ -525,7 +525,7 @@ public partial class EmployeesPage : ContentPage
 *Figure 16B.4: Showing the file path and contents for a picked text file*
 
 1.  Switch to the Chrome browser.
-2.  Navigate to https://github.com/markjprice/apps-services-net8/blob/main/images/Categories-small/categories-small.jpeg.
+2.  Navigate to https://github.com/markjprice/apps-services-net10/blob/main/images/Categories-small/categories-small.jpeg.
 3.  Download the small image of categories, as shown in Figure 16B.5:
 
 ![Downloading an image of categories in the Android emulator](assets/B19587_16B_05.png)
@@ -565,7 +565,7 @@ shown highlighted in the following markup:
   <VerticalStackLayout Spacing="10">
     <Frame BorderColor="{StaticResource PrimaryTextColor}"
            Margin="5" Padding="5">
-      <VerticalStackLayout Spacing="10">Chapter 18 19
+      <VerticalStackLayout Spacing="10">
         <Label Text="Windowing"
                VerticalOptions="Center"
                HorizontalOptions="Center" />
@@ -970,7 +970,7 @@ You can learn more about the DevExpress library at the following link: https://w
 ## Exercise 16B.2 – Implement a carousel for categories
 
 For more practice fetching data from a web service and presenting it to the user in a .NET MAUI app, you can complete the optional tasks found at the following link:
-https://github.com/markjprice/apps-services-net8/blob/main/docs/ch16-maui-carousel.md.
+https://github.com/markjprice/apps-services-net10/blob/main/docs/ch16-maui-carousel.md.
 
 ## Exercise 16B.3 – Explore code samples
 

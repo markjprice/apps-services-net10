@@ -73,7 +73,7 @@ When you’re struggling with a bug, you need to stay motivated. The best way to
 
 A common suggestion for this type of project is to build your own Content Management System (CMS). This is a thriving market with everything from the “big boys” like Optimizely and Adobe to SaaS solutions like Squarespace, via open-source solutions like Piranha and Umbraco.
 
-> You can learn more about CMS solutions at the following link: https://github.com/markjprice/apps-services-net8/blob/main/docs/cms.md.
+> You can learn more about CMS solutions at the following link: https://github.com/markjprice/apps-services-net10/blob/main/docs/cms.md.
 
 ## Features of survey and polling tools
 
@@ -236,7 +236,7 @@ If you are more visually creative, then design and build a question item or a gr
 
 If you are more engineering-oriented, then perhaps optimizing the plumbing appeals to you more. You could define service requirements and then implement them using multiple technologies. Then you could create tests to compare the performance of each.
 
-You can share ideas, discuss potential solutions, and get help from fellow readers and even me on the Discord channel for this book, found at the following link: https://packt.link/apps_and_services_dotnet8.
+You can share ideas, discuss potential solutions, and get help from fellow readers and even me on the Discord channel for this book, found at the following link: https://packt.link/apps_and_services_dotnet10.
 
 Publish your work in a public GitHub repository to share your achievement with the world. I am excited to see what my readers produce!
 

@@ -13,7 +13,7 @@ We will create a web service for working with categories in the Northwind databa
 
 1.	Using your preferred code editor, add a web service project, as defined in the following list:
     - Project template: **ASP.NET Core Web API** / `webapi --use-minimal-apis`.
-    - Workspace/solution file and folder: `Chapter16`.
+    - Workspace/solution file and folder: `ModernApps`.
     - Project file and folder: `Northwind.Maui.WebApi.Service`.
     - Authentication type: None.
     - Configure for HTTPS: Selected.
@@ -25,7 +25,7 @@ We will create a web service for working with categories in the Northwind databa
 2.	Add a project reference to the Northwind database context project for SQL Server, as shown in the following markup:
 ```xml
 <ItemGroup>
-  <ProjectReference Include="..\..\Chapter03\Northwind.Common.DataContext.SqlServer\Northwind.Common.DataContext.SqlServer.csproj" />
+  <ProjectReference Include="..\..\ModernApps\Northwind.DataContext\Northwind.DataContext.csproj" />
 </ItemGroup>
 ```
 
@@ -456,7 +456,7 @@ info: Microsoft.Hosting.Lifetime[0]
 info: Microsoft.Hosting.Lifetime[0]
       Hosting environment: Development
 info: Microsoft.Hosting.Lifetime[0]
-      Content root path: C:\apps-services-net8\Chapter16\Northwind.Maui.WebApi.Service
+      Content root path: C:\apps-services-net10\ModernApps\Northwind.Maui.WebApi.Service
 ```
 
 4.	Run the `Northwind.Maui.Blazor.Client` project using the Android emulator, navigate to the `Categories page`, and note that eight categories are loaded from the web service and displayed in the carousel, with indicator lights at the bottom of the page view, as shown in *Figure 16C.1*:
