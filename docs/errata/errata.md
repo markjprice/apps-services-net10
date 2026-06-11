@@ -22,6 +22,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 250 - Date and time calculations](#page-250---date-and-time-calculations)
 - [Page 256 - Localizing the DayOfWeek enum](#page-256---localizing-the-dayofweek-enum)
 - [Page 259 - Unit testing with a time provider](#page-259---unit-testing-with-a-time-provider)
+- [Page 279 - Testing globalization and localization](#page-279---testing-globalization-and-localization)
 - [Page 288 - Testing globalization and localization](#page-288---testing-globalization-and-localization)
 - [Page 317 - Executing queries and working with data readers using ADO.NET](#page-317---executing-queries-and-working-with-data-readers-using-adonet)
 - [Page 401 - Using .NET to build an MCP server](#page-401---using-net-to-build-an-mcp-server)
@@ -359,6 +360,95 @@ Both these coding mistakes were only in the print book (and online version). The
 > Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 7, 2026](https://github.com/markjprice/apps-services-net10/issues/24).
 
 In Step 7, I wrote, "In the `TestingWithTimeProvider` project, rename `Test1.cs` to `TimeTests.cs`." But the default name of the example test file is `UnitTest1.cs` not `Test1.cs`."
+
+# Page 279 - Testing globalization and localization
+
+> Thanks to [nthnhwrdprmn](https://github.com/nthnhwrdprmn) for raising [this issue on June 10, 2026](https://github.com/markjprice/apps-services-net10/issues/36).
+
+On page 278, I wrote, "Resource files are XML files with the `.resx` extension." This means that you create and edit files with the file extension `.resx` although the file contents is XML. You do not need to create the files with the file extension `.xml` and rename it later to `.resx`. But if you are using Visual Studio then it tries to use a graphical resource editor when you open those files and this shows errors if the resource files do not have a special header section.
+
+On page 279, in Step 4, I wrote, "In the `Resources` folder, add a new XML file named `PacktResources.resx`, and modify the contents to contain default invariant language resources (usually equivalent to US English), as shown in the following markup:"
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="EnterYourDob" xml:space="preserve">
+    <value>Enter your date of birth: </value>
+  </data>
+  <data name="EnterYourName" xml:space="preserve">
+    <value>Enter your name: </value>
+  </data>
+  <data name="EnterYourSalary" xml:space="preserve">
+    <value>Enter your salary: </value>
+  </data>
+  <data name="PersonDetails" xml:space="preserve">
+    <value>{0} was born on a {1:dddd}. {0} is {2:N0} minutes old. {0} earns {3:C}.</value>
+  </data>
+</root>
+```
+
+But this instruction is less clear than it should be, especially for beginners. In the next edition, I will remove the word "XML" from the step text, and add a note underneath it:
+
+> Warning! If you are using Visual Studio, navigate to **Project** | **Add New Item...**, and select the project item type **Resources File**, or to edit the file, right-click it, select **Open With...**, and select **XML (Text) Editor**. In VS Code, just add an empty file. The file extension `.resx`. Although the file content is XML format, you must not select `.xml` as the file type. 
+
+If you are using Visual Studio, to enable the graphical resrouce editor, `.resx` files must have a special header to describe their schema. This take a lot of space and is not needed at runtime, or in other code editors like VS Code. If you want to use the Visual Studio graphical editor, the contents of every `.resx` file should start with a resource schema and extra `resheader` elements, as shown in the following markup:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Optional extra headers for the Visual Studio resource editor. -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+  <!-- End of optional extra headers. -->
+  <data name="EnterYourDob" xml:space="preserve">
+    <value>Enter your date of birth: </value>
+  </data>
+  <data name="EnterYourName" xml:space="preserve">
+    <value>Enter your name: </value>
+  </data>
+  <data name="EnterYourSalary" xml:space="preserve">
+    <value>Enter your salary: </value>
+  </data>
+  <data name="PersonDetails" xml:space="preserve">
+    <value>{0} was born on a {1:dddd}. {0} is {2:N0} minutes old. {0} earns {3:C}.</value>
+  </data>
+</root>
+```
 
 # Page 288 - Testing globalization and localization
 
