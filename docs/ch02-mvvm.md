@@ -164,54 +164,59 @@ public class CustomerDetailViewModel : INotifyPropertyChanged
     }
   }
 
-public string CompanyName
-{
-get => companyName;
-set
-{
-companyName = value;
-NotifyPropertyChanged();
-}
-}
-public string ContactName
-{
-get => contactName;
-set
-{
-contactName = value;
-NotifyPropertyChanged();
-}
-}
-public string City
-{
-get => city;
-set
-{
-city = value;
-NotifyPropertyChanged();
-NotifyPropertyChanged(nameof(Location));
-}
-}
-public string Country
-{
-get => country;
-set
-{
-country = value;
-NotifyPropertyChanged();
-NotifyPropertyChanged(nameof(Location));
-}
-}
-public string Phone
-{
-get => phone;
-set
-{
-phone = value;
-NotifyPropertyChanged();
-}
-}
-public string Location => $"{City}, {Country}";
+  public string CompanyName
+  {
+    get => companyName;
+    set
+    {
+      companyName = value;
+      NotifyPropertyChanged();
+    }
+  }
+
+  public string ContactName
+  {
+    get => contactName;
+    set
+    {
+      contactName = value;
+      NotifyPropertyChanged();
+    }
+  }
+
+  public string City
+  {
+    get => city;
+    set
+    {
+    city = value;
+      NotifyPropertyChanged();
+      NotifyPropertyChanged(nameof(Location));
+    }
+  }
+
+  public string Country
+  {
+    get => country;
+    set
+    {
+    country = value;
+      NotifyPropertyChanged();
+      NotifyPropertyChanged(nameof(Location));
+    }
+  }
+
+  public string Phone
+  {
+    get => phone;
+    set
+    {
+      phone = value;
+      NotifyPropertyChanged();
+    }
+  }
+
+  public string Location => $"{City}, {Country}";
 }
 ```
 
@@ -234,35 +239,36 @@ public class CustomersListViewModel :
   {
     if (clearList) Clear();
 
-  Add(new CustomerDetailViewModel
-  {
-    CustomerId = "ALFKI",
-    CompanyName = "Alfreds Futterkiste",
-    ContactName = "Maria Anders",
-    City = "Berlin",
-    Country = "Germany",
-    Phone = "030-0074321"
-  });
+    Add(new CustomerDetailViewModel
+    {
+      CustomerId = "ALFKI",
+      CompanyName = "Alfreds Futterkiste",
+      ContactName = "Maria Anders",
+      City = "Berlin",
+      Country = "Germany",
+      Phone = "030-0074321"
+    });
 
-Add(new CustomerDetailViewModel
-{
-CustomerId = "FRANK",
-CompanyName = "Frankenversand",
-ContactName = "Peter Franken",
-City = "München",
-Country = "Germany",
-Phone = "089-0877310"
-});
-Add(new CustomerDetailViewModel
-{
-CustomerId = "SEVES",
-CompanyName = "Seven Seas Imports",
-ContactName = "Hari Kumar",
-City = "London",
-Country = "UK",
-Phone = "(171) 555-1717"
-});
-}
+    Add(new CustomerDetailViewModel
+    {
+      CustomerId = "FRANK",
+      CompanyName = "Frankenversand",
+      ContactName = "Peter Franken",
+      City = "München",
+      Country = "Germany",
+      Phone = "089-0877310"
+    });
+
+    Add(new CustomerDetailViewModel
+    {
+      CustomerId = "SEVES",
+      CompanyName = "Seven Seas Imports",
+      ContactName = "Hari Kumar",
+      City = "London",
+      Country = "UK",
+      Phone = "(171) 555-1717"
+    });
+  }
 }
 ```
 
@@ -279,37 +285,39 @@ You will now add a view to show a list of customers and a view to show the detai
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="Northwind.Maui.Client.CustomersPage"
-Title="Customers">
-<VerticalStackLayout Spacing="15" Padding="20">
-<HorizontalStackLayout Spacing="10">
-<Label Text="Customers" FontSize="Title" />
-<Button Text="Add" Clicked="Add_Clicked"
-HorizontalOptions="End" />
-</HorizontalStackLayout>
-<ListView ItemsSource="{Binding .}"
-VerticalOptions="Start"
-HorizontalOptions="Start"
-IsPullToRefreshEnabled="True"
-ItemTapped="Customer_Tapped"
-Refreshing="Customers_Refreshing">
-<ListView.ItemTemplate>
-<DataTemplate>
-<TextCell Text="{Binding CompanyName}"
-Detail="{Binding Location}"
-TextColor="{DynamicResource PrimaryTextColor}"
-DetailColor="{DynamicResource PrimaryTextColor}" >
-<TextCell.ContextActions>
-<MenuItem Clicked="Customer_Phoned" Text="Phone" />
-<MenuItem Clicked="Customer_Deleted" Text="Delete"
-IsDestructive="True" />
-</TextCell.ContextActions>
-</TextCell>
-</DataTemplate>
-</ListView.ItemTemplate>
-</ListView>
-</VerticalStackLayout>
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="Northwind.Maui.Client.CustomersPage"
+  Title="Customers">
+
+  <VerticalStackLayout Spacing="15" Padding="20">
+    <HorizontalStackLayout Spacing="10">
+      <Label Text="Customers" FontSize="Title" />
+      <Button Text="Add" Clicked="Add_Clicked"
+              HorizontalOptions="End" />
+    </HorizontalStackLayout>
+    <ListView ItemsSource="{Binding .}"
+      VerticalOptions="Start"
+      HorizontalOptions="Start"
+      IsPullToRefreshEnabled="True"
+      ItemTapped="Customer_Tapped"
+      Refreshing="Customers_Refreshing">
+
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding CompanyName}"
+            Detail="{Binding Location}"
+            TextColor="{DynamicResource PrimaryTextColor}"
+            DetailColor="{DynamicResource PrimaryTextColor}" >
+            <TextCell.ContextActions>
+              <MenuItem Clicked="Customer_Phoned" Text="Phone" />
+              <MenuItem Clicked="Customer_Deleted" Text="Delete"
+                        IsDestructive="True" />
+            </TextCell.ContextActions>
+          </TextCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </VerticalStackLayout>
 </ContentPage>
 ```
 
@@ -368,8 +376,7 @@ public partial class CustomersPage : ContentPage
   async void Customer_Phoned(object sender, EventArgs e)
   {
     MenuItem menuItem = sender as MenuItem;
-    if (menuItem.BindingContext is not CustomerDetailViewModel c)
-return;
+    if (menuItem.BindingContext is not CustomerDetailViewModel c) return;
     if (await DisplayAlert("Dial a Number",
       "Would you like to call " + c.Phone + "?",
       "Yes", "No"))
@@ -547,10 +554,10 @@ We will now test the app using the Android device emulator so that we can see th
 9. Click **Phone** and note the pop-up prompt to the user to dial the number of that customer with **Yes** and **No** buttons.
 10.  Click Yes and note the app switches to the device’s native phone dialer.
 11.  In the emulator, click the back button (the back-pointing triangle) three times to return to the app.
-1.   Click and hold on one of the customers to reveal two action buttons, **Phone** and **Delete**, and then click on **Delete**, and note that the customer is removed.
-1.   Click, hold, and drag the list down and then release, and note the animation effect for refreshing the list, but remember that this feature is simulated, so the list does not change.
-1.   Close the Android device emulator.
-2.   Repeat the above steps with Windows Machine to see the differences.
+12.   Click and hold on one of the customers to reveal two action buttons, **Phone** and **Delete**, and then click on **Delete**, and note that the customer is removed.
+13.   Click, hold, and drag the list down and then release, and note the animation effect for refreshing the list, but remember that this feature is simulated, so the list does not change.
+14.   Close the Android device emulator.
+15.   Repeat the above steps with Windows Machine to see the differences.
 
 We will now make the app call a web service to get the list of customers.
 
@@ -588,12 +595,13 @@ If a class already needs to inherit from another class and so it cannot inherit 
 ```cs
 // [INotifyPropertyChanged], [ObservableProperty]
 using CommunityToolkit.Mvvm.ComponentModel;
+
 [INotifyPropertyChanged]
 partial class Category : SomeOtherClass
 {
-[ObservableProperty]
-private string? categoryName;
-// Other members.
+  [ObservableProperty]
+  private string? categoryName;
+  // Other members.
 }
 ```
 
@@ -605,16 +613,11 @@ Let’s go:
 markup:
 ```xml
 <ItemGroup>
-  <PackageReference Include="Microsoft.Maui.Controls"
-                    Version="$(MauiVersion)" />
-  <PackageReference Include="Microsoft.Maui.Controls.Compatibility"
-                    Version="$(MauiVersion)" />
-  <PackageReference Include="Microsoft.Extensions.Logging.Debug"
-                    Version="8.0.0" />
-  <PackageReference Include="CommunityToolkit.Mvvm"
-                    Version="8.2.2" />
-  <PackageReference Include="CommunityToolkit.Maui" 
-                    Version="6.0.0" />
+  <PackageReference Include="Microsoft.Maui.Controls" />
+  <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
+  <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+  <PackageReference Include="CommunityToolkit.Mvvm" />
+  <PackageReference Include="CommunityToolkit.Maui" />
 </ItemGroup>
 ```
 
@@ -676,8 +679,7 @@ internal partial class ProductViewModel : ObservableObject
   // A readonly property to show information about stock.
   public string Stock
   {
-    get => $"Stock: {UnitsInStock} in stock, {UnitsOnOrder} on order,
-reorder at {ReorderLevel}.";
+    get => $"Stock: {UnitsInStock} in stock, {UnitsOnOrder} on order, reorder at {ReorderLevel}.";
   }
 }
 ```
@@ -805,30 +807,28 @@ namespace Northwind.Maui.Client
 
 namespace Northwind.Maui.Client
 {
-/// <inheritdoc/>
-partial class ProductsViewModel
-{
-/// <summary>The backing field for <see
-cref="DeleteProductCommand"/>.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode(
-"CommunityToolkit.Mvvm.SourceGenerators
-.RelayCommandGenerator", "8.2.0.0")]
-private global::CommunityToolkit.Mvvm.Input
-.RelayCommand<int>? deleteProductCommand;
-/// <summary>Gets an <see cref=
-"global::CommunityToolkit.Mvvm.Input
-.IRelayCommand{T}"/> instance wrapping <see
-cref="DeleteProduct"/>.</summary>
-[global::System.CodeDom.Compiler.GeneratedCode(
-"CommunityToolkit.Mvvm.SourceGenerators
-.RelayCommandGenerator", "8.2.0.0")]
-[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-public global::CommunityToolkit.Mvvm.Input
-.IRelayCommand<int> DeleteProductCommand =>
-deleteProductCommand ??= new global::CommunityToolkit
-.Mvvm.Input.RelayCommand<int>(
-new global::System.Action<int>(DeleteProduct), CanDeleteProduct);
-}
+  /// <inheritdoc/>
+  partial class ProductsViewModel
+  {
+    /// <summary>The backing field for <see cref="DeleteProductCommand"/>.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode(
+      "CommunityToolkit.Mvvm.SourceGenerators
+      .RelayCommandGenerator", "8.2.0.0")]
+
+    private global::CommunityToolkit.Mvvm.Input.RelayCommand<int>? deleteProductCommand;
+
+    /// <summary>Gets an <see cref="global::CommunityToolkit.Mvvm.Input  .IRelayCommand{T}"/> instance wrapping <see cref="DeleteProduct"/>.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode(
+      "CommunityToolkit.Mvvm.SourceGenerators
+      .RelayCommandGenerator", "8.2.0.0")]
+    [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+
+    public global::CommunityToolkit.Mvvm.Input
+      .IRelayCommand<int> DeleteProductCommand =>
+      deleteProductCommand ??= new global::CommunityToolkit
+      .Mvvm.Input.RelayCommand<int>(
+      new global::System.Action<int>(DeleteProduct), CanDeleteProduct);
+  }
 }
 ```
 
@@ -852,31 +852,31 @@ public partial class ProductsPage : ContentPage
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-xmlns:local="clr-namespace:Northwind.Maui.Client"
-x:Class="Northwind.Maui.Client.ProductsPage"
-Title="Products">
-<ListView ItemsSource="{Binding .}">
-<ListView.ItemTemplate>
-<DataTemplate>
-<ViewCell>
-<HorizontalStackLayout>
-<VerticalStackLayout Padding="5,5,0,5" Spacing="15">
-<Label Text="{Binding ProductName}"
-FontSize="14"
-FontAttributes="Bold" />
-<Label Text="{Binding Stock}" />
-</VerticalStackLayout>
-<Button Text="Delete"
-Command="{Binding Source={RelativeSource
-AncestorType={x:Type local:ProductsViewModel}},
-Path=DeleteProductCommand}"
-CommandParameter="{Binding ProductId}"/>
-</HorizontalStackLayout>
-</ViewCell>
-</DataTemplate>
-</ListView.ItemTemplate>
-</ListView>
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:local="clr-namespace:Northwind.Maui.Client"
+  x:Class="Northwind.Maui.Client.ProductsPage"
+  Title="Products">
+  <ListView ItemsSource="{Binding .}">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <HorizontalStackLayout>
+            <VerticalStackLayout Padding="5,5,0,5" Spacing="15">
+              <Label Text="{Binding ProductName}"
+                    FontSize="14"
+                    FontAttributes="Bold" />
+              <Label Text="{Binding Stock}" />
+            </VerticalStackLayout>
+            <Button Text="Delete"
+              Command="{Binding Source={RelativeSource
+              AncestorType={x:Type local:ProductsViewModel}},
+              Path=DeleteProductCommand}"
+              CommandParameter="{Binding ProductId}"/>
+          </HorizontalStackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>
 ```
 
