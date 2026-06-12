@@ -890,8 +890,8 @@ Now we can test the app:
 ![Products with delete buttons bound to an MVVM command](assets/B19587_16A_06.png)
 *Figure 16A.6: Products with delete buttons bound to an MVVM command*
 
-1. In the **Chang** row, click the **Delete** button, and note the animation when the row is deleted.
-2. Close the app.
+3. In the **Chang** row, click the **Delete** button, and note the animation when the row is deleted.
+4. Close the app.
 
 > **More Information**: You can learn more about the .NET MAUI MVVM Community Toolkit documentation at the following link: https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/.
 
@@ -906,37 +906,34 @@ If you need to call a web service that is secured with a self-signed certificate
 We will create a web service for working with customers in the Northwind database:
 
 1. In your preferred code editor, add a web service project, as defined in the following list:
-- Project template: **ASP.NET Core Web API** / `webapi --use-minimal-apis`
+- Project template: **ASP.NET Core Web API** / `webapi`
 - Solution file and folder: `ModernApps`
 - Project file and folder: `Northwind.Maui.WebApi.Service`
 - **Authentication type**: **None**.
 - **Configure for HTTPS**: Selected.
-- **Enable Docker**: Cleared.
+- **Enable container support**: Cleared.
 - **Enable OpenAPI support**: Selected.
 - **Do not use top-level statements**: Cleared.
 - **Use controllers**: Cleared.
 
-1. In the project file, set the invariant global to false, treat errors as warnings, and add a project reference to the Northwind database context project for SQL Server that you created in *Chapter 1*, as shown in the following markup:
+> We cannot use the native AOT project template because we need to reference an EF Core 10 project, which does not support AOT.
+
+2. In the project file, set the invariant global to `false`, treat warnings as errors, and add a project reference to the Northwind database context project for SQL Server that you created in *Chapter 1*, as shown in the following markup:
 ```xml
 <ItemGroup>
   <ProjectReference Include="..\..\ModernApps\Northwind.DataContext\Northwind.DataContext.csproj" />
 </ItemGroup>
 ```
-
-1. At the command prompt or terminal, build the `Northwind.Maui.WebApi.Service` project to make sure the entity model class library projects outside the current solution are properly compiled, as shown in the following command: `dotnet build`.
-2. In the `Properties` folder, in `launchSettings.json`, for the `https` profile, modify `applicationUrl` to use port `5161` for `https` and port `5162` for `http`, as shown highlighted in the following configuration:
+3. Build the `Northwind.Maui.WebApi.Service` project.
+4. In the `Properties` folder, in `launchSettings.json`, for the `https` profile, modify `applicationUrl` to use port `5161` for `https` and port `5162` for `http`, as shown highlighted in the following configuration:
 ```json
 "applicationUrl": "https://localhost:5161;http://localhost:5162",
 ```
-
-1. For the `http` profile, modify `applicationUrl` to use port `5162` for `http`, as shown highlighted in the following configuration:
+5. For the `http` profile, modify `applicationUrl` to use port `5162` for `http`, as shown highlighted in the following configuration:
 ```json
 "applicationUrl": "http://localhost:5162",
 ```
-
-> We cannot use the native AOT project template because we need to reference an EF Core 8 project, which does not support AOT. Also note that the --use-minimalapis switch is not needed in .NET 8 because it is now the default, but for .NET 7 you would need to specify this switch.
-
-1. In `Program.cs`, delete the statements about the weather service and replace them with statements to configure endpoints for CRUD operations on customers, as shown in the following code:
+6. In `Program.cs`, delete the statements about the weather service and replace them with statements to configure endpoints for CRUD operations on customers, as shown in the following code:
 ```cs
 using Microsoft.AspNetCore.Mvc; // To use [FromServices] .
 using Northwind.EntityModels; // To use AddNorthwindContext method.
@@ -1026,15 +1023,15 @@ app.MapDelete("api/customers/{id}", async (
 app.Run();
 ```
 
-8. If your database server is not running, for example, because you are hosting it in Docker, a virtual machine, or in the cloud, then make sure to start it.
-9. Start the web service project with the `https` profile and note the Swagger documentation, as shown in *Figure 16A.7*:
+7. If your database server is not running, for example, because you are hosting it in Docker, a virtual machine, or in the cloud, then make sure to start it.
+8. Start the web service project with the `https` profile and note the Swagger documentation, as shown in *Figure 16A.7*:
 
 ![Swagger documentation for the Northwind Web API service](assets/B19587_16A_07.png)
 *Figure 16A.7: Swagger documentation for the Northwind Web API service*
 
-1. Click **GET /api/customers** to expand that section.
-2.  Click the **Try it out** button, click the **Execute** button, and note that customer records are returned.
-3.  Close the browser and shut down the web server.
+9. Click **GET /api/customers** to expand that section.
+10.  Click the **Try it out** button, click the **Execute** button, and note that customer records are returned.
+11.  Close the browser and shut down the web server.
 
 ## Configuring the web service to allow unsecure requests
 
