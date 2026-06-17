@@ -18,9 +18,6 @@ This online-only section is about implementing the MVVM design pattern for .NET 
   - [Configuring the iOS app to allow unsecured connections](#configuring-the-ios-app-to-allow-unsecured-connections)
   - [Configuring the Android app to allow unsecured connections](#configuring-the-android-app-to-allow-unsecured-connections)
   - [Getting customers from the web service](#getting-customers-from-the-web-service)
-- [Practicing and exploring](#practicing-and-exploring)
-  - [Exercise 16A.1 – Test your knowledge](#exercise-16a1--test-your-knowledge)
-  - [Exercise 16A.2 – Implement the calculator with MVVM commands](#exercise-16a2--implement-the-calculator-with-mvvm-commands)
 - [Summary](#summary)
 
 
@@ -1065,8 +1062,8 @@ To allow unsecured connections to web services in an iOS app, we have a couple o
 Now you will configure the `Northwind.Maui.Customers` project to disable ATS to allow unsecured HTTP requests to the web service:
 
 1. In the `Northwind.Maui.Client` project, in the `Platforms/iOS` folder, open the `Info.plist` file by right-clicking and opening it with the **XML (Text) Editor**.
-2. At the bottom of the dictionary, add a new key named `NSAppTransportSecurity` that is a dictionary, and in it, add a key named `NSAllowsArbitraryLoads` that has a value of `true`, as shown highlighted in the following partial markup:
-```xml
+2. At the bottom of the dictionary, add a new key named `NSAppTransportSecurity` that is a dictionary, and in it, add a key named `NSAllowsArbitraryLoads` that has a value of `true`, as shown in the following diff of the markup:
+```diff
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
 "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -1077,11 +1074,11 @@ Now you will configure the `Northwind.Maui.Customers` project to disable ATS to 
     ...
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/appicon.appiconset</string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
-    </dict>
++   <key>NSAppTransportSecurity</key>
++   <dict>
++     <key>NSAllowsArbitraryLoads</key>
++     <true/>
++   </dict>
   </dict>
 </plist>
 ```
@@ -1107,7 +1104,7 @@ Now you will configure the project to enable cleartext to allow unsecured HTTP r
 </network-security-config>
 ```
 
-3. In the `Android` folder, in `AndroidManifest.xml`, add an attribute to the `<application>` element to reference the new XML file, as shown highlighted in the following markup:
+3. In the `Android` folder, in `AndroidManifest.xml`, add an `android:networkSecurityConfig="@xml/network_security_config"` attribute to the `<application>` element to reference the new XML file, as shown in the following markup:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -1135,17 +1132,18 @@ Now you will configure the project to enable cleartext to allow unsecured HTTP r
 
 Now, we can modify the customers list page to get its list of customers from the web service instead of using sample data:
 
-1. In the `Northwind.Maui.Client` project, in `CustomersPage.xaml`, add a label to show information about the web service endpoint and a label to show any error messages, as shown in the following markup:
-```xml
+1. In the `Northwind.Maui.Client` project, in `CustomersPage.xaml`, add a label to show information about the web service endpoint and a label to show any error messages, as shown in the following `diff` markup:
+```diff
 <VerticalStackLayout Spacing="15" Padding="20">
   <HorizontalStackLayout Spacing="10">
     <Label Text="Customers" FontSize="Title" />
     <Button Text="Add" Clicked="Add_Clicked"
             HorizontalOptions="End" />
   </HorizontalStackLayout>
-  <Label x:Name="InfoLabel" />
-  <Label x:Name="ErrorLabel" IsVisible="false" />
++ <Label x:Name="InfoLabel" />
++ <Label x:Name="ErrorLabel" IsVisible="false" />
   <ListView ItemsSource="{Binding .}"
+  ...
 ```
 
 2. In `CustomersPage.xaml.cs`, import the following additional namespaces:
@@ -1211,27 +1209,6 @@ public CustomersPage()
 *Figure 16A.9: Loading customers from a web service into the Northwind .NET MAUI app*
 
 8. Close the app.
-
-# Practicing and exploring
-
-Test your knowledge and understanding by answering some questions, getting some hands-on practice, and exploring this chapter’s topics with more in-depth research.
-
-## Exercise 16A.1 – Test your knowledge
-
-Answer the following questions:
-
-1. What interface must a type implement to support two-way binding?
-2. What class should a view model inherit from the support automatic notifications when an item is added and removed from a collection?
-1. What class should a view model inherit from and what keyword must be applied to it to allow automatic definitions of bindable properties?
-1. What attribute must you decorate private fields with to allow automatic definitions of bindable properties?
-1. What naming conventions must you use for private fields to allow automatic definitions of bindable properties?
-
-## Exercise 16A.2 – Implement the calculator with MVVM commands
-
-Implement the calculator on the employees page with commands. Hints on how to do so can be found at the following links:
-
-- https://docs.microsoft.com/en-us/dotnet/maui/fundamentals/data-binding/commanding.
-- https://docs.microsoft.com/en-us/dotnet/maui/xaml/fundamentals/mvvm.
 
 # Summary
 
