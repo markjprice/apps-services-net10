@@ -3,8 +3,8 @@
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 6 - Building web and other services](#page-6---building-web-and-other-services)
-- [Page 67 - Getting help on Discord and other chat forums](#page-67---getting-help-on-discord-and-other-chat-forums)
 - [Page 38 - Treating warnings as errors](#page-38---treating-warnings-as-errors)
+- [Page 67 - Getting help on Discord and other chat forums](#page-67---getting-help-on-discord-and-other-chat-forums)
 - [Page 72 - Customizing Copilot responses](#page-72---customizing-copilot-responses)
 - [Page 74 - Using future versions of .NET with this book](#page-74---using-future-versions-of-net-with-this-book)
 - [Page 80 - Simplifying code using XAML](#page-80---simplifying-code-using-xaml)
@@ -38,16 +38,16 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 
 The second time I mention Roy Fielding, I mistyped his last name, "...defined by Roy Field in his dissertation about REST APIs." It should be "...defined by Roy Fielding in his dissertation about REST APIs."
 
+# Page 38 - Treating warnings as errors
+
+In the output at the bottom of the page, the path includes `Chapter14` instead of `ModernServices`.
+
 # Page 67 - Getting help on Discord and other chat forums
 
 > Thanks to [Kris](https://github.com/kprikratki) for raising [this issue on March 11, 2026](https://github.com/markjprice/apps-services-net10/issues/9).
 
 In the second bullet, **Research before asking**, I mistakenly used the errata page link for my other book, *C# 14 and .NET 10*. The link should be:
 https://github.com/markjprice/apps-services-net10/blob/main/docs/errata/README.md
-
-# Page 38 - Treating warnings as errors
-
-In the output at the bottom of the page, the path includes `Chapter14` instead of `ModernServices`.
 
 # Page 72 - Customizing Copilot responses
 
