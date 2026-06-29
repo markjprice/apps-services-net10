@@ -4,7 +4,7 @@ This online-only section is about integrating .NET MAUI apps with Blazor compone
 
 In *Chapter 2, Building Mobile Apps Using .NET MAUI*, you saw that .NET MAUI enables you to build cross-platform apps that work using native controls on each device and its operating system.
 
-In *Chapter 3, Building Web Apps Using Blazor*, you saw how easy it is to create components using web user interface technologies, including HTML and CSS, and common user interface style libraries like Bootstrap.
+In *Chapter 4, Building Web Apps Using Blazor*, you saw how easy it is to create components using web user interface technologies, including HTML and CSS, and common user interface style libraries like Bootstrap.
 
 In this online-only section, you will see how to get the best of both those worlds by building .NET MAUI apps that host Blazor components and retain the ability to closely integrate with native features, including the look and feel.
 
@@ -30,10 +30,6 @@ By the end of this online-only section, you will be able to make sensible decisi
   - [Integrating with desktop menu bars](#integrating-with-desktop-menu-bars)
   - [Popping up a toast notification](#popping-up-a-toast-notification)
   - [Using third-party control libraries](#using-third-party-control-libraries)
-- [Practicing and exploring](#practicing-and-exploring)
-  - [Exercise 16B.1 – Test your knowledge](#exercise-16b1--test-your-knowledge)
-  - [Exercise 16B.2 – Implement a carousel for categories](#exercise-16b2--implement-a-carousel-for-categories)
-  - [Exercise 16B.3 – Explore code samples](#exercise-16b3--explore-code-samples)
 - [Summary](#summary)
 
 
@@ -114,23 +110,23 @@ Let’s go:
 > Although we have created subfolders for each view for organizational purposes, we want all views to be in the same namespace for namespace import purposes, so we will do that manually for each view we define.
 
 3. In the `Views/Categories` folder, add a new **.NET MAUI ContentPage (XAML)** project item named `CategoriesPage.xaml`.
-4. In `CategoriesPage.xaml`, modify the `x:Class` attribute so that the class that is automatically generated from the XAML will be in the Views namespace rather than the subfolder `Views.Categories` namespace, as shown highlighted in the following markup:
+4. In `CategoriesPage.xaml`, modify the `x:Class` attribute so that the class that is automatically generated from the XAML will be in the Views namespace rather than the subfolder `Views.Categories` namespace, as shown in the following markup:
 ```xml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="Northwind.Maui.Blazor.Client.Views.CategoriesPage"
 ```
 
-5. In `CategoriesPage.xaml.cs`, modify the namespace, as shown in the following code:
+1. In `CategoriesPage.xaml.cs`, modify the namespace, as shown in the following code:
 ```cs
 namespace Northwind.Maui.Blazor.Client.Views;
 ```
 
-6. In the `Views/Categories` folder, add a new **.NET MAUI ContentPage (XAML)** project item named `CategoryPage.xaml`, and repeat the namespace changes on the markup and code-behind files. This page view will be used to show a single category for editing purposes.
-1. In the `Views/Employees` folder, add a new **.NET MAUI ContentPage (XAML)** project item named `EmployeesPage.xaml`, and repeat the namespace changes on the markup and code-behind files.
-1. In the `Views/Orders` folder, add a new **.NET MAUI ContentPage (XAML)** project item named `OrdersPage.xaml`, and repeat the namespace changes on the markup and code-behind files.
-1. Move the `MainPage.xaml` file from the project folder to the `Views/Home` folder, and then make the appropriate namespace changes to the markup and code-behind files.
-1.  In `MainPage.xaml`, set the `Title` to `Home`, as shown highlighted in the following markup:
+1. In the `Views/Categories` folder, add a new **.NET MAUI ContentPage (XAML)** project item named `CategoryPage.xaml`, and repeat the namespace changes on the markup and code-behind files. This page view will be used to show a single category for editing purposes.
+2. In the `Views/Employees` folder, add a new **.NET MAUI ContentPage (XAML)** project item named `EmployeesPage.xaml`, and repeat the namespace changes on the markup and code-behind files.
+3. In the `Views/Orders` folder, add a new **.NET MAUI ContentPage (XAML)** project item named `OrdersPage.xaml`, and repeat the namespace changes on the markup and code-behind files.
+4. Move the `MainPage.xaml` file from the project folder to the `Views/Home` folder, and then make the appropriate namespace changes to the markup and code-behind files.
+5.  In `MainPage.xaml`, set the `Title` to `Home`, as shown in the following markup:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -147,8 +143,8 @@ namespace Northwind.Maui.Blazor.Client.Views;
 </ContentPage>
 ```
 
-11.  In the project folder, add a new **.NET MAUI ContentPage (XAML)** project item named `AppShell.xaml`.
-12.  In `AppShell.xaml`:
+1.   In the project folder, add a new **.NET MAUI ContentPage (XAML)** project item named `AppShell.xaml`.
+2.   In `AppShell.xaml`:
  - Delete the `<VerticalStackLayout>` element.
  - Change the root element to `<Shell>` and delete the title.
  - Import the project `Views` namespace using the `views` prefix.
@@ -180,12 +176,12 @@ namespace Northwind.Maui.Blazor.Client.Views;
 </Shell>
 ```
 
-13.  In `AppShell.xaml.cs`, change the class to inherit from `ContentPage` to `Shell`, as shown highlighted in the following code:
+1.   In `AppShell.xaml.cs`, change the class to inherit from `ContentPage` to `Shell`, as shown in the following code:
 ```cs
 public partial class AppShell : Shell
 ```
 
-14.  In **Solution Explorer**, expand `App.xaml`, open `App.xaml.cs`, and change the main page property to an instance of the `AppShell` class, as shown in the following code:
+1.   In **Solution Explorer**, expand `App.xaml`, open `App.xaml.cs`, and change the main page property to an instance of the `AppShell` class, as shown in the following code:
 ```cs
 MainPage = new AppShell();
 ```
@@ -237,7 +233,7 @@ category, they might want to copy and paste the description from that other app.
 
 Let’s enable integration with the clipboard:
 
-1. In the `Views/Employees` folder, in `EmployeesPage.xaml`, change the title, set the vertical spacing in the stack to `10`, and replace the existing label element with a frame, an entry, and a pair of buttons to copy and paste to and from the box whatever text is currently in the clipboard, as shown highlighted in the following markup:
+1. In the `Views/Employees` folder, in `EmployeesPage.xaml`, change the title, set the vertical spacing in the stack to `10`, and replace the existing label element with a frame, an entry, and a pair of buttons to copy and paste to and from the box whatever text is currently in the clipboard, as shown in the following markup:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -262,14 +258,14 @@ Let’s enable integration with the clipboard:
                   x:Name="PasteFromClipboardButton"
                   Clicked="PasteFromClipboardButton_Clicked"
                   HorizontalOptions="Center" />
-        </HorizontalStackayout>
+        </HorizontalStackLayout>
       </VerticalStackLayout>
     </Frame>
   </VerticalStackLayout>
 </ContentPage>
 ```
 
-2. In `EmployeesPage.xaml.cs`, add statements to the event handlers to call the default clipboard methods for setting and getting text, as shown highlighted in the following code:
+1. In `EmployeesPage.xaml.cs`, add statements to the event handlers to call the default clipboard methods for setting and getting text, as shown in the following code:
 ```cs
 namespace Northwind.Maui.Blazor.Client.Views;
 
@@ -323,7 +319,7 @@ To access the media and file picker functionality in a .NET MAUI app, platform-s
 To enable media and file picking on Windows:
 
 1. In the `Platforms/Windows` folder, open `Package.appxmanifest`.
-2. In `Package.appxmanifest`, add entries to the `<Capabilities>` section, as shown highlighted in the following markup:
+2. In `Package.appxmanifest`, add entries to the `<Capabilities>` section, as shown in the following markup:
 ```xml
 <Capabilities>
   <rescap:Capability Name="runFullTrust" />
@@ -381,7 +377,7 @@ and videos.</string>
 
 Let’s enable the user to select a new image for a category:
 
-1. In the `Views/Employees` folder, in `EmployeesPage.xaml`, after the existing frame element, add another frame, a label, an image, and a pair of buttons to pick a text file or an image file and show them in the label or image control, as shown highlighted in the following markup:
+1. In the `Views/Employees` folder, in `EmployeesPage.xaml`, after the existing frame element, add another frame, a label, an image, and a pair of buttons to pick a text file or an image file and show them in the label or image control, as shown in the following markup:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage ...
@@ -555,7 +551,7 @@ MAUI adds the capability of creating a new window.
 Let’s go!
 
 1. In the `Views\Orders` folder, in `OrdersPage.xaml`, change the title, set the spacing in the vertical stack to `10`, and then replace the existing label with a frame containing a label and button, as
-shown highlighted in the following markup:
+shown in the following markup:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -587,9 +583,9 @@ private void NewWindowButton_Clicked(object sender, EventArgs e)
 }
 ```
 
-2. Start the app on **Windows Machine**.
-3. Navigate to the **Orders** page, click the **New Window** button, and note that a new window appears.
-4. Close the new window and then close the Windows app.
+1. Start the app on **Windows Machine**.
+2. Navigate to the **Orders** page, click the **New Window** button, and note that a new window appears.
+3. Close the new window and then close the Windows app.
 
 ## Getting device information
 
@@ -641,7 +637,7 @@ internal class DeviceInfoViewModel
 }
 ```
 
-2. In `OrdersPage.xaml`, instantiate the class to bind to, as shown highlighted in the following markup:
+1. In `OrdersPage.xaml`, instantiate the class to bind to, as shown in the following markup:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -655,7 +651,7 @@ internal class DeviceInfoViewModel
   ...
 ```
 
-3. In `OrdersPage.xaml`, add markup in the `ContentPage` element below the existing frame to define a frame for showing device information, as shown in the following markup:
+1. In `OrdersPage.xaml`, add markup in the `ContentPage` element below the existing frame to define a frame for showing device information, as shown in the following markup:
 ```xml
 <Frame BorderColor="{StaticResource PrimaryTextColor}"
        Margin="5" Padding="5">
@@ -685,7 +681,7 @@ internal class DeviceInfoViewModel
 </Frame>
 ```
 
-4. In `OrdersPage.xaml.cs`, add an event handler for when the battery information has changed and call it in the constructor so that the page immediately shows the information when it first loads, as shown highlighted in the following code:
+1. In `OrdersPage.xaml.cs`, add an event handler for when the battery information has changed and call it in the constructor so that the page immediately shows the information when it first loads, as shown in the following code:
 ```cs
 namespace Northwind.Maui.Blazor.Client.Views;
 
@@ -947,43 +943,12 @@ The only major component library software manufacturer that gives away a control
 
 Other .NET MAUI component library software manufacturers charge license fees for their libraries, for example, Progress Telerik ($999 for a single developer license with priority support) and Syncfusion ($2,495 for a single developer license for the first year, $900 for the second year). Both have free trials.
 
-# Practicing and exploring
-
-Test your knowledge and understanding by answering some questions, getting some hands-on practice, and exploring this chapter’s topics with deeper research.
-
-## Exercise 16B.1 – Test your knowledge
-
-Answer the following questions:
-
-1. Modern .NET is cross-platform. Windows Forms and WPF apps can run on modern .NET. Can those apps therefore run on macOS and Linux?
-1. Is .NET MAUI a .NET developer’s only choice for creating cross-platform graphical user interfaces?
-2. How do you enable a .NET MAUI app that targets iOS and Android to allow unsecured HTTP connections, i.e., use http as well as https?
-1. What does the .NET MAUI Community Toolkit do to make sure you have configured it?
-2. What domain must a .NET MAUI app use to connect to a locally hosted web service when testing in (a) the Android emulator and (b) the iOS simulator?
-1. In a .NET MAUI app, how would you store the text “Hello, World!” in the system clipboard?
-2. To use file and media pickers, as well as writing code, what must you do?
-3. When picking a file in a .NET MAUI app, how do you set a filter to limit the types of files that can be selected?
-1. What information about a device can you access in a .NET MAUI app?
-2.  What are some benefits of using the .NET MAUI Community Toolkit?
-You can learn more about the DevExpress library at the following link: https://www.devexpress.com/maui/.
-
-## Exercise 16B.2 – Implement a carousel for categories
-
-For more practice fetching data from a web service and presenting it to the user in a .NET MAUI app, you can complete the optional tasks found at the following link:
-https://github.com/markjprice/apps-services-net10/blob/main/docs/ch16-maui-carousel.md.
-
-## Exercise 16B.3 – Explore code samples
-
-Review the official .NET MAUI code samples at the following link:
-https://learn.microsoft.com/en-us/samples/browse/?expanded=dotnet&products=dotnet-maui.
-
 # Summary
 
 In this online-only section, you learned:
 
 - How to create a hybrid .NET MAUI and Blazor app.
 - How to use the MVVM Community Toolkit to implement the Model-View-ViewModel pattern with bindable properties and commands.
-- How to use the carousel view with current position indicators.
 - How to integrate apps with platform features like the clipboard, picking files, and getting device information.
 - How to use desktop features like menu bars and new windows.
 - How to use the .NET MAUI Community Toolkit to add notifications.
