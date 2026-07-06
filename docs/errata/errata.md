@@ -1,4 +1,4 @@
-**Errata** (26 items)
+**Errata** (29 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -27,6 +27,9 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 317 - Executing queries and working with data readers using ADO.NET](#page-317---executing-queries-and-working-with-data-readers-using-adonet)
 - [Page 401 - Using .NET to build an MCP server](#page-401---using-net-to-build-an-mcp-server)
 - [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
+- [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
+- [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
+- [Page 694 - Defining a custom decimal type and using date/time types](#page-694---defining-a-custom-decimal-type-and-using-datetime-types)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
@@ -578,6 +581,41 @@ is missing the `$` sign and should be:
 _logger.LogInformation($"Memory cache. Total hits: {stats?
   .TotalHits}. Estimated size: {
   stats?.CurrentEstimatedSize}.");
+```
+
+# Page 520 - Building an MVC project to call the faulty web service
+
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for emailing me about this issue on June 30, 2026.
+
+In Steps 2 and 4, I use a type named `HomeProductsViewModel` that does not exist. Before Step 2, we need to create it.
+
+In the `Models` folder, create a new file named `HomeProductsViewModel.cs` and add the following code:
+```cs
+using Northwind.EntityModels; // To use Product.
+
+namespace Northwind.WebApi.Client.Mvc.Models;
+
+public class HomeProductsViewModel
+{
+  public string? NameContains { get; set; }
+  public Uri? BaseAddress { get; set; }
+  public IEnumerable<Product>? Products { get; set; }
+  public string? ErrorMessage { get; set; }
+}
+```
+
+# Page 691 - Handling dates, times, and decimal numbers
+
+The following statement gives a warning because it is not used, so you should delete it:
+```
+import "google/protobuf/duration.proto";
+```
+
+# Page 694 - Defining a custom decimal type and using date/time types
+
+In Step 3, the following statement gives a warning because it is not used, so you should delete it:
+```
+import "google/protobuf/duration.proto";
 ```
 
 # Page 776 - Microsoft Learn documentation MCP server
