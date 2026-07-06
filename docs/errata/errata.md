@@ -90,7 +90,7 @@ In the XAML code example, the end tag should be `</HorizontalStackPanel>` not `<
 
 # Page 92 - Enabling Windows developer mode
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on March 31, 2026](https://github.com/markjprice/apps-services-net10/issues/15).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on March 31, 2026](https://github.com/markjprice/apps-services-net10/issues/15).
 
 In Step 1, I wrote, "Navigate to **Start** | **Settings** | **Privacy & security** | **For developers**, and then switch on **Developer Mode**. (You can also search for “developers”.)"
 
@@ -98,7 +98,7 @@ This setting has moved, so it should say, "Navigate to **Start** | **Settings** 
 
 # Page 96 - Adding shell navigation and more content pages
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on March 31, 2026](https://github.com/markjprice/apps-services-net10/issues/16).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on March 31, 2026](https://github.com/markjprice/apps-services-net10/issues/16).
 
 In Step 2, I mistakenly showed the .NET 8 generation MAUI code where you must set the `MainPage` property:
 ```cs
@@ -152,7 +152,7 @@ The link is broken. It should be: https://github.com/markjprice/apps-services-ne
 
 # Page 139 - Implementing a simple desktop app for data
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 2, 2026](https://github.com/markjprice/apps-services-net10/issues/17).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on April 2, 2026](https://github.com/markjprice/apps-services-net10/issues/17).
 
 In Step 1, `Northwind.Blazor.csproj` should be `Northwind.DesktopApp.csproj`.
 
@@ -160,7 +160,7 @@ In Step 2, `Northwind.Blazor` should be `Northwind.DesktopApp`.
 
 # Page 141 - Implementing a simple desktop app for data
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 2, 2026](https://github.com/markjprice/apps-services-net10/issues/18).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on April 2, 2026](https://github.com/markjprice/apps-services-net10/issues/18).
 
 In Step 6, inclusion of `ConverterCulture='en-US'` causes an error in the following text block:
 ```xml
@@ -286,7 +286,7 @@ Also in `MainWindow.axaml`, change the `Source` of the image to use the converte
 
 # Page 161 - Reviewing the new Blazor project template
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 12, 2026](https://github.com/markjprice/apps-services-net10/issues/19).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on April 12, 2026](https://github.com/markjprice/apps-services-net10/issues/19).
 
 In Step 1, in the bullet list of project options, I included **Interactivity location: Per page/component**. But when the previous option **Interactive render mode: None** is set, the **Interactivity location** option disappears because it is not relevant when there is no interactivity. 
 
@@ -294,7 +294,7 @@ In the next edition, I will remove the **Interactivity location** bullet.
 
 # Page 185 - Getting entities into a Blazor component
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 15, 2026](https://github.com/markjprice/apps-services-net10/issues/20).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on April 15, 2026](https://github.com/markjprice/apps-services-net10/issues/20).
 
 In Step 4, in the code at the top of page 185, in the `OnParametersSetAsync()` method, I declared a variable and set a local variable:
 ```cs
@@ -340,7 +340,7 @@ For example, to use it in the `Serilogging` project:
 
 # Page 216 - Defining mappers for an AutoMapper configuration
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on April 27, 2026](https://github.com/markjprice/apps-services-net10/issues/21).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on April 27, 2026](https://github.com/markjprice/apps-services-net10/issues/21).
 
 In Step 5, if you reference the latest version of AutoMapper then you will get a compile error because the [API has changed](https://github.com/markjprice/apps-services-net10/blob/main/code/PopularPackages/MappingObjects.Mappers/CartToSummaryMapper.cs#L12).
 
@@ -352,7 +352,7 @@ In the next edition, I will replace the AutoMapper example with an alternative, 
 
 # Page 250 - Date and time calculations
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 5, 2026](https://github.com/markjprice/apps-services-net10/issues/22).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on May 5, 2026](https://github.com/markjprice/apps-services-net10/issues/22).
 
 In Step 1, in the code, the following statement is missing an end brace `}` after `xmas.Year`:
 ```cs
@@ -387,7 +387,7 @@ https://github.com/markjprice/apps-services-net10/blob/main/code/Internationaliz
 
 # Page 256 - Localizing the DayOfWeek enum
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 7, 2026](https://github.com/markjprice/apps-services-net10/issues/23).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on May 7, 2026](https://github.com/markjprice/apps-services-net10/issues/23).
 
 In Step 1, in the code, I forgot the `$` prefix for two of the three `WriteLine` statements. The complete code for Step 1 should be:
 ```cs
@@ -419,7 +419,7 @@ Both these coding mistakes were only in the print book (and online version). The
 
 # Page 259 - Unit testing with a time provider
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 7, 2026](https://github.com/markjprice/apps-services-net10/issues/24).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on May 7, 2026](https://github.com/markjprice/apps-services-net10/issues/24).
 
 In Step 7, I wrote, "In the `TestingWithTimeProvider` project, rename `Test1.cs` to `TimeTests.cs`." But the default name of the example test file is `UnitTest1.cs` not `Test1.cs`."
 
@@ -537,7 +537,7 @@ For ordinary machine translation rather than Microsoft product terminology, the 
 
 # Page 317 - Executing queries and working with data readers using ADO.NET
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on May 16, 2026](https://github.com/markjprice/apps-services-net10/issues/25).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on May 16, 2026](https://github.com/markjprice/apps-services-net10/issues/25).
 
 In Step 7, I wrote, "Run the console app," but at this point we only have code that sets up, creates, and opens the connection, without closing it. Later I give multiple step instructions that reference closing the connection. The simplest solution to this errata is to explcitly add a statement to close the connection despite the connection automatically closing (and disposing) when it goes out of scope at the end of the implicit `Main` method.
 
@@ -548,7 +548,7 @@ connection.Close(); // Explicitly close the connection.
 
 # Page 401 - Using .NET to build an MCP server
 
-> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on June 1, 2026](https://github.com/markjprice/apps-services-net10/issues/27).
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on June 1, 2026](https://github.com/markjprice/apps-services-net10/issues/27).
 
 In Steps 6 and 7, I wrote `HelloMcpTool.cs` when I should have written `NorthwindTool.cs`.
 
@@ -556,7 +556,7 @@ In Step 8, I wrote "add statements to x" but it should be "add statements to cre
 
 # Page 504 - Caching objects using in-memory caching
 
-> Thanks to [zkazz](https://github.com/zkazz) for emailing me about this issue on June 30, 2026.
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for emailing me about this issue on June 30, 2026.
 
 In Step 4, the statement:
 ```cs
