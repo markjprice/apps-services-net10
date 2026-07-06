@@ -13,11 +13,11 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Northwind.DataContext\Northwind.DataContext.csproj" />
-	</ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Northwind.DataContext\Northwind.DataContext.csproj" />
+    </ItemGroup>
 
-	<ItemGroup Label="Versions are set in Directory.Build.props.">
+    <ItemGroup Label="Versions are set in Directory.Build.props.">
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Avalonia.Desktop" />
     <PackageReference Include="Avalonia.Themes.Fluent" />

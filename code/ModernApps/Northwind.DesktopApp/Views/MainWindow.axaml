@@ -47,7 +47,7 @@
 		</Menu>
 
 		<StackPanel DockPanel.Dock="Left">
-			<Image Source="{Binding CategoryId, Converter={StaticResource CategoryIdToBitmapConverter}}"
+			<Image Source="{Binding SelectedCategory.CategoryId, Converter={StaticResource CategoryIdToBitmapConverter}}"
                    Height="135" Width="200" />
 
 			<ListBox DockPanel.Dock="Left" Width="200" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Background="Gainsboro">
