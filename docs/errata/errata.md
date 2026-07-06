@@ -1,4 +1,4 @@
-**Errata** (25 items)
+**Errata** (26 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -26,6 +26,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 288 - Testing globalization and localization](#page-288---testing-globalization-and-localization)
 - [Page 317 - Executing queries and working with data readers using ADO.NET](#page-317---executing-queries-and-working-with-data-readers-using-adonet)
 - [Page 401 - Using .NET to build an MCP server](#page-401---using-net-to-build-an-mcp-server)
+- [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
@@ -552,6 +553,32 @@ connection.Close(); // Explicitly close the connection.
 In Steps 6 and 7, I wrote `HelloMcpTool.cs` when I should have written `NorthwindTool.cs`.
 
 In Step 8, I wrote "add statements to x" but it should be "add statements to create a host application builder, add logging to the console, add an MCP server with tools automatically loaded from the current assembly, and then run the host asynchronously."
+
+# Page 504 - Caching objects using in-memory caching
+
+> Thanks to [zkazz](https://github.com/zkazz) for emailing me about this issue on June 30, 2026.
+
+In Step 4, the statement:
+```cs
+private readonly ILogger<ProductsController> logger;
+```
+is missing an underscore and should be:
+```cs
+private readonly ILogger<ProductsController> _logger;
+```
+
+In Step 5, the statement:
+```cs
+_logger.LogInformation("Memory cache. Total hits: {stats?
+  .TotalHits}. Estimated size: {
+  stats?.CurrentEstimatedSize}.");
+```
+is missing the `$` sign and should be:
+```cs 
+_logger.LogInformation($"Memory cache. Total hits: {stats?
+  .TotalHits}. Estimated size: {
+  stats?.CurrentEstimatedSize}.");
+```
 
 # Page 776 - Microsoft Learn documentation MCP server
 

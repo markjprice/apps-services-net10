@@ -4,7 +4,7 @@ If you find any mistakes in the third edition, *Apps and Services with .NET 10*,
 
 > **Warning!** You must be signed in to your GitHub account to enable the **New issue** button, otherwise it will mislead you by saying *Issue creation is restricted in this repository*. All signed in GitHub users are allowed to create issues in my public repositories.
 
-[**Errata** (25 items)](errata.md): Typos, tool user interface and behavior changes, or mistakes in code that would cause a compilation error that prevents a successful build.
+[**Errata** (26 items)](errata.md): Typos, tool user interface and behavior changes, or mistakes in code that would cause a compilation error that prevents a successful build.
 
 [**Improvements** (5 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
 
@@ -16,7 +16,7 @@ All errata and improvements will be included in the next edition.
 
 Who|Errata|Improvements
 ---|---|---
-[zkazz](https://github.com/zkazz)|12|1
+[zkazz](https://github.com/zkazz)|13|1
 [Kris](https://github.com/kprikratki)|3|1
 [DrAvriLev](https://github.com/DrAvriLev)|1|2
 [Moisés Sirvente](https://github.com/es-moises)|1|1
