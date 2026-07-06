@@ -208,6 +208,67 @@ namespace Northwind.DesktopApp.ViewModels
   }
 }
 ```
+In the `ViewModels` folder, make sure the `SelectedCategory` property and its private field are `CategoryViewModel?` so we can bind to the calculated property:
+```cs
+using Northwind.EntityModels; // To use Category and Product.
+using System.Collections.ObjectModel; // To use ObservableCollection<T>.
+using System.Linq; // To use LINQ methods.
+
+namespace Northwind.DesktopApp.ViewModels
+{
+    public partial class MainWindowViewModel : ViewModelBase
+    {
+        public string Greeting { get; } = "Welcome to Apps and Services with .NET 10 with Avalonia!";
+
+        public ObservableCollection<CategoryViewModel> Categories { get; } = [];
+        public ObservableCollection<Product> Products { get; } = [];
+
+        private CategoryViewModel? _selectedCategory;
+
+        public CategoryViewModel? SelectedCategory
+        {
+            get => _selectedCategory;
+            set
+            {
+                if (!SetProperty(ref _selectedCategory, value))
+                    return;
+                Products.Clear();
+
+                if (value != null)
+                {
+                    foreach (var product in value.Products)
+                        Products.Add(product);
+                }
+            }
+        }
+
+        public MainWindowViewModel()
+        {
+            using NorthwindContext db = new();
+
+            CategoryViewModel[]? categories = db.Categories
+              .Select(c => new CategoryViewModel
+              {
+                  CategoryId = c.CategoryId,
+                  CategoryName = c.CategoryName,
+                  Description = c.Description,
+                  Picture = c.Picture,
+                  Products = c.Products
+              }).ToArray();
+
+            if (categories is null)
+                return;
+
+            foreach (CategoryViewModel category in categories)
+            {
+                Categories.Add(category);
+            }
+
+            SelectedCategory = Categories[0];
+        }
+    }
+}
+```
 
 In the `Views` folder, in `MainWindow.axaml`, add markup to define an instance of the converter:
 ```xaml
@@ -218,7 +279,7 @@ In the `Views` folder, in `MainWindow.axaml`, add markup to define an instance o
 
 Also in `MainWindow.axaml`, change the `Source` of the image to use the converter:
 ```xaml
-<Image Source="{Binding CategoryId, Converter={StaticResource CategoryIdToBitmapConverter}}"
+<Image Source="{Binding SelectedCategory.CategoryId, Converter={StaticResource CategoryIdToBitmapConverter}}"
        Height="135" Width="200" />
 ```
 
