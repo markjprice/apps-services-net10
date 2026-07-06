@@ -16,7 +16,7 @@ All errata and improvements will be included in the next edition.
 
 Who|Errata|Improvements
 ---|---|---
-[zkazz](https://github.com/zkazz)|13|1
+Phil aka [zkazz](https://github.com/zkazz)|13|1
 [Kris](https://github.com/kprikratki)|3|1
 [DrAvriLev](https://github.com/DrAvriLev)|1|2
 [Moisés Sirvente](https://github.com/es-moises)|1|1
