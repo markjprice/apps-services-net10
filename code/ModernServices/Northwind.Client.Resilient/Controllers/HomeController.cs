@@ -5,20 +5,13 @@ using Northwind.EntityModels; // To use Product.
 using RabbitMQ.Client; // To use ConnectionFactory and so on.
 using System.Text.Json; // To use JsonSerializer.
 
-namespace Northwind.WebApi.Client.Mvc.Controllers
+namespace Northwind.Client.Resilient.Controllers
 {
-  public class HomeController : Controller
+  public class HomeController(ILogger<HomeController> logger,
+    IHttpClientFactory httpClientFactory) : Controller
   {
-    private readonly ILogger<HomeController> _logger;
-    private readonly IHttpClientFactory _httpClientFactory;
-
-    public HomeController(ILogger<HomeController> logger,
-      IHttpClientFactory httpClientFactory
-)
-    {
-      _logger = logger;
-      _httpClientFactory = httpClientFactory;
-    }
+    private readonly ILogger<HomeController> _logger = logger;
+    private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
 
     public IActionResult Index()
     {
@@ -60,13 +53,13 @@ namespace Northwind.WebApi.Client.Mvc.Controllers
       }
       else
       {
-        model.Products = Enumerable.Empty<Product>();
+        model.Products = [];
 
         string content = await response.Content.ReadAsStringAsync();
 
         // Use the range operator .. to start from zero and 
         // go to the first carriage return.
-        string exceptionMessage = content[..content.IndexOf("\r")];
+        string exceptionMessage = content[..content.IndexOf('\r')];
 
         model.ErrorMessage = string.Format("{0}: {1}",
           response.ReasonPhrase, exceptionMessage);
@@ -86,8 +79,10 @@ namespace Northwind.WebApi.Client.Mvc.Controllers
     public async Task<IActionResult> SendMessage(
       string? message, int? productId)
     {
-      HomeSendMessageViewModel model = new();
-      model.Message = new();
+      HomeSendMessageViewModel model = new()
+      {
+        Message = new()
+      };
 
       if (message is null || productId is null)
       {
@@ -117,13 +112,13 @@ namespace Northwind.WebApi.Client.Mvc.Controllers
           model.Message.Product = product;
         }
       }
-
+    
       // Create a RabbitMQ factory.
       ConnectionFactory factory = new() { HostName = "localhost" };
 
-      using IConnection connection = factory.CreateConnection();
+      await using IConnection connection = await factory.CreateConnectionAsync();
 
-      using IModel channel = connection.CreateModel();
+      await using IChannel channel = await connection.CreateChannelAsync();
 
       string queueNameAndRoutingKey = "product"; 
 
@@ -132,15 +127,18 @@ namespace Northwind.WebApi.Client.Mvc.Controllers
       // The queue can be shared with multiple consumers.
       // The queue will not be deleted when the last message is consumer.
 
-      channel.QueueDeclare(queue: queueNameAndRoutingKey, durable: false, 
+      await channel.QueueDeclareAsync(queue: queueNameAndRoutingKey, durable: false, 
         exclusive: false, autoDelete: false, arguments: null);
 
       byte[] body = JsonSerializer.SerializeToUtf8Bytes(model.Message);
 
       // The exchange is empty because we are using the default exchange.
-      channel.BasicPublish(exchange: string.Empty,
-        routingKey: queueNameAndRoutingKey, 
-        basicProperties: null, body: body);
+      await channel.BasicPublishAsync(
+        exchange: string.Empty,
+        routingKey: queueNameAndRoutingKey,
+        mandatory: false,
+        basicProperties: new BasicProperties(), 
+        body: body);
 
       model.Info = "Message sent to queue successfully.";
 
