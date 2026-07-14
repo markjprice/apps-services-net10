@@ -1,23 +1,23 @@
 <Project>
   
-  <!--Last updated package versions: June 9, 2026.-->
+  <!--Last updated package versions: July 14, 2026.-->
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
   <PropertyGroup Label="Define custom properties for common version numbers.">
-    <Net10>10.0.9</Net10>
-    <Net11>11.0.0-preview.5.26302.115</Net11>
+    <Net10>10.0.10</Net10>
+    <Net11>11.0.0-preview.6.26359.118</Net11>
     <!-- To use .NET 11 preview packages: -->
     <!-- 1) Install the latest .NET 11 SDK preview. -->
     <!-- 2) Change project target framework from net10.0 to net11.0. -->
     <!-- 3) Change the version values below from $(Net10) to $(Net11). -->
 
-    <Avalonia>11.3.17</Avalonia>
+    <Avalonia>11.3.18</Avalonia>
     <AI>10.7.0</AI>
     <Hangfire>1.8.23</Hangfire>
-    <HotChocolate>15.1.16</HotChocolate>
+    <HotChocolate>15.1.17</HotChocolate>
   </PropertyGroup>
   
   <ItemGroup Label="Common packages in multiple chapters.">
@@ -38,10 +38,10 @@
     <!--For logging to console.-->
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="$(Net10)" />
-    <PackageVersion Include="Spectre.Console" Version="0.56.0" />
+    <PackageVersion Include="Spectre.Console" Version="0.57.2" />
     
     <!--For unit testing.-->
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.6.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
     <PackageVersion Include="coverlet.collector" Version="10.0.1" />
 
     <!--xunit package will only be updated for security issues. All future feature work has moved onto v3.-->
@@ -139,7 +139,7 @@
   
   <ItemGroup Label="Chapter 10 Building and Securing Minimal API Web Services">
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(Net10)" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="2.16.2" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.16.11" />
     <PackageVersion Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(Net10)" />
   </ItemGroup>
