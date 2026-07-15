@@ -1,4 +1,4 @@
-**Errata** (29 items)
+**Errata** (30 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -16,6 +16,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 141 - Implementing a simple desktop app for data](#page-141---implementing-a-simple-desktop-app-for-data)
 - [Page 147 - Adding images to the project](#page-147---adding-images-to-the-project)
 - [Page 161 - Reviewing the new Blazor project template](#page-161---reviewing-the-new-blazor-project-template)
+- [Page 169 - Using Bootstrap icons](#page-169---using-bootstrap-icons)
 - [Page 185 - Getting entities into a Blazor component](#page-185---getting-entities-into-a-blazor-component)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 216 - Defining mappers for an AutoMapper configuration](#page-216---defining-mappers-for-an-automapper-configuration)
@@ -294,6 +295,12 @@ Also in `MainWindow.axaml`, change the `Source` of the image to use the converte
 In Step 1, in the bullet list of project options, I included **Interactivity location: Per page/component**. But when the previous option **Interactive render mode: None** is set, the **Interactivity location** option disappears because it is not relevant when there is no interactivity. 
 
 In the next edition, I will remove the **Interactivity location** bullet.
+
+# Page 169 - Using Bootstrap icons
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on July 14, 2026](https://github.com/markjprice/apps-services-net10/issues/43).
+
+The **SVG as data: URI** button does not exist anymore. Just copy the CSS from the file I provide in the GitHub repository. In the next edition, instead of showing the https://icon-sets.iconify.design/ website, I will just say to use the CSS file that I provide.
 
 # Page 185 - Getting entities into a Blazor component
 
