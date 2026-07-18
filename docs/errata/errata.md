@@ -1,4 +1,4 @@
-**Errata** (30 items)
+**Errata** (31 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -17,6 +17,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 147 - Adding images to the project](#page-147---adding-images-to-the-project)
 - [Page 161 - Reviewing the new Blazor project template](#page-161---reviewing-the-new-blazor-project-template)
 - [Page 169 - Using Bootstrap icons](#page-169---using-bootstrap-icons)
+- [Page 173 - Building a component with server interactivity](#page-173---building-a-component-with-server-interactivity)
 - [Page 185 - Getting entities into a Blazor component](#page-185---getting-entities-into-a-blazor-component)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 216 - Defining mappers for an AutoMapper configuration](#page-216---defining-mappers-for-an-automapper-configuration)
@@ -301,6 +302,12 @@ In the next edition, I will remove the **Interactivity location** bullet.
 > Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on July 14, 2026](https://github.com/markjprice/apps-services-net10/issues/43).
 
 The **SVG as data: URI** button does not exist anymore. Just copy the CSS from the file I provide in the GitHub repository. In the next edition, instead of showing the https://icon-sets.iconify.design/ website, I will just say to use the CSS file that I provide.
+
+# Page 173 - Building a component with server interactivity
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on July 16, 2026](https://github.com/markjprice/apps-services-net10/issues/44).
+
+In Step 12, I wrote, "click **WS** to filter by WebSockets". In earlier versions of Chrome the option was labeled **WS** but it was later changed to **Socket**, as shown in *Figure 4.3*. I updated the screenshot but forgot to update the text.
 
 # Page 185 - Getting entities into a Blazor component
 
