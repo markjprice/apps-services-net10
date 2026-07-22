@@ -1,17 +1,18 @@
 <Solution>
-  <Project Path="Benchmarking/Benchmarking.csproj" Id="a54b6be5-0a16-4537-b51c-6d425912830e" />
+  <Project Path="Benchmarking/Benchmarking.csproj" />
   <Project Path="ChatApp/ChatApp.csproj" />
   <Project Path="LlamaApp/LlamaApp.csproj" />
-  <Project Path="MonitoringApp/MonitoringApp.csproj" Id="88ef1a58-e8f6-4c1a-9641-72ae4d9be699" />
-  <Project Path="MonitoringLib/MonitoringLib.csproj" Id="528d4004-aeaf-4e02-b4ae-4e63191b88c3" />
+  <Project Path="MonitoringApp/MonitoringApp.csproj" />
+  <Project Path="MonitoringLib/MonitoringLib.csproj" />
   <Project Path="Northwind.Blazor/Northwind.Blazor.csproj" />
+  <Project Path="Northwind.BlazorPwa/Northwind.BlazorPwa.csproj" />
   <Project Path="Northwind.Console.EFCore/Northwind.Console.EFCore.csproj" />
   <Project Path="Northwind.Console.HierarchyMapping/Northwind.Console.HierarchyMapping.csproj" />
   <Project Path="Northwind.Console.SqlClient/Northwind.Console.SqlClient.csproj" />
   <Project Path="Northwind.DataContext/Northwind.DataContext.csproj" />
   <Project Path="Northwind.DesktopApp/Northwind.DesktopApp.csproj" />
   <Project Path="Northwind.EntityModels/Northwind.EntityModels.csproj" />
-  <Project Path="Northwind.Maui.Client/Northwind.Maui.Client.csproj" Id="2608f0c0-12ea-4b67-be7f-2f0001269d81" />
+  <Project Path="Northwind.Maui.Client/Northwind.Maui.Client.csproj" />
   <Project Path="Northwind.UnitTests/Northwind.UnitTests.csproj" />
-  <Project Path="NorthwindMcp/NorthwindMcp.csproj" Id="21462937-6739-4ae9-9942-f823ae39e93a" />
+  <Project Path="NorthwindMcp/NorthwindMcp.csproj" />
 </Solution>
