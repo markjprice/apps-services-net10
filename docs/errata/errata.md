@@ -1,4 +1,4 @@
-**Errata** (32 items)
+**Errata** (33 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -21,6 +21,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 185 - Getting entities into a Blazor component](#page-185---getting-entities-into-a-blazor-component)
 - [Page 212 - Avoid logging sensitive data](#page-212---avoid-logging-sensitive-data)
 - [Page 216 - Defining mappers for an AutoMapper configuration](#page-216---defining-mappers-for-an-automapper-configuration)
+- [Page 222 - Making fluent assertions in unit testing](#page-222---making-fluent-assertions-in-unit-testing)
 - [Page 250 - Date and time calculations](#page-250---date-and-time-calculations)
 - [Page 256 - Localizing the DayOfWeek enum](#page-256---localizing-the-dayofweek-enum)
 - [Page 259 - Unit testing with a time provider](#page-259---unit-testing-with-a-time-provider)
@@ -367,6 +368,12 @@ The book uses [AutoMapper `14.0.0`](https://github.com/markjprice/apps-services-
 Unfortunately all versions except `15.1.3` and `16.1.1` now have a security vulnerability. I have temporarily [disabled the warning for this in the project file](https://github.com/markjprice/apps-services-net10/blob/main/code/PopularPackages/MappingObjects.Mappers/MappingObjects.Mappers.csproj#L8) so that the project compiles but that isn't a good solution. I recommend avoiding AutoMapper completely and skipping the AutoMapper section of my book.
 
 In the next edition, I will replace the AutoMapper example with an alternative, or more likely, turn the mapping section into a discussion of why almost all mapping libraries should be avoided but you need to know about them because so many legacy projects use them. And expand on the content about using manual mappings with extension methods and similar.
+
+# Page 222 - Making fluent assertions in unit testing
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on August 12, 2026](https://github.com/markjprice/apps-services-net10/issues/49).
+
+The owner dennisdoomen commented: "v7 will remain free indefinitely and will still receive critical fixes. v8 will only require a license when you use it in non-commercial projects." But he meant "commercial" not "non-commercial" projects. Someone corrected him in a later comment and he edited his original statement.
 
 # Page 250 - Date and time calculations
 
