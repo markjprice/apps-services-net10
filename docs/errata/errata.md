@@ -371,7 +371,7 @@ In the next edition, I will replace the AutoMapper example with an alternative, 
 
 # Page 222 - Making fluent assertions in unit testing
 
-> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on August 12, 2026](https://github.com/markjprice/apps-services-net10/issues/49).
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on August 13, 2026](https://github.com/markjprice/apps-services-net10/issues/49).
 
 The owner dennisdoomen commented: "v7 will remain free indefinitely and will still receive critical fixes. v8 will only require a license when you use it in non-commercial projects." But he meant "commercial" not "non-commercial" projects. Someone corrected him in a later comment and he edited his original statement.
 
