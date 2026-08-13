@@ -1,4 +1,4 @@
-**Errata** (31 items)
+**Errata** (32 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -32,6 +32,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
 - [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
 - [Page 694 - Defining a custom decimal type and using date/time types](#page-694---defining-a-custom-decimal-type-and-using-datetime-types)
+- [Page 699 - Adding product and employee gRPC clients](#page-699---adding-product-and-employee-grpc-clients)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
@@ -631,6 +632,21 @@ In Step 3, the following statement gives a warning because it is not used, so yo
 ```
 import "google/protobuf/duration.proto";
 ```
+
+# Page 699 - Adding product and employee gRPC clients
+
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on August 13, 2026](https://github.com/markjprice/apps-services-net10/issues/48).
+
+In step 11, the markup for the `Products.cshtml` file is missing the code for the filter on minimum price:
+```html
+<form asp-action="Products" method="post">
+    <input name="minimumPrice" placeholder="Enter a minimum unit price" />
+    <input type="submit" value="Filter Products" />
+</form>
+```
+
+It was already correct in the solution code on GitHub:
+https://github.com/markjprice/apps-services-net10/blob/main/code/ModernServices/Northwind.Grpc.Client.Mvc/Views/Home/Products.cshtml#L9
 
 # Page 776 - Microsoft Learn documentation MCP server
 
