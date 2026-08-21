@@ -34,6 +34,8 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
 - [Page 694 - Defining a custom decimal type and using date/time types](#page-694---defining-a-custom-decimal-type-and-using-datetime-types)
 - [Page 699 - Adding product and employee gRPC clients](#page-699---adding-product-and-employee-grpc-clients)
+- [Page 703 - Adding a client-side interceptor](#page-703---adding-a-client-side-interceptor)
+- [Page 710 - Testing gRPC JSON transcoding](#page-710---testing-grpc-json-transcoding)
 - [Page 776 - Microsoft Learn documentation MCP server](#page-776---microsoft-learn-documentation-mcp-server)
 - [Page 780 - Getting definitions of types and their members](#page-780---getting-definitions-of-types-and-their-members)
 
