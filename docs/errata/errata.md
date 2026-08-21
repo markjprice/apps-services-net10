@@ -1,4 +1,4 @@
-**Errata** (33 items)
+**Errata** (34 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -644,7 +644,7 @@ import "google/protobuf/duration.proto";
 
 > Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on August 13, 2026](https://github.com/markjprice/apps-services-net10/issues/48).
 
-In step 11, the markup for the `Products.cshtml` file is missing the code for the filter on minimum price:
+In Step 11, the markup for the `Products.cshtml` file is missing the code for the filter on minimum price:
 ```html
 <form asp-action="Products" method="post">
     <input name="minimumPrice" placeholder="Enter a minimum unit price" />
@@ -654,6 +654,21 @@ In step 11, the markup for the `Products.cshtml` file is missing the code for th
 
 It was already correct in the solution code on GitHub:
 https://github.com/markjprice/apps-services-net10/blob/main/code/ModernServices/Northwind.Grpc.Client.Mvc/Views/Home/Products.cshtml#L9
+
+# Page 703 - Adding a client-side interceptor
+
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on August 21, 2026](https://github.com/markjprice/apps-services-net10/issues/50).
+
+Before Step 3, you must also import the following namespace at the top of `Program.cs`:
+```cs
+using Northwind.Grpc.Client.Mvc.Interceptors; // To use ClientLoggingInterceptor.
+```
+
+# Page 710 - Testing gRPC JSON transcoding
+
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on August 21, 2026](https://github.com/markjprice/apps-services-net10/issues/50).
+
+In Step 4, the following comment: `### Get Andrew Fuller Davolio.` should be `### Get Andrew Fuller.`
 
 # Page 776 - Microsoft Learn documentation MCP server
 
