@@ -479,7 +479,7 @@ But this instruction is less clear than it should be, especially for beginners. 
 
 > **Warning!** If you are using Visual Studio, navigate to **Project** | **Add New Item...**, and select the project item type **Resources File**, and then to edit the file, right-click it, select **Open With...**, and select **XML (Text) Editor**. In VS Code, just add an empty file. Although the file content is XML format, you must not select `.xml` as the file type. 
 
-If you are using Visual Studio, to enable the graphical resrouce editor, `.resx` files must have a special header to describe their schema. This take a lot of space and is not needed at runtime, or in other code editors like VS Code. If you want to use the Visual Studio graphical editor, the contents of every `.resx` file should start with a resource schema and extra `resheader` elements, as shown in the following markup:
+If you are using Visual Studio, to enable the graphical resource editor, `.resx` files must have a special header to describe their schema. This take a lot of space and is not needed at runtime, or in other code editors like VS Code. If you want to use the Visual Studio graphical editor, the contents of every `.resx` file should start with a resource schema and extra `resheader` elements, as shown in the following markup:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
