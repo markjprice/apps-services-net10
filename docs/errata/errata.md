@@ -1,4 +1,4 @@
-**Errata** (34 items)
+**Errata** (35 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -14,6 +14,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 117 - Exercise 2.3 – Implementing Model-View-ViewModel for .NET MAUI](#page-117---exercise-23--implementing-model-view-viewmodel-for-net-maui)
 - [Page 139 - Implementing a simple desktop app for data](#page-139---implementing-a-simple-desktop-app-for-data)
 - [Page 141 - Implementing a simple desktop app for data](#page-141---implementing-a-simple-desktop-app-for-data)
+- [Page 140 - Implementing a simple desktop app for data](#page-140---implementing-a-simple-desktop-app-for-data)
 - [Page 147 - Adding images to the project](#page-147---adding-images-to-the-project)
 - [Page 161 - Reviewing the new Blazor project template](#page-161---reviewing-the-new-blazor-project-template)
 - [Page 169 - Using Bootstrap icons](#page-169---using-bootstrap-icons)
@@ -180,6 +181,36 @@ In Step 6, inclusion of `ConverterCulture='en-US'` causes an error in the follow
 
 This element was already correct in the GitHub repository:
 https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/Northwind.DesktopApp/Views/MainWindow.axaml#L65
+
+# Page 140 - Implementing a simple desktop app for data
+
+> Thanks to [CzajaDawid](https://github.com/CzajaDawid) for raising [this issue on August 26, 2026](https://github.com/markjprice/apps-services-net10/issues/53).
+
+In Step 5, the code forgets to call `OnPropertyChanged` to trigger updates to the two `TextBlock` elements that are data-bound to `CategoryName` and `Description`.
+
+The code for the `SelectedCategory` property should be:
+```cs
+public Category? SelectedCategory
+{
+  get => _selectedCategory;
+  set
+  {
+    _selectedCategory = value;
+    Products.Clear();
+
+    if (value != null)
+    {
+      foreach (var product in value.Products)
+      {
+        Products.Add(product);
+
+        // To trigger updates to bound UI controls.
+        OnPropertyChanged(nameof(SelectedCategory));
+      }
+    }
+  }
+}
+```
 
 # Page 147 - Adding images to the project
 

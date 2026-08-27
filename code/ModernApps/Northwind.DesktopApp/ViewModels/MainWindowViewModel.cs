@@ -4,56 +4,61 @@ using System.Linq; // To use LINQ methods.
 
 namespace Northwind.DesktopApp.ViewModels
 {
-    public partial class MainWindowViewModel : ViewModelBase
+  public partial class MainWindowViewModel : ViewModelBase
+  {
+    public string Greeting { get; } = "Welcome to Apps and Services with .NET 10 with Avalonia!";
+
+    public ObservableCollection<CategoryViewModel> Categories { get; } = [];
+    public ObservableCollection<Product> Products { get; } = [];
+
+    private CategoryViewModel? _selectedCategory;
+
+    public CategoryViewModel? SelectedCategory
     {
-        public string Greeting { get; } = "Welcome to Apps and Services with .NET 10 with Avalonia!";
+      get => _selectedCategory;
+      set
+      {
+        if (!SetProperty(ref _selectedCategory, value))
+          return;
 
-        public ObservableCollection<CategoryViewModel> Categories { get; } = [];
-        public ObservableCollection<Product> Products { get; } = [];
+        Products.Clear();
 
-        private CategoryViewModel? _selectedCategory;
-
-        public CategoryViewModel? SelectedCategory
+        if (value != null)
         {
-            get => _selectedCategory;
-            set
-            {
-                if (!SetProperty(ref _selectedCategory, value))
-                    return;
+          foreach (var product in value.Products)
+          {
+            Products.Add(product);
 
-                Products.Clear();
-
-                if (value != null)
-                {
-                    foreach (var product in value.Products)
-                        Products.Add(product);
-                }
-            }
+            // To trigger updates to bound UI controls.
+            OnPropertyChanged(nameof(SelectedCategory));
+          }
         }
-
-        public MainWindowViewModel()
-        {
-            using NorthwindContext db = new();
-
-            CategoryViewModel[]? categories = db.Categories
-              .Select(c => new CategoryViewModel
-              {
-                  CategoryId = c.CategoryId,
-                  CategoryName = c.CategoryName,
-                  Description = c.Description,
-                  Picture = c.Picture,
-                  Products = c.Products
-              }).ToArray();
-
-            if (categories is null)
-                return;
-
-            foreach (CategoryViewModel category in categories)
-            {
-                Categories.Add(category);
-            }
-
-            SelectedCategory = Categories[0];
-        }
+      }
     }
+
+    public MainWindowViewModel()
+    {
+      using NorthwindContext db = new();
+
+      CategoryViewModel[]? categories = db.Categories
+        .Select(c => new CategoryViewModel
+        {
+          CategoryId = c.CategoryId,
+          CategoryName = c.CategoryName,
+          Description = c.Description,
+          Picture = c.Picture,
+          Products = c.Products
+        }).ToArray();
+
+      if (categories is null)
+        return;
+
+      foreach (CategoryViewModel category in categories)
+      {
+        Categories.Add(category);
+      }
+
+      SelectedCategory = Categories[0];
+    }
+  }
 }
