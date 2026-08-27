@@ -13,8 +13,8 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 97 - Adding shell navigation and more content pages](#page-97---adding-shell-navigation-and-more-content-pages)
 - [Page 117 - Exercise 2.3 – Implementing Model-View-ViewModel for .NET MAUI](#page-117---exercise-23--implementing-model-view-viewmodel-for-net-maui)
 - [Page 139 - Implementing a simple desktop app for data](#page-139---implementing-a-simple-desktop-app-for-data)
-- [Page 141 - Implementing a simple desktop app for data](#page-141---implementing-a-simple-desktop-app-for-data)
 - [Page 140 - Implementing a simple desktop app for data](#page-140---implementing-a-simple-desktop-app-for-data)
+- [Page 141 - Implementing a simple desktop app for data](#page-141---implementing-a-simple-desktop-app-for-data)
 - [Page 147 - Adding images to the project](#page-147---adding-images-to-the-project)
 - [Page 161 - Reviewing the new Blazor project template](#page-161---reviewing-the-new-blazor-project-template)
 - [Page 169 - Using Bootstrap icons](#page-169---using-bootstrap-icons)
@@ -168,20 +168,6 @@ In Step 1, `Northwind.Blazor.csproj` should be `Northwind.DesktopApp.csproj`.
 
 In Step 2, `Northwind.Blazor` should be `Northwind.DesktopApp`.
 
-# Page 141 - Implementing a simple desktop app for data
-
-> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on April 2, 2026](https://github.com/markjprice/apps-services-net10/issues/18).
-
-In Step 6, inclusion of `ConverterCulture='en-US'` causes an error in the following text block:
-```xml
-<TextBlock Text="{Binding UnitPrice, StringFormat='C2',
-                 ConverterCulture='en-US'}"
-           Width="100" TextAlignment="Right"/>
-```
-
-This element was already correct in the GitHub repository:
-https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/Northwind.DesktopApp/Views/MainWindow.axaml#L65
-
 # Page 140 - Implementing a simple desktop app for data
 
 > Thanks to [CzajaDawid](https://github.com/CzajaDawid) for raising [this issue on August 26, 2026](https://github.com/markjprice/apps-services-net10/issues/53).
@@ -211,6 +197,20 @@ public Category? SelectedCategory
   }
 }
 ```
+
+# Page 141 - Implementing a simple desktop app for data
+
+> Thanks to Phil aka [zkazz](https://github.com/zkazz) for raising [this issue on April 2, 2026](https://github.com/markjprice/apps-services-net10/issues/18).
+
+In Step 6, inclusion of `ConverterCulture='en-US'` causes an error in the following text block:
+```xml
+<TextBlock Text="{Binding UnitPrice, StringFormat='C2',
+                 ConverterCulture='en-US'}"
+           Width="100" TextAlignment="Right"/>
+```
+
+This element was already correct in the GitHub repository:
+https://github.com/markjprice/apps-services-net10/blob/main/code/ModernApps/Northwind.DesktopApp/Views/MainWindow.axaml#L65
 
 # Page 147 - Adding images to the project
 
