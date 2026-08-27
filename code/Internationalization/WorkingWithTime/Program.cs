@@ -6,6 +6,8 @@ ConfigureConsole(); // Defaults to en-US culture.
 //ConfigureConsole("es-AR");
 //ConfigureConsole("en-GB");
 
+#region Specifying date and time values
+
 SectionTitle("Specifying date and time values");
 
 WriteLine($"DateTime.MinValue:  {DateTime.MinValue}");
@@ -31,6 +33,10 @@ WriteLine($"Christmas (sortable): {xmas:u}");
 WriteLine($"Christmas is in month {xmas.Month} of the year.");
 WriteLine($"Christmas is day {xmas.DayOfYear} of {xmas.Year}.");
 WriteLine($"Christmas {xmas.Year} is on a {xmas.DayOfWeek}.");
+
+#endregion
+
+#region Date and time calculations
 
 SectionTitle("Date and time calculations");
 
@@ -58,6 +64,10 @@ WriteLine($"Kids wake up: {kidsWakeUp}");
 WriteLine($"The kids woke me up at {
   kidsWakeUp.ToShortTimeString()}");
 
+#endregion
+
+#region Milli-, micro-, and nanoseconds
+
 SectionTitle("Milli-, micro-, and nanoseconds");
 
 DateTime preciseTime = new(
@@ -73,6 +83,10 @@ preciseTime = DateTime.UtcNow;
 // Nanosecond value will be 0 to 900 in 100 nanosecond increments.
 WriteLine($"Millisecond: {preciseTime.Millisecond}, Microsecond: {
   preciseTime.Microsecond}, Nanosecond: {preciseTime.Nanosecond}");
+
+#endregion
+
+#region Globalization with dates and times
 
 SectionTitle("Globalization with dates and times");
 
@@ -108,6 +122,10 @@ WriteLine($"Is Christmas daylight saving time? {
 WriteLine($"Is July 4th daylight saving time? {
   independenceDay.IsDaylightSavingTime()}");
 
+#endregion
+
+#region Localizing the DayOfWeek enum
+
 SectionTitle("Localizing the DayOfWeek enum");
 
 CultureInfo previousCulture = Thread.CurrentThread.CurrentCulture;
@@ -131,16 +149,24 @@ WriteLine($"Culture: {Thread.CurrentThread.CurrentCulture
 
 Thread.CurrentThread.CurrentCulture = previousCulture;
 
+#endregion
+
+#region Working with only a date or a time
+
 SectionTitle("Working with only a date or a time");
 
-DateOnly party = new(year: 2024, month: 11, day: 12);
-WriteLine($"The .NET 9 release party is on {party.ToLongDateString()}.");
+DateOnly party = new(year: 2026, month: 11, day: 10);
+WriteLine($"The .NET 11 release party is on {party.ToLongDateString()}.");
 
 TimeOnly starts = new(hour: 11, minute: 30);
 WriteLine($"The party starts at {starts}.");
 
 DateTime calendarEntry = party.ToDateTime(starts);
 WriteLine($"Add to your calendar: {calendarEntry}.");
+
+#endregion
+
+#region Working with date/time formats
 
 SectionTitle("Working with date/time formats");
 
@@ -170,3 +196,4 @@ for (int i = 1; i < dtfi.MonthNames.Length; i++)
 }
 WriteLine();
 
+#endregion
