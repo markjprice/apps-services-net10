@@ -16,8 +16,8 @@ builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 var openAIClient = new OpenAIClient(
     new ApiKeyCredential(builder.Configuration["OpenAI:Key"] ?? throw new InvalidOperationException("Missing configuration: OpenAI:Key. See the README for details.")));
 
-#pragma warning disable OPENAI001 // GetResponsesClient(string) is experimental and subject to change or removal in future updates.
-var chatClient = openAIClient.GetResponsesClient().AsIChatClient();
+#pragma warning disable OPENAI001 // GetResponsesClient() is experimental and subject to change or removal in future updates.
+var chatClient = openAIClient.GetResponsesClient().AsIChatClient("gpt-5.4-nano");
 #pragma warning restore OPENAI001
 
 var embeddingGenerator = openAIClient.GetEmbeddingClient("text-embedding-3-small").AsIEmbeddingGenerator();
@@ -25,7 +25,7 @@ var embeddingGenerator = openAIClient.GetEmbeddingClient("text-embedding-3-small
 var vectorStorePath = Path.Combine(AppContext.BaseDirectory, "vector-store.db");
 var vectorStoreConnectionString = $"Data Source={vectorStorePath}";
 builder.Services.AddSqliteVectorStore(_ => vectorStoreConnectionString);
-builder.Services.AddSqliteCollection<string, IngestedChunk>(IngestedChunk.CollectionName, vectorStoreConnectionString);
+builder.Services.AddSqliteCollection<Guid, IngestedChunk>(IngestedChunk.CollectionName, vectorStoreConnectionString);
 
 builder.Services.AddSingleton<DataIngestor>();
 builder.Services.AddSingleton<SemanticSearch>();
@@ -38,9 +38,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-  app.UseExceptionHandler("/Error", createScopeForErrors: true);
-  // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-  app.UseHsts();
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
 }
 
 app.UseHttpsRedirection();

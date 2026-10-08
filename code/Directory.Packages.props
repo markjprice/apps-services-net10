@@ -1,6 +1,6 @@
 <Project>
   
-  <!--Last updated package versions: September 8, 2026.-->
+  <!--Last updated package versions: October 8, 2026.-->
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
@@ -15,7 +15,7 @@
     <!-- 3) Change the version values below from $(Net10) to $(Net11). -->
 
     <Avalonia>11.3.21</Avalonia>
-    <AI>10.9.0</AI>
+    <AI>10.10.0</AI>
     <Hangfire>1.8.25</Hangfire>
     <HotChocolate>15.1.18</HotChocolate>
   </PropertyGroup>
@@ -127,15 +127,16 @@
   <ItemGroup Label="Chapter 9 Building an LLM-Based Chat Service">
     <PackageVersion Include="Microsoft.Extensions.AI.OpenAI" Version="$(AI)" />
     <PackageVersion Include="Microsoft.Extensions.AI" Version="$(AI)" />
-    <PackageVersion Include="Microsoft.Extensions.DataIngestion" Version="10.9.0-preview.1.26411.16" />
-    <PackageVersion Include="Microsoft.Extensions.DataIngestion.Markdig" Version="10.9.0-preview.1.26411.16" />
-    <PackageVersion Include="PdfPig" Version="0.1.14" />
-    <PackageVersion Include="Microsoft.ML.Tokenizers.Data.Cl100kBase" Version="3.0.0-preview.26160.2" />
-    <PackageVersion Include="Microsoft.ML.Tokenizers.Data.O200kBase" Version="3.0.0-preview.26160.2" />
-    <PackageVersion Include="Microsoft.SemanticKernel.Connectors.SqliteVec" Version="1.74.0-preview" />
+    <PackageVersion Include="Microsoft.Extensions.DataIngestion" Version="10.10.0-preview.1.26459.2" />
+    <PackageVersion Include="Microsoft.Extensions.DataIngestion.Markdig" Version="10.10.0-preview.1.26459.2" />
+    <PackageVersion Include="PdfPig" Version="0.1.16" />
+    <PackageVersion Include="Microsoft.ML.Tokenizers.Data.Cl100kBase" Version="3.0.0-preview.26457.2" />
+    <PackageVersion Include="Microsoft.ML.Tokenizers.Data.O200kBase" Version="3.0.0-preview.26457.2" />
+    <PackageVersion Include="CommunityToolkit.VectorData.SqliteVec" Version="1.0.2-preview" />
     <PackageVersion Include="ModelContextProtocol" Version="2.2.0" />
-    <PackageVersion Include="OllamaSharp" Version="5.4.30" />
-  </ItemGroup>
+		<PackageVersion Include="OllamaSharp" Version="5.5.0" />
+		<PackageVersion Include="Microsoft.Bcl.Memory" Version="10.0.12" />
+	</ItemGroup>
   
   <ItemGroup Label="Chapter 10 Building and Securing Minimal API Web Services">
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(Net10)" />

@@ -1,27 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-	<PropertyGroup>
-		<TargetFramework>net10.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<UserSecretsId>73f065dd-9df6-4be6-a12c-3b42bc25c31f</UserSecretsId>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>f8dfba41-3efe-4aa0-a3c4-4c355c18eb76</UserSecretsId>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
-		<PackageReference Include="Microsoft.Extensions.AI" />
-		<PackageReference Include="Microsoft.Extensions.DataIngestion" />
-		<PackageReference Include="Microsoft.Extensions.DataIngestion.Markdig" />
-		<PackageReference Include="PdfPig" />
-		<PackageReference Include="Microsoft.ML.Tokenizers.Data.Cl100kBase" />
-		<PackageReference Include="Microsoft.ML.Tokenizers.Data.O200kBase" />
-		<PackageReference Include="Microsoft.Bcl.Memory" VersionOverride="9.0.15" />
-		<PackageReference Include="Microsoft.SemanticKernel.Connectors.SqliteVec" />
-		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" VersionOverride="3.0.3" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
+    <PackageReference Include="Microsoft.Extensions.AI" />
+    <PackageReference Include="Microsoft.Extensions.DataIngestion" />
+    <PackageReference Include="Microsoft.Extensions.DataIngestion.Markdig" />
+    <PackageReference Include="PdfPig" />
+    <PackageReference Include="Microsoft.ML.Tokenizers.Data.Cl100kBase" />
+    <PackageReference Include="Microsoft.ML.Tokenizers.Data.O200kBase" />
+    <PackageReference Include="CommunityToolkit.VectorData.SqliteVec" />
+		<PackageReference Include="Microsoft.Bcl.Memory" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Northwind.DataContext\Northwind.DataContext.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\Data\" />
+  </ItemGroup>
 
 </Project>
