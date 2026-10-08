@@ -1,4 +1,4 @@
-**Errata** (35 items)
+**Errata** (36 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -29,6 +29,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 279 - Testing globalization and localization](#page-279---testing-globalization-and-localization)
 - [Page 288 - Testing globalization and localization](#page-288---testing-globalization-and-localization)
 - [Page 317 - Executing queries and working with data readers using ADO.NET](#page-317---executing-queries-and-working-with-data-readers-using-adonet)
+- [Page 389 - Trying out the chat app](#page-389---trying-out-the-chat-app)
 - [Page 401 - Using .NET to build an MCP server](#page-401---using-net-to-build-an-mcp-server)
 - [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
 - [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
@@ -603,6 +604,21 @@ In the next edition, before Step 7, I will add a new step to say, "At the end of
 ```cs
 connection.Close(); // Explicitly close the connection.
 ```
+
+# Page 389 - Trying out the chat app
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on October 8, 2026](https://github.com/markjprice/apps-services-net10/issues/57).
+
+The **AI Chat Web App** / `aichatweb` project template has changed since the book was published and it is still in preview.
+
+As well as the changes shown in the book, you must:
+
+1. In `Program.cs`, on line 28, change `string` to `Guid`.
+2. In `Services` folder, in `SemanticSearch.cs`, on line 7, change `string` to `Guid`.
+
+Here is a screenshot of the changes as a Git diff:
+
+![Change string to Guid](page389.png)
 
 # Page 401 - Using .NET to build an MCP server
 
