@@ -1,4 +1,4 @@
-**Errata** (36 items)
+**Errata** (37 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -31,6 +31,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 317 - Executing queries and working with data readers using ADO.NET](#page-317---executing-queries-and-working-with-data-readers-using-adonet)
 - [Page 389 - Trying out the chat app](#page-389---trying-out-the-chat-app)
 - [Page 401 - Using .NET to build an MCP server](#page-401---using-net-to-build-an-mcp-server)
+- [Page 420 - Summary](#page-420---summary)
 - [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
 - [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
 - [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
@@ -627,6 +628,14 @@ Here is a screenshot of the changes as a Git diff:
 In Steps 6 and 7, I wrote `HelloMcpTool.cs` when I should have written `NorthwindTool.cs`.
 
 In Step 8, I wrote "add statements to x" but it should be "add statements to create a host application builder, add logging to the console, add an MCP server with tools automatically loaded from the current assembly, and then run the host asynchronously."
+
+# Page 420 - Summary
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on October 19, 2026](https://github.com/markjprice/apps-services-net10/issues/58).
+
+The second **Summary** section is duplicated from *Chapter 1*.
+
+![The second **Summary** section is duplicated from *Chapter 1*.](page420.png)
 
 # Page 504 - Caching objects using in-memory caching
 
