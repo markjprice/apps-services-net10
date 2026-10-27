@@ -1,4 +1,4 @@
-**Errata** (38 items)
+**Errata** (39 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -33,6 +33,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 401 - Using .NET to build an MCP server](#page-401---using-net-to-build-an-mcp-server)
 - [Page 420 - Summary](#page-420---summary)
 - [Page 446 - Implementing Scalar for documentation](#page-446---implementing-scalar-for-documentation)
+- [Page 473 - Creating a rate-limited console client](#page-473---creating-a-rate-limited-console-client)
 - [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
 - [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
 - [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
@@ -643,6 +644,17 @@ The second **Summary** section is duplicated from *Chapter 1*.
 > Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on October 25, 2026](https://github.com/markjprice/apps-services-net10/issues/61).
 
 In Step 6, I wrote "note the Scalar UI shows a list of endpoints such as `/customers/{id} GET` and `/customers/{id} DEL` in the left navigation". It should be `/products` not `/customers`, so: "note the Scalar UI shows a list of endpoints such as `/products/{id} GET` and `/products/{id} DEL` in the left navigation".
+
+# Page 473 - Creating a rate-limited console client
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on October 25, 2026](https://github.com/markjprice/apps-services-net10/issues/62).
+
+Add a step 24 to comment out the custom rate limiting because it can negatively affect Scalar UI after you've finished testing the client.
+
+24. In the `Northwind.WebApi.Service project`, in `Program.cs`, comment out the call to use client rate limiting, as shown in the following code:
+```cs
+// await app.UseCustomClientRateLimiting();
+```
 
 # Page 504 - Caching objects using in-memory caching
 
