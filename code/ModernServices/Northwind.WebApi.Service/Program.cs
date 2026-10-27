@@ -34,7 +34,9 @@ app.UseHttpsRedirection();
 
 app.UseHttpLogging();
 
-await app.UseCustomClientRateLimiting();
+// Comment out the following line to disable rate limiting
+// because it can affect Scalar UI.
+//await app.UseCustomClientRateLimiting();
 
 // app.UseCors(policyName: "Northwind.Mvc.Policy");
 // Without a named policy the middleware is added but not active.
