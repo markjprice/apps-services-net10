@@ -19,7 +19,11 @@
 		<PackageReference Include="Microsoft.Bcl.Memory" />
 	</ItemGroup>
 
-  <ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Northwind.DataContext\Northwind.DataContext.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
     <Folder Include="wwwroot\Data\" />
   </ItemGroup>
 
