@@ -9,7 +9,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" />
-		<PackageReference Include="Microsoft.OpenApi" VersionOverride="2.9.0" />
+		<PackageReference Include="Microsoft.OpenApi" />
 	</ItemGroup>
 
 	<ItemGroup>
