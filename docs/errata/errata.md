@@ -1,4 +1,4 @@
-**Errata** (39 items)
+**Errata** (40 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -34,6 +34,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 420 - Summary](#page-420---summary)
 - [Page 446 - Implementing Scalar for documentation](#page-446---implementing-scalar-for-documentation)
 - [Page 473 - Creating a rate-limited console client](#page-473---creating-a-rate-limited-console-client)
+- [Page 474 - Rate limiting using ASP.NET Core middleware](#page-474---rate-limiting-using-aspnet-core-middleware)
 - [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
 - [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
 - [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
@@ -655,6 +656,13 @@ Add a step 24 to comment out the custom rate limiting because it can negatively 
 ```cs
 // await app.UseCustomClientRateLimiting();
 ```
+
+# Page 474 - Rate limiting using ASP.NET Core middleware
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on October 28, 2026](https://github.com/markjprice/apps-services-net10/issues/63).
+
+The link used `ch10` instead of `ch11`. The correct link is:
+https://github.com/markjprice/apps-services-net10/blob/main/docs/ch11-rate-limiting.md
 
 # Page 504 - Caching objects using in-memory caching
 
