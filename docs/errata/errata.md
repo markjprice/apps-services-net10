@@ -1,4 +1,4 @@
-**Errata** (39 items)
+**Errata** (40 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -34,6 +34,9 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 420 - Summary](#page-420---summary)
 - [Page 446 - Implementing Scalar for documentation](#page-446---implementing-scalar-for-documentation)
 - [Page 473 - Creating a rate-limited console client](#page-473---creating-a-rate-limited-console-client)
+- [Page 475 - Limitations of native AOT, Native AOT for ASP.NET Core](#page-475---limitations-of-native-aot-native-aot-for-aspnet-core)
+  - [Limitations of native AOT](#limitations-of-native-aot)
+  - [Native AOT for ASP.NET Core](#native-aot-for-aspnet-core)
 - [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
 - [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
 - [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
@@ -655,6 +658,60 @@ Add a step 24 to comment out the custom rate limiting because it can negatively 
 ```cs
 // await app.UseCustomClientRateLimiting();
 ```
+
+# Page 475 - Limitations of native AOT, Native AOT for ASP.NET Core
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on October 29, 2026](https://github.com/markjprice/apps-services-net10/issues/64).
+
+These sections were written for .NET 8 and need an update (below).
+
+## Limitations of native AOT
+
+Native AOT has limitations, including the following:
+- No dynamic loading of assemblies.
+- No runtime code generation, for example, using System.Reflection.Emit.
+- It requires trimming, which has its own limitations.
+- The app must be self-contained, so it must embed any libraries it calls. Trimming removes unused code, so the final size is usually smaller than a regular self-contained app, but you must build a separate executable for each target platform.
+
+Your own apps and services might not use these features, but major parts of .NET do. For example, ASP.NET Core MVC (including Web API services that use controllers) and EF Core both rely on reflection and runtime code generation to implement their functionality.
+
+When native AOT first appeared for ASP.NET Core in .NET 8, many of us expected MVC and EF Core support to follow within one or two releases. That has not happened. With .NET 11, the situation is as follows:
+
+- **ASP.NET Core**: Minimal API, gRPC, and worker services support native AOT. MVC, including controller-based Web API services, is still not supported. If you want to publish a web service with native AOT, use the **ASP.NET Core Web API (native AOT)** project template (short name `webapiaot`). It uses Minimal API only and calls CreateSlimBuilder instead of CreateBuilder to enable only essential features.
+- **EF Core**: EF Core 9 introduced experimental support for native AOT based on precompiled queries. At publish time, EF Core finds your LINQ queries and generates C# interceptors with the SQL and materialization code already prepared. In EF Core 11 this support is still marked as experimental and not recommended for production. Dynamic queries, which compose LINQ operators based on runtime conditions, cannot be precompiled and are not supported. Your database provider must also support precompiled queries.
+
+Microsoft’s strategy has shifted. Instead of trying to make every existing feature AOT-compatible, the .NET teams focus on source generators, which move work that used to happen at runtime to compile time. Examples include the JSON source generator in `System.Text.Json`, the configuration binding source generator, and the Request Delegate Generator used by Minimal API. If you design a new app or service with native AOT in mind, choose components built this way.
+
+> **Good Practice**: Native AOT is best suited to new projects such as cloud-native microservices, serverless functions, and command-line tools, where fast startup and a small memory footprint matter most. Retrofitting an existing MVC or EF Core app for native AOT is usually not practical yet.
+
+The native AOT publishing process includes code analyzers that warn you if you use unsupported features. Many popular packages are now annotated, and library authors can set `<IsAotCompatible>true</IsAotCompatible>` in their project file to enable these analyzers. But not every package has been annotated yet, so test your app thoroughly after publishing it with native AOT.
+
+The most common annotation to indicate that a type or member does not support native AOT is the `[RequiresDynamicCode]` attribute. A related attribute, `[RequiresUnreferencedCode]`, indicates that a member is not compatible with trimming, which also makes it incompatible with native AOT.
+
+## Native AOT for ASP.NET Core
+
+Native AOT support was introduced with .NET 7, but only for console apps and class libraries on Windows and Linux. .NET 8 added support for macOS and for parts of ASP.NET Core. Since then, Microsoft has continued to expand compatibility, and with .NET 11 you can use native AOT to publish ASP.NET Core apps on Windows, Linux, and macOS.
+
+The following ASP.NET Core features are fully supported: gRPC, CORS, HealthChecks, HttpLogging, JWT authentication, Localization, OutputCaching, RateLimiting, RequestDecompression, ResponseCaching, ResponseCompression, Rewrite, StaticFiles, and WebSockets.
+
+The following ASP.NET Core features are partially supported: Minimal API and SignalR.
+
+The following ASP.NET Core features are not supported: MVC, Blazor Server, OData, authentication other than JWT, Session, and SPA.
+
+> **Good Practice**: This list changes with each release, so always check the official documentation for the latest compatibility details: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/native-aot.
+
+As you have previously seen, you implement an ASP.NET Core Minimal API web service by mapping an HTTP request to a lambda expression, as shown in the following code:
+```cs
+app.MapGet("/", () => "Hello World!");
+```
+
+At runtime, ASP.NET Core normally uses the `RequestDelegateFactory` (RDF) class to convert your `MapX` calls into `RequestDelegate` instances. But RDF generates code dynamically, so it is not compatible with native AOT.
+
+When native AOT is enabled, a source generator named Request Delegate Generator (RDG) replaces RDF. It performs similar work, but at compile time instead of at runtime. This means the generated code can be statically analyzed by the native AOT publish process. The RDG is enabled automatically when you set `<PublishAot>true</PublishAot>` in your project file. You can also enable it in apps that do not use native AOT by setting `<EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>`, which can improve startup time.
+
+The RDG is one of several source generators that make native AOT possible for web services. Another is the `System.Text.Json` source generator. Any type that your Minimal API endpoints accept in a request body or return in a response must be registered with a `JsonSerializerContext`, because reflection-based JSON serialization does not work with native AOT.
+
+---
 
 # Page 504 - Caching objects using in-memory caching
 
