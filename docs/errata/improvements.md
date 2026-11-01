@@ -1,4 +1,4 @@
-**Improvements** (5 items)
+**Improvements** (6 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -7,6 +7,8 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 40 - Installing Docker and an SQL Server container image](#page-40---installing-docker-and-an-sql-server-container-image)
 - [Page 79 - Building Mobile Apps Using .NET MAUI](#page-79---building-mobile-apps-using-net-maui)
 - [Page 249 - Formatting date and time values](#page-249---formatting-date-and-time-values)
+- [Page 481 - Building a native AOT project](#page-481---building-a-native-aot-project)
+  - [Tidying up left over sample code from the project template](#tidying-up-left-over-sample-code-from-the-project-template)
 
 # Page 17 - Downloading and installing Visual Studio
 
@@ -62,3 +64,23 @@ In the next edition, I will use a calculation for the initial value of Christmas
 DateTime xmas = new(year: DateTime.Today.Year, month: 12, day: 25);
 if (DateTime.Today >= xmas) xmas = xmas.AddYears(1);
 ```
+
+# Page 481 - Building a native AOT project
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on October 30, 2026](https://github.com/markjprice/apps-services-net10/issues/65).
+
+Steps 11 and 12 tell the reader to delete unnecessary code statements that are not needed to "tidy up" the finished project. But some readers get confused.
+
+In the next edition, I will add a new section and move steps 11 and 12 to it. Below is the new section.
+
+---
+
+## Tidying up left over sample code from the project template
+
+Now that you have defined your own DTO classes and mapped your own endpoints, you should delete the sample code that the project template generated: the `Todo` type, its entry in the JSON serializer context, the sample data, and the endpoints that return it. It’s tempting to leave it in place because it’s harmless and still compiles. But every endpoint that a web service maps is a door that anyone on the network can knock on, and these doors serve no purpose in your application. A core principle of secure design is to minimize attack surface, which means a deployed service should expose only the functionality it actually needs. Code that isn’t deployed can’t be probed, abused, or exploited, however it might be misused in the future.
+
+The sample endpoints are also a giveaway. They have predictable routes, so automated scanners routinely request them to fingerprint services built from default templates. A service that answers those requests tells an attacker which framework you used and suggests that the project may not have been hardened. The sample endpoints are also unlikely to get the protections you apply to your real ones. If you add authorization, rate limiting, or input validation to your own route group, the leftover sample routes still respond to anyone, anonymously. They will also appear in your OpenAPI document, so client code generated from it will include types and methods that have nothing to do with your service.
+
+Removing the `Todo` type from the serializer context matters for a different reason. The source-generated JSON serializer produces metadata and code for every type listed in the context. With native AOT and trimming, any type that is still referenced cannot be trimmed away, so stale types make your binary bigger and slower to start. You should replace the sample types in the context with your own DTOs rather than adding yours alongside them. That way the context documents exactly which types your service is prepared to serialize and deserialize, which helps when you review what data can cross the wire.
+
+Finally, there is the everyday cost of dead code. Future readers of the project, including you in six months’ time, will wonder whether the `Todo` endpoints are used, whether they can safely be deleted, and whether tests depend on them. Unused code still needs to be read, reviewed, and kept compiling through framework upgrades, and it adds nothing in return. So delete it now, while you still remember where it came from. Then build and run the project, and check that the OpenAPI document lists only your own endpoints. Don’t forget the `.http` file that the template created, which contains a sample request for the removed routes.

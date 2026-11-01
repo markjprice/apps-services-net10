@@ -6,7 +6,7 @@ If you find any mistakes in the third edition, *Apps and Services with .NET 10*,
 
 [**Errata** (40 items)](errata.md): Typos, tool user interface and behavior changes, or mistakes in code that would cause a compilation error that prevents a successful build.
 
-[**Improvements** (5 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
+[**Improvements** (6 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
 
 [**Common Mistakes**](https://github.com/markjprice/markjprice/blob/main/articles/common-mistakes.md): These are some of the most common errors that a reader might encounter when trying to get code in book tasks to work, or when trying to write your own code. (Links to the `markjprice` shared articles repository.)
 
@@ -17,7 +17,7 @@ All errata and improvements will be included in the next edition.
 Who|Errata|Improvements
 ---|---|---
 Phil aka [zkazz](https://github.com/zkazz)|16|1
-[Moisés Sirvente](https://github.com/es-moises)|9|1
+[Moisés Sirvente](https://github.com/es-moises)|9|2
 [Kris](https://github.com/kprikratki)|3|1
 [DrAvriLev](https://github.com/DrAvriLev)|1|2
 [CzajaDawid](https://github.com/CzajaDawid)|1|0
