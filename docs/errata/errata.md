@@ -1,4 +1,4 @@
-**Errata** (40 items)
+**Errata** (41 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -37,6 +37,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 475 - Limitations of native AOT, Native AOT for ASP.NET Core](#page-475---limitations-of-native-aot-native-aot-for-aspnet-core)
   - [Limitations of native AOT](#limitations-of-native-aot)
   - [Native AOT for ASP.NET Core](#native-aot-for-aspnet-core)
+- [Page 478 - Publishing a native AOT project](#page-478---publishing-a-native-aot-project)
 - [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
 - [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
 - [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
@@ -712,6 +713,14 @@ When native AOT is enabled, a source generator named Request Delegate Generator 
 The RDG is one of several source generators that make native AOT possible for web services. Another is the `System.Text.Json` source generator. Any type that your Minimal API endpoints accept in a request body or return in a response must be registered with a `JsonSerializerContext`, because reflection-based JSON serialization does not work with native AOT.
 
 ---
+
+# Page 478 - Publishing a native AOT project
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on November 2, 2026](https://github.com/markjprice/apps-services-net10/issues/66).
+
+In Step 17, `Northwind.MinimalAot.Service.exe` should be `Northwind.WebApi.Service.exe`.
+
+In Step 19, `http://localhost:5000/products/100` should be `http://localhost:5000/api/products/man`. Also note that this is different from the Minimal API project because we did not implement a "minimum price" endpoint in the original web service, so we are trying an endpoint that also returns two products byb filtering on a partial product name.
 
 # Page 504 - Caching objects using in-memory caching
 
