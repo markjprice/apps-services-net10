@@ -37,7 +37,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 475 - Limitations of native AOT, Native AOT for ASP.NET Core](#page-475---limitations-of-native-aot-native-aot-for-aspnet-core)
   - [Limitations of native AOT](#limitations-of-native-aot)
   - [Native AOT for ASP.NET Core](#native-aot-for-aspnet-core)
-- [Page 478 - Publishing a native AOT project](#page-478---publishing-a-native-aot-project)
+- [Page 483 - Publishing a native AOT project](#page-483---publishing-a-native-aot-project)
 - [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
 - [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
 - [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
@@ -714,11 +714,11 @@ The RDG is one of several source generators that make native AOT possible for we
 
 ---
 
-# Page 478 - Publishing a native AOT project
+# Page 483 - Publishing a native AOT project
 
 > Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on November 2, 2026](https://github.com/markjprice/apps-services-net10/issues/66).
 
-In Step 17, `Northwind.MinimalAot.Service.exe` should be `Northwind.WebApi.Service.exe`.
+On page 486, in Step 17, `Northwind.MinimalAot.Service.exe` should be `Northwind.WebApi.Service.exe`.
 
 In Step 19, `http://localhost:5000/products/100` should be `http://localhost:5000/api/products/man`. Also note that this is different from the Minimal API project because we did not implement a "minimum price" endpoint in the original web service, so we are trying an endpoint that also returns two products byb filtering on a partial product name.
 
