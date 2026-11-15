@@ -1,4 +1,4 @@
-**Errata** (41 items)
+**Errata** (42 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/apps-services-net10/issues) or email me at markjprice (at) gmail.com.
 
@@ -40,6 +40,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 483 - Publishing a native AOT project](#page-483---publishing-a-native-aot-project)
 - [Page 504 - Caching objects using in-memory caching](#page-504---caching-objects-using-in-memory-caching)
 - [Page 520 - Building an MVC project to call the faulty web service](#page-520---building-an-mvc-project-to-call-the-faulty-web-service)
+- [Page 527 - Queuing with RabbitMQ](#page-527---queuing-with-rabbitmq)
 - [Page 691 - Handling dates, times, and decimal numbers](#page-691---handling-dates-times-and-decimal-numbers)
 - [Page 694 - Defining a custom decimal type and using date/time types](#page-694---defining-a-custom-decimal-type-and-using-datetime-types)
 - [Page 699 - Adding product and employee gRPC clients](#page-699---adding-product-and-employee-grpc-clients)
@@ -768,6 +769,30 @@ public class HomeProductsViewModel
   public string? ErrorMessage { get; set; }
 }
 ```
+
+# Page 527 - Queuing with RabbitMQ
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on November 13, 2026](https://github.com/markjprice/apps-services-net10/issues/68).
+
+Version 7.0 made the API async-only and renamed or replaced many of the types I listed in this section which were from v6. A reader who installs the latest package will find that `IModel` and the sync consumer types don’t exist.
+
+The changes are summarized in the following table:
+
+Print book|Current (v7+)
+---|---
+`IConnection`|Still `IConnection`, but created with `await factory.CreateConnectionAsync()`
+`ConnectionFactory`|Unchanged
+`IModel`|Renamed `IChannel`, created with `await connection.CreateChannelAsync()`
+`QueueDeclare`|`QueueDeclareAsync`
+`BasicPublish`|`BasicPublishAsync`
+`IBasicConsumer`|`IAsyncBasicConsumer`
+`EventingBasicConsumer`|`AsyncEventingBasicConsumer`, whose `ReceivedAsync` event handler is async
+
+The consumer name was wrong in the original text. The v6 class was `EventingBasicConsumer`, not `EventBasicConsumer`.
+
+The code in step 15 on pages 532 to 534 that declares a queue and sends messages correctly uses the `await` versions. Both `IConnection` and `IChannel` implement `IAsyncDisposable`, so `await using` can replace `using`.
+
+The code in steps 4 on pages 536 to 537 correctly declares a queue and consumes messages in the console app.
 
 # Page 691 - Handling dates, times, and decimal numbers
 
