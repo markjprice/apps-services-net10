@@ -21,7 +21,8 @@
     <PackageReference Include="Grpc.AspNetCore" />
     <PackageReference Include="Microsoft.Data.SqlClient" />
     <PackageReference Include="Microsoft.AspNetCore.Grpc.JsonTranscoding" />
-  </ItemGroup>
+		<PackageReference Include="Microsoft.DotNet.ILCompiler" />
+	</ItemGroup>
 
   <ItemGroup>
 		<ProjectReference Include="..\..\ModernApps\Northwind.DataContext\Northwind.DataContext.csproj" />

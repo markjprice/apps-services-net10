@@ -18,7 +18,8 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     <PackageReference Include="Microsoft.Extensions.Http" />
     <PackageReference Include="StrawberryShake.Server" />
-  </ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.WebUtilities" />
+	</ItemGroup>
   
   <ItemGroup>
     <Using Include="System.Console" Static="true" />

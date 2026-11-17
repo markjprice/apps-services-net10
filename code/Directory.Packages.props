@@ -1,6 +1,6 @@
 <Project>
   
-  <!--Last updated package versions: November 10, 2026.-->
+  <!--Last updated package versions: November 17, 2026.-->
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
@@ -19,7 +19,7 @@
     <Avalonia>11.3.23</Avalonia>
     <AI>10.11.0</AI>
     <Hangfire>1.8.25</Hangfire>
-    <HotChocolate>15.1.21</HotChocolate>
+    <HotChocolate>16.7.6</HotChocolate>
   </PropertyGroup>
   
   <ItemGroup Label="Common packages in multiple chapters.">
@@ -145,7 +145,8 @@
   
   <ItemGroup Label="Chapter 10 Building and Securing Minimal API Web Services">
 		<PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(Net10)" />
-		<PackageVersion Include="Microsoft.OpenApi" Version="2.12.2" />
+		<PackageVersion Include="Microsoft.OpenApi" Version="2.13.1" />
+		<PackageVersion Include="Microsoft.DotNet.ILCompiler" Version="$(Net10)" />
     <PackageVersion Include="Scalar.AspNetCore" Version="2.18.0" />
     <PackageVersion Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(Net10)" />
@@ -169,8 +170,9 @@
   <ItemGroup Label="Chapter 13 Combining Data Sources Using GraphQL">
     <PackageVersion Include="HotChocolate.AspNetCore" Version="$(HotChocolate)" />
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="$(HotChocolate)" />
-    <PackageVersion Include="StrawberryShake.Server" Version="$(HotChocolate)" />
-  </ItemGroup>
+		<PackageVersion Include="Microsoft.AspNetCore.WebUtilities" Version="$(Net10)" />
+		<PackageVersion Include="StrawberryShake.Server" Version="$(HotChocolate)" />
+	</ItemGroup>
   
   <ItemGroup Label="Chapter 14 Building Efficient Microservices Using gRPC">
     <PackageVersion Include="Google.Protobuf" Version="3.34.1" />
