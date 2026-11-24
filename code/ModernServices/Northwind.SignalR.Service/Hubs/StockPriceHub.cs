@@ -37,7 +37,7 @@ public class StockPriceHub : Microsoft.AspNetCore.SignalR.Hub
   {
     await foreach (string stock in stocks)
     {
-      Console.WriteLine($"Uploading {stock}...");
+      Console.WriteLine($"Receiving {stock} from client...");
     }
   }
 }
